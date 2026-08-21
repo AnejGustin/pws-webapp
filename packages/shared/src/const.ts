@@ -1,0 +1,1 @@
+export const WEATHER_STATION_TIMEZONE = "Europe/Ljubljana";

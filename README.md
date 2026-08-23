@@ -71,6 +71,14 @@ The frontend will be available at:
 
 http://localhost:5173/
 
+API documentation is available at:
+
+http://localhost:3001/api/v1/docs
+
+OR
+
+https://weather-station-slov-konjice.onrender.com/api/v1/docs/
+
 ## Zambretti Algorithm
 
 The application uses a modified version of the Zambretti weather forecasting algorithm.

@@ -47,7 +47,7 @@ export default function InfoTooltip() {
                     </p>
 
                     <a
-                        href="https://github.com"
+                        href="https://github.com/AnejGustin/pws-webapp#zambretti-algorithm"
                         target="_blank"
                         rel="noreferrer"
                         className="text-blue-600 hover:underline"

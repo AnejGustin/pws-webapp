@@ -9,7 +9,7 @@ const swaggerOptions = {
       version: '1.0.0',
     },
   },
-  apis: ["./dist/routes/*.js", "./src/routes/*.ts"],
+  apis: ["./dist/routes/*.js", "./src/routes/*.ts", "./apps/api/dist/routes/*.js"],
 };
 
 export const swaggerDocs = swaggerJsDoc(swaggerOptions);

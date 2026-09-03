@@ -503,7 +503,7 @@ export function getLineChartProperties(yAxisRangeStart: number | null, yAxisRang
     const xTicks = [];
     const date = toZonedTime(new Date(xAxisTimeStart), WEATHER_STATION_TIMEZONE);
     if (period === "day") {
-        for (let i = 0; i <= 24; i++) {
+        for (let i = 0; i <= 24; i += 3) {
             date.setHours(i, 0, 0, 0);
             const utcDateInWeatherStationTimezone = fromZonedTime(date, WEATHER_STATION_TIMEZONE);
             xTicks.push(utcDateInWeatherStationTimezone.getTime());
@@ -525,4 +525,78 @@ export function getLineChartProperties(yAxisRangeStart: number | null, yAxisRang
         yTicks: yTicks,
         xTicks: xTicks
     })
+}
+
+export function capitaliseEachWord(sentence: string) {
+
+    const words = sentence.split(" ");
+
+    for (const wordIndex in words) {
+        words[wordIndex] = words[wordIndex][0].toUpperCase() + words[wordIndex].substring(1);
+    }
+
+    return words.join(" ");
+}
+
+export function getVisibilityDescription(visibility: number | null) {
+    if(!visibility) {
+        return visibility;
+    }
+
+    if (visibility >= 10000) {
+        return "Good";
+    }
+    if (visibility >= 6000 && visibility < 10000) {
+        return "Moderate";
+    }
+    if (visibility >= 1000 && visibility < 6000) {
+        return "Poor";
+    }
+    if (visibility >= 0 && visibility < 1000) {
+        return "Very Poor";
+    }
+}
+
+export function getAirQualityDescription(airQuality: number | null) {
+    switch (airQuality) {
+        case 1: {
+            return "Good";
+        }
+        case 2: {
+            return "Fair";
+        }
+        case 3: {
+            return "Moderate";
+        }
+        case 4: {
+            return "Poor";
+        }
+        case 5: {
+            return "Very Poor";
+        }
+        default:
+            return airQuality;
+    }
+}
+
+export function getUvIndexSeverity(uvIndex: number | null) {
+    if(!uvIndex) {
+        return uvIndex;
+    }
+
+    if (uvIndex >= 0 && uvIndex <= 2) {
+        return "Low";
+    }
+    if (uvIndex > 2 && uvIndex <= 5) {
+        return "Moderate";
+    }
+    if (uvIndex > 5 && uvIndex <= 7) {
+        return "High";
+    }
+    if (uvIndex > 7 && uvIndex <= 10) {
+        return "Very High";
+    }
+    if (uvIndex > 10) {
+        return "Extreme";
+    }
 }

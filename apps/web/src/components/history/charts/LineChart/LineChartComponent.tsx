@@ -32,7 +32,7 @@ function LineChartComponent(props: LineChartProps) {
         >
           <defs>
             <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor={props.stroke} stopOpacity={0.85} />
+              <stop offset="5%" stopColor={props.stroke} stopOpacity={0.75} />
               <stop offset="95%" stopColor={props.stroke} stopOpacity={0.1} />
             </linearGradient>
           </defs>

@@ -8,7 +8,7 @@ import type { HistoryLayoutProps } from "./types";
 
 export default function HistoryLayout(props: HistoryLayoutProps) {
     return (
-        <div className="lg:col-span-3 space-y-4">
+        <div className="lg:col-span-2 space-y-4">
             <h2 className="text-xl font-semibold">History</h2>
 
             <div className="flex flex-wrap items-center gap-3">

@@ -1,5 +1,5 @@
 import type { ForecastZambrettiFormat } from "shared"
-import type { IconName } from "./WeatherIcon/types"
+import type { IconName } from "../WeatherIcon/types"
 
 export type ForecastTextToIconPropsMapMember = {
     icon: IconName,

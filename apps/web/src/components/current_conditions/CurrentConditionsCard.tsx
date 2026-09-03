@@ -16,6 +16,7 @@ import WeatherIcon from "../WeatherIcon/WeatherIcon";
 import SideElement from "../dashboard/WeatherCard/SideElement/SideElement";
 import InfoTooltip from "../InfoToolTip/InfoTooltip";
 import type { IconName } from "../WeatherIcon/types";
+import { icons } from "../WeatherIcon/icons";
 
 export default function CurrentConditionsCard() {
   const [isHovered, setIsHovered] = useState(false);
@@ -100,6 +101,9 @@ export default function CurrentConditionsCard() {
       weatherConditionsIconDescription =
         currentConditionsData.weather_description;
     }
+    if (!(weatherConditionsIconDescription in icons)) {
+      weatherConditionsIconDescription = "unknown";
+    }
   } else {
     conditionsDescription = "Unknown";
     weatherConditionsIconDescription = "unknown";
@@ -110,7 +114,7 @@ export default function CurrentConditionsCard() {
     sunriseFormatted = new Date(sunriseTime).toLocaleString("sl-SI", {
       hour: "2-digit",
       minute: "2-digit",
-      timeZone: WEATHER_STATION_TIMEZONE
+      timeZone: WEATHER_STATION_TIMEZONE,
     });
   }
 
@@ -119,7 +123,7 @@ export default function CurrentConditionsCard() {
     sunsetFormatted = new Date(sunsetTime).toLocaleString("sl-SI", {
       hour: "2-digit",
       minute: "2-digit",
-      timeZone: WEATHER_STATION_TIMEZONE
+      timeZone: WEATHER_STATION_TIMEZONE,
     });
   }
 

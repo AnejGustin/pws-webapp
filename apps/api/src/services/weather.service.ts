@@ -8,6 +8,7 @@ import {
   and,
   forecastZambretti
 } from "db";
+import { currentWeatherConditions } from "../cron/current.conditions";
 
 export async function getLatestReading() {
   return db
@@ -113,4 +114,8 @@ export async function getLatestZambrettiForecast() {
       desc(forecastZambretti.createdAt)
     )
     .limit(1);
+}
+
+export function getCurrentConditions() {
+  return currentWeatherConditions;
 }

@@ -21,6 +21,7 @@ import {
   swaggerUi,
   swaggerDocs
 } from "./swagger_docs/swagger";
+import { fetchCurrentConditions, startCurrentConditionsCron } from './cron/current.conditions';
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
@@ -46,4 +47,7 @@ app.listen(port, async () => {
 
   getZambrettiForecast();
   startZambrettiCron();
+
+  await fetchCurrentConditions();
+  startCurrentConditionsCron();
 });

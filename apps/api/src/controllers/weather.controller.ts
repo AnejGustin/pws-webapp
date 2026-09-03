@@ -173,3 +173,34 @@ export async function getLatestZambrettiForecast(
         next(error);
     }
 }
+
+export async function getCurrentConditions(
+    _req: Request,
+    res: Response,
+    next: NextFunction,
+) {
+    try {
+        const currentConditions = weatherService.getCurrentConditions();
+
+        if (!currentConditions.aqi && 
+            !currentConditions.cloud_cover && 
+            !currentConditions.sunrise && 
+            !currentConditions.sunset && 
+            !currentConditions.visibility && 
+            !currentConditions.weather_description &&
+            !currentConditions.uv_index
+        ) {
+            return res.status(200).json({
+                data: null
+            })
+        }
+
+        const response = {
+            data: currentConditions
+        }
+
+        return res.status(200).json(response);
+    } catch (error) {
+        next(error);
+    }
+}

@@ -538,6 +538,11 @@ router.get(
   weatherController.getStats,
 );
 
+router.get(
+  "/current-conditions",
+  weatherController.getCurrentConditions,
+);
+
 router.use("/forecast", weatherForecastRoutes);
 
 export default router;

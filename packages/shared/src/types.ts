@@ -116,3 +116,14 @@ export type WeatherStatsFormat = {
         avg: number
     },
 }
+
+export type CurrentWeatherConditionsFormat = {
+    sunrise: number | null,
+    sunset: number | null,
+    visibility: number | null,
+    weather_description: string | null,
+    cloud_cover: number | null,
+    aqi: number | null,
+    uv_index: number | null,
+    last_update_time: number | null
+}

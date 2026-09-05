@@ -66,9 +66,9 @@ import hazeNightAnimated from "@meteocons/svg/monochrome/haze-night.svg";
 
 import unknown from "@meteocons/svg-static/monochrome/not-available.svg";
 
-import type { IconName } from "./types";
+import type { IconName, IconObject } from "./types";
 
-export const icons: Record<IconName, object> = {
+export const icons: Record<IconName, IconObject> = {
     "rain": {
         normal: rain,
         animated: rainAnimated

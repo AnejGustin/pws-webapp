@@ -1,5 +1,5 @@
 export type FormatTimeOptions = {
-    timezone: string,
+    timeZone: string,
     year?: Intl.DateTimeFormatOptions["year"],
     month?: Intl.DateTimeFormatOptions["month"],
     day?: Intl.DateTimeFormatOptions["day"],

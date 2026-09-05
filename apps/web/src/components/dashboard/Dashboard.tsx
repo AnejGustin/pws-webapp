@@ -22,6 +22,7 @@ import StatusRow from "./StatusRow/StatusRow";
 import InfoCard from "../info/InfoCard";
 import { WEATHER_STATION_TIMEZONE } from "shared";
 import Title from "./Title/Title";
+import { toZonedTime } from "date-fns-tz";
 
 export default function Dashboard() {
   const weatherLatestQuery = useQuery({
@@ -35,7 +36,7 @@ export default function Dashboard() {
 
   const [clock, setClock] = useState(Date.now());
   const localTime = formatTime(clock, {
-    timezone: WEATHER_STATION_TIMEZONE,
+    timeZone: WEATHER_STATION_TIMEZONE,
     year: "numeric",
     month: "numeric",
     day: "numeric",
@@ -129,7 +130,7 @@ export default function Dashboard() {
   }
 
   const weatherDataObservationTime = formatTime(weatherData.observation_time, {
-    timezone: WEATHER_STATION_TIMEZONE,
+    timeZone: WEATHER_STATION_TIMEZONE,
     year: "numeric",
     month: "numeric",
     day: "numeric",

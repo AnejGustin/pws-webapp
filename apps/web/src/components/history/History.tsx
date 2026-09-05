@@ -28,7 +28,7 @@ import { RefreshCw } from "lucide-react";
 import Card from "../Card/Card";
 import HistoryLayout from "./Layout/HistoryLayout";
 import InfoCard from "../info/InfoCard";
-import { fromZonedTime } from "date-fns-tz";
+import { fromZonedTime, toZonedTime } from "date-fns-tz";
 import WindRadarChartComponent from "./charts/RadarChart/WindRadarChartComponent";
 import {
     monthParameterOptions,
@@ -37,18 +37,20 @@ import {
 } from "./dropdown.options";
 
 export default function History() {
+    const weatherStationLocalDateTime = toZonedTime(Date.now(), WEATHER_STATION_TIMEZONE);
+
     const [selectedWeatherParameter, setSelectedWeatherParameter] = useState<WeatherParameter>("Temperature");
     const [selectedPeriod, setSelectedPeriod] = useState<WeatherPeriod>("day");
-    const [selectedDay, setSelectedDay] = useState(new Date().getDate());
-    const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
-    const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
+    const [selectedDay, setSelectedDay] = useState(weatherStationLocalDateTime.getDate());
+    const [selectedMonth, setSelectedMonth] = useState(weatherStationLocalDateTime.getMonth());
+    const [selectedYear, setSelectedYear] = useState(weatherStationLocalDateTime.getFullYear());
     const [dayOptions, setDayOptions] = useState<number[]>([]);
 
     const [appliedWeatherParameter, setAppliedWeatherParameter] = useState<WeatherParameter>("Temperature");
     const [appliedPeriod, setAppliedPeriod] = useState<WeatherPeriod>("day");
-    const [appliedDay, setAppliedDay] = useState(new Date().getDate());
-    const [appliedMonth, setAppliedMonth] = useState(new Date().getMonth());
-    const [appliedYear, setAppliedYear] = useState(new Date().getFullYear());
+    const [appliedDay, setAppliedDay] = useState(weatherStationLocalDateTime.getDate());
+    const [appliedMonth, setAppliedMonth] = useState(weatherStationLocalDateTime.getMonth());
+    const [appliedYear, setAppliedYear] = useState(weatherStationLocalDateTime.getFullYear());
 
     const historyParams = periodToDate(appliedPeriod, new Date(appliedYear, appliedMonth, appliedDay));
 

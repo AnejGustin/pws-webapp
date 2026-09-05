@@ -4,6 +4,11 @@ export type WeatherIconProps = {
     animate?: boolean,
 };
 
+export type IconObject = {
+    normal: string,
+    animated: string,
+}
+
 export type IconName = "rain"
     | "cloudy"
     | "clearDay"

@@ -55,7 +55,7 @@ export default function ZambrettiCard() {
   }
 
   const forecastTime = formatTime(zambrettiForecastData.created_at, {
-    timezone: WEATHER_STATION_TIMEZONE,
+    timeZone: WEATHER_STATION_TIMEZONE,
     year: "numeric",
     month: "numeric",
     day: "numeric",

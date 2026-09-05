@@ -54,10 +54,14 @@ export default function ZambrettiCard() {
     );
   }
 
-  const forecastTime = formatTime(
-    zambrettiForecastData.created_at,
-    WEATHER_STATION_TIMEZONE,
-  );
+  const forecastTime = formatTime(zambrettiForecastData.created_at, {
+    timezone: WEATHER_STATION_TIMEZONE,
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
   const forecastText = zambrettiForecastData.forecast_text;
   const { icon, iconAlt, trend, trendAlt } =
     forecastTextToIconProps[forecastText];

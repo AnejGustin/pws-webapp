@@ -12,6 +12,7 @@ import type {
     WeatherParameter
 } from "../components/history/types";
 import { icons } from "../components/WeatherIcon/icons";
+import type { FormatTimeOptions } from "./type";
 
 // for now, data on dashboard is considered stale after 15 minutes, station is considered offline if no data has been received for 2 hours
 export function getStatusBadgeProperties(observationTime: Date): StatusBadgeProperties {
@@ -34,16 +35,8 @@ export function getStatusBadgeProperties(observationTime: Date): StatusBadgeProp
     }
 }
 
-export function formatTime(time: Date | number, timezone: string) {
-    const datetime = new Date(time).toLocaleString("sl-SI", {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        timeZone: timezone
-    })
+export function formatTime(time: Date | number, options: FormatTimeOptions) {
+    const datetime = new Date(time).toLocaleString("sl-SI", options);
     return datetime;
 }
 

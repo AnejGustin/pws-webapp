@@ -63,10 +63,14 @@ export default function CurrentConditionsCard() {
 
   let updateTime;
   if (currentConditionsData.last_update_time) {
-    updateTime = formatTime(
-      currentConditionsData.last_update_time,
-      WEATHER_STATION_TIMEZONE,
-    );
+    updateTime = formatTime(currentConditionsData.last_update_time, {
+      timezone: WEATHER_STATION_TIMEZONE,
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
   } else {
     updateTime = "-";
   }
@@ -91,19 +95,19 @@ export default function CurrentConditionsCard() {
 
   let sunriseFormatted;
   if (sunriseTime) {
-    sunriseFormatted = new Date(sunriseTime).toLocaleString("sl-SI", {
+    sunriseFormatted = formatTime(sunriseTime, {
+      timezone: WEATHER_STATION_TIMEZONE,
       hour: "2-digit",
       minute: "2-digit",
-      timeZone: WEATHER_STATION_TIMEZONE,
     });
   }
 
   let sunsetFormatted;
   if (sunsetTime) {
-    sunsetFormatted = new Date(sunsetTime).toLocaleString("sl-SI", {
+    sunsetFormatted = formatTime(sunsetTime, {
+      timezone: WEATHER_STATION_TIMEZONE,
       hour: "2-digit",
       minute: "2-digit",
-      timeZone: WEATHER_STATION_TIMEZONE,
     });
   }
 

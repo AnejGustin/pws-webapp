@@ -10,11 +10,9 @@ A full-stack web application built for my personal weather station. It provides 
 
 The dashboard provides a quick overview of the latest data reported by the weather station, including temperature, humidity, pressure, wind speed and wind direction. It also displays the station's local time, the time of the latest update, and a status indicator.
 
-The dashboard also includes a short-term weather forecast generated using a modified Zambretti algorithm. The forecast displays a short text description along with weather icons for easier interpretation.
+The dashboard also includes current conditions card. It includes general weather conditions description and icon. Some additional parameters such as visibility, cloud cover, air quality index and more are also displayed. Information on this card is collected from [OpenWeather](https://openweathermap.org/).
 
-An arrow indicates the expected trend of the weather: pointing down when conditions are expected to worsen (e.g. rain is approaching) and pointing up when conditions are expected to improve or stabilize.
-
-![Live data dashboard with short-term forecast](screenshots/live_dashboard_short_term_forecast.png)
+![dashboard](screenshots/dashboard.png)
 
 ### Statistics & Charts
 
@@ -26,9 +24,15 @@ The statistics card displays the **minimum**, **maximum**, and **average** value
 
 Wind direction has a dedicated visualization that represents directions as degrees on a circular chart. Since this can be difficult to interpret at a glance, a wind rose is also provided to show the dominant wind directions more clearly.
 
-![Temperature chart and statistics](screenshots/temperature_chart_tooltip.png)
+![statistics, chart and short term forecast](screenshots/history_section.png)
 
 ![Wind direction chart and wind rose](screenshots/wind_direction_chart_rose_chart.png)
+
+### Short Term Forecast
+
+A short-term weather forecast is generated using a modified Zambretti algorithm. The forecast displays a short text description along with weather icons for easier interpretation.
+
+An arrow indicates the expected trend of the weather: pointing down when conditions are expected to worsen (e.g. rain is approaching) and pointing up when conditions are expected to improve or stabilize.
 
 ## Tech Stack
 

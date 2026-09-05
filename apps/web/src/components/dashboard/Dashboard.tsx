@@ -22,7 +22,6 @@ import StatusRow from "./StatusRow/StatusRow";
 import InfoCard from "../info/InfoCard";
 import { WEATHER_STATION_TIMEZONE } from "shared";
 import Title from "./Title/Title";
-import { toZonedTime } from "date-fns-tz";
 
 export default function Dashboard() {
   const weatherLatestQuery = useQuery({

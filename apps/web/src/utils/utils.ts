@@ -11,6 +11,7 @@ import type {
     WeatherHistoryTransformed,
     WeatherParameter
 } from "../components/history/types";
+import { icons } from "../components/WeatherIcon/icons";
 
 // for now, data on dashboard is considered stale after 15 minutes, station is considered offline if no data has been received for 2 hours
 export function getStatusBadgeProperties(observationTime: Date): StatusBadgeProperties {
@@ -539,7 +540,7 @@ export function capitaliseEachWord(sentence: string) {
 }
 
 export function getVisibilityDescription(visibility: number | null) {
-    if(!visibility) {
+    if (visibility === null || visibility === undefined) {
         return visibility;
     }
 
@@ -580,7 +581,7 @@ export function getAirQualityDescription(airQuality: number | null) {
 }
 
 export function getUvIndexSeverity(uvIndex: number | null) {
-    if(!uvIndex) {
+    if (uvIndex === undefined || uvIndex === null) {
         return uvIndex;
     }
 
@@ -599,4 +600,34 @@ export function getUvIndexSeverity(uvIndex: number | null) {
     if (uvIndex > 10) {
         return "Extreme";
     }
+}
+
+export function getCurrentConditionsDescriptionAndIconName(weatherDescription: string | null, updateTime: number | null, sunriseTime: number | null, sunsetTime: number | null) {
+    if (!weatherDescription) {
+        return ({
+            conditionsDescription: "Unknown",
+            weatherConditionsIconDescription: "unknown"
+        })
+    }
+    const conditionsDescription = capitaliseEachWord(weatherDescription);
+    let weatherConditionsIconName;
+    if (
+        updateTime &&
+        sunriseTime &&
+        sunsetTime &&
+        (updateTime <= sunriseTime ||
+            updateTime >= sunsetTime)
+    ) {
+        weatherConditionsIconName = weatherDescription + " night";
+    } else {
+        weatherConditionsIconName = weatherDescription;
+    }
+    if (!(weatherConditionsIconName in icons)) {
+        weatherConditionsIconName = "unknown";
+    }
+    
+    return ({
+        conditionsDescription: conditionsDescription,
+        weatherConditionsIconName: weatherConditionsIconName
+    })
 }

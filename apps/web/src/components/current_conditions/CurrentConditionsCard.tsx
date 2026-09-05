@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import {
-  capitaliseEachWord,
   formatTime,
   getAirQualityDescription,
+  getCurrentConditionsDescriptionAndIconName,
   getUvIndexSeverity,
   getVisibilityDescription,
 } from "../../utils/utils";
@@ -16,7 +16,6 @@ import WeatherIcon from "../WeatherIcon/WeatherIcon";
 import SideElement from "../dashboard/WeatherCard/SideElement/SideElement";
 import InfoTooltip from "../InfoToolTip/InfoTooltip";
 import type { IconName } from "../WeatherIcon/types";
-import { icons } from "../WeatherIcon/icons";
 
 export default function CurrentConditionsCard() {
   const [isHovered, setIsHovered] = useState(false);
@@ -82,32 +81,13 @@ export default function CurrentConditionsCard() {
   const airQualityDescription = getAirQualityDescription(airQuality);
   const visibilityDescription = getVisibilityDescription(visibility);
 
-  let conditionsDescription;
-  let weatherConditionsIconDescription;
-  if (currentConditionsData.weather_description) {
-    conditionsDescription = capitaliseEachWord(
+  const { conditionsDescription, weatherConditionsIconName } =
+    getCurrentConditionsDescriptionAndIconName(
       currentConditionsData.weather_description,
+      currentConditionsData.last_update_time,
+      sunriseTime,
+      sunsetTime,
     );
-    if (
-      currentConditionsData.last_update_time &&
-      sunriseTime &&
-      sunsetTime &&
-      (currentConditionsData.last_update_time <= sunriseTime ||
-        currentConditionsData.last_update_time >= sunsetTime)
-    ) {
-      weatherConditionsIconDescription =
-        currentConditionsData.weather_description + " night";
-    } else {
-      weatherConditionsIconDescription =
-        currentConditionsData.weather_description;
-    }
-    if (!(weatherConditionsIconDescription in icons)) {
-      weatherConditionsIconDescription = "unknown";
-    }
-  } else {
-    conditionsDescription = "Unknown";
-    weatherConditionsIconDescription = "unknown";
-  }
 
   let sunriseFormatted;
   if (sunriseTime) {
@@ -154,7 +134,7 @@ export default function CurrentConditionsCard() {
           </div>
           <div className="flex justify-center mt-10">
             <WeatherIcon
-              icon={weatherConditionsIconDescription as IconName}
+              icon={weatherConditionsIconName as IconName}
               iconAlt={
                 currentConditionsData.weather_description
                   ? currentConditionsData.weather_description
@@ -170,12 +150,18 @@ export default function CurrentConditionsCard() {
             <SideElement parameter={"Sunset"} value={sunsetFormatted} />
             <SideElement
               parameter={"UV Index"}
-              value={uvIndex ? `${uvIndex} (${uvIndexSeverity})` : "-"}
+              value={
+                uvIndex != null && uvIndex != undefined
+                  ? `${uvIndex} (${uvIndexSeverity})`
+                  : "-"
+              }
             />
             <SideElement
               parameter={"Visibility"}
               value={
-                visibility ? `${visibilityDescription} (${visibility} m)` : "-"
+                visibility != null && visibility != undefined
+                  ? `${visibilityDescription} (${visibility} m)`
+                  : "-"
               }
             />
             <SideElement
@@ -186,7 +172,9 @@ export default function CurrentConditionsCard() {
             <SideElement
               parameter={"Air Quality Index"}
               value={
-                airQuality ? `${airQuality} (${airQualityDescription})` : "-"
+                airQuality != null && airQuality != undefined
+                  ? `${airQuality} (${airQualityDescription})`
+                  : "-"
               }
             />
           </div>

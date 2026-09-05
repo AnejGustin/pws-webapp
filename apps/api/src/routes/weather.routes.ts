@@ -538,6 +538,59 @@ router.get(
   weatherController.getStats,
 );
 
+/**
+ * @openapi
+ * /api/v1/weather/current-conditions:
+ *   get:
+ *     summary: Get current weather conditions
+ *     description: Endpoint returns current weather conditions such as description, cloud cover, air quality index and more.
+ *     responses:
+ *       200:
+ *         description: Successfull request returns current weather conditions. If no data is available, null is returned.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               nullable: true
+ *               properties:
+ *                 data:
+ *                   type: object
+ *                   nullable: true
+ *                   properties:
+ *                     sunrise:
+ *                       type: integer
+ *                       nullable: true
+ *                       example: 1788582208000
+ *                     sunset:
+ *                       type: integer
+ *                       nullable: true
+ *                       example: 1788629470000
+ *                     visibility:
+ *                       type: integer
+ *                       nullable: true
+ *                       example: 10000
+ *                     weather_description:
+ *                       type: string
+ *                       nullable: true
+ *                       example: "broken clouds"
+ *                     cloud_cover:
+ *                       type: integer
+ *                       nullable: true
+ *                       example: 38
+ *                     aqi:
+ *                       type: integer
+ *                       nullable: true
+ *                       example: 1
+ *                     uv_index:
+ *                       type: integer
+ *                       format: float
+ *                       nullable: true
+ *                       example: 4.8
+ *                     last_update_time:
+ *                       type: integer
+ *                       nullable: true
+ *                       example: 1788604398000
+ */
 router.get(
   "/current-conditions",
   weatherController.getCurrentConditions,

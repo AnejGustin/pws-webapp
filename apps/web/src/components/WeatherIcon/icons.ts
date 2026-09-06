@@ -3,7 +3,7 @@ import cloudy from "@meteocons/svg-static/monochrome/cloudy.svg";
 import clearDay from "@meteocons/svg-static/monochrome/clear-day.svg";
 import showery from "@meteocons/svg-static/monochrome/mostly-clear-day-rain.svg";
 import mostlyClearDay from "@meteocons/svg-static/monochrome/mostly-clear-day.svg";
-import becomingUnsettledOvercast from "@meteocons/svg-static/monochrome/overcast-day.svg";
+import becomingUnsettled from "@meteocons/svg-static/monochrome/overcast-day.svg";
 import stormy from "@meteocons/svg-static/monochrome/thunderstorms.svg";
 import improving from "@meteocons/svg-static/monochrome/pressure-high.svg";
 import worsening from "@meteocons/svg-static/monochrome/pressure-low.svg";
@@ -29,6 +29,7 @@ import fogNight from "@meteocons/svg-static/monochrome/fog-night.svg";
 import wind from "@meteocons/svg-static/monochrome/wind.svg";
 import hazeDay from "@meteocons/svg-static/monochrome/haze-day.svg";
 import hazeNight from "@meteocons/svg-static/monochrome/haze-night.svg";
+import overcast from "@meteocons/svg-static/monochrome/cloudy.svg";
 
 
 import rainAnimated from "@meteocons/svg/monochrome/rain.svg";
@@ -36,7 +37,7 @@ import cloudyAnimated from "@meteocons/svg/monochrome/cloudy.svg";
 import clearDayAnimated from "@meteocons/svg/monochrome/clear-day.svg";
 import showeryAnimated from "@meteocons/svg/monochrome/mostly-clear-day-rain.svg";
 import mostlyClearDayAnimated from "@meteocons/svg/monochrome/mostly-clear-day.svg";
-import becomingUnsettledOvercastAnimated from "@meteocons/svg/monochrome/overcast-day.svg";
+import becomingUnsettledAnimated from "@meteocons/svg/monochrome/overcast-day.svg";
 import stormyAnimated from "@meteocons/svg/monochrome/thunderstorms.svg";
 import improvingAnimated from "@meteocons/svg/monochrome/pressure-high.svg";
 import worseningAnimated from "@meteocons/svg/monochrome/pressure-low.svg";
@@ -62,6 +63,7 @@ import fogNightAnimated from "@meteocons/svg/monochrome/fog-night.svg";
 import windAnimated from "@meteocons/svg/monochrome/wind.svg";
 import hazeDayAnimated from "@meteocons/svg/monochrome/haze-day.svg";
 import hazeNightAnimated from "@meteocons/svg/monochrome/haze-night.svg";
+import overcastAnimated from "@meteocons/svg/monochrome/cloudy.svg";
 
 
 import unknown from "@meteocons/svg-static/monochrome/not-available.svg";
@@ -90,8 +92,8 @@ export const icons: Record<IconName, IconObject> = {
         animated: mostlyClearDayAnimated
     },
     "becomingUnsettled": {
-        normal: becomingUnsettledOvercast,
-        animated: becomingUnsettledOvercastAnimated
+        normal: becomingUnsettled,
+        animated: becomingUnsettledAnimated
     },
     "stormy": {
         normal: stormy,
@@ -286,8 +288,8 @@ export const icons: Record<IconName, IconObject> = {
         animated: snowShowerAnimated
     },
     "overcast clouds": {
-        normal: becomingUnsettledOvercast,
-        animated: becomingUnsettledOvercastAnimated
+        normal: overcast,
+        animated: overcastAnimated
     },
     "smoke": {
         normal: hazeDay,
@@ -506,8 +508,8 @@ export const icons: Record<IconName, IconObject> = {
         animated: snowShowerNightAnimated
     },
     "overcast clouds night": {
-        normal: becomingUnsettledOvercast,
-        animated: becomingUnsettledOvercastAnimated
+        normal: overcast,
+        animated: overcastAnimated
     },
     "smoke night": {
         normal: hazeNight,

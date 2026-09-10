@@ -1,5 +1,6 @@
 import CurrentConditionsCard from "./components/current_conditions/CurrentConditionsCard";
 import Dashboard from "./components/dashboard/Dashboard";
+import Footer from "./components/footer/Footer";
 import History from "./components/history/History";
 import ZambrettiCard from "./components/zambretti/ZambrettiCard";
 
@@ -12,6 +13,7 @@ function App() {
         <History />
         <ZambrettiCard />
       </div>
+      <Footer />
     </div>
   );
 }

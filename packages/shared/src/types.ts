@@ -127,3 +127,48 @@ export type CurrentWeatherConditionsFormat = {
     uv_index: number | null,
     last_update_time: number | null
 }
+
+export type CurrentMoonInfoFormat = {
+    last_update_time: number | null,
+    name: string | null,
+    phase_angle_deg: number | null,
+    illumination: number | null,
+    age_days: number | null,
+    distance_km: number | null,
+    rise_set: {
+        rise_time: string | null,
+        set_time: string | null,
+    },
+    special_moon_labels: Array<string> | null,
+    eclipse: {
+        is_eclipse: boolean | null,
+        is_blood_moon: boolean | null,
+    },
+    forecast: {
+        full_moon: {
+            date: string | null,
+            days_until: number | null,
+        },
+        new_moon: {
+            date: string | null,
+            days_until: number | null,
+        },
+        first_quarter: {
+            date: string | null,
+        },
+        last_quarter: {
+            date: string | null,
+        },
+        next_special_moon: {
+            date: string | null,
+            days_until: number | null,
+            type: string | null,
+        },
+        next_eclipse: {
+            date: string | null,
+            days_until: number | null,
+            type: string | null,
+            is_blood_moon: boolean | null,
+        },
+    },
+}

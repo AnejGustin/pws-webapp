@@ -25,6 +25,17 @@ export default function Footer() {
       <span className="hidden md:inline">·</span>
       <span>
         <a
+          href="https://weather-station-slov-konjice.onrender.com/api/v1/docs/"
+          target="_blank"
+          rel="noreferrer"
+          className="text-blue-600 hover:underline"
+        >
+          API Documentation
+        </a>
+      </span>
+      <span className="hidden md:inline">·</span>
+      <span>
+        <a
           href="https://github.com/AnejGustin/pws-webapp#weather-station"
           target="_blank"
           rel="noreferrer"

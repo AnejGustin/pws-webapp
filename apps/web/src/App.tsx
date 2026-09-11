@@ -2,6 +2,7 @@ import CurrentConditionsCard from "./components/current_conditions/CurrentCondit
 import Dashboard from "./components/dashboard/Dashboard";
 import Footer from "./components/footer/Footer";
 import History from "./components/history/History";
+import MoonCard from "./components/moon/MoonCard";
 import ZambrettiCard from "./components/zambretti/ZambrettiCard";
 
 function App() {
@@ -11,7 +12,10 @@ function App() {
         <Dashboard />
         <CurrentConditionsCard />
         <History />
-        <ZambrettiCard />
+        <div className="grid grid-cols-1 grid-rows-2 gap-6">
+          <ZambrettiCard />
+          <MoonCard />
+        </div>
       </div>
       <Footer />
     </div>

@@ -30,10 +30,10 @@ export default function SideElement(props: SideElementProps) {
         <div
           onMouseEnter={show}
           onMouseLeave={hide}
-          className="absolute bottom-full mb-2 right-0 w-80
+          className="absolute bottom-full mb-2 right-0 w-auto
                                bg-white text-gray-700 text-sm
                                shadow-lg border border-gray-200
-                               rounded-xl p-4 z-50 space-y-3"
+                               rounded-xl p-4 z-50 space-y-2"
         >
           {props.hoverContent}
         </div>

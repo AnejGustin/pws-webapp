@@ -182,50 +182,52 @@ export default function CurrentConditionsCard() {
                   : "-"
               }
               hoverContent={[
-                <p className="text-sm font-semibold text-gray-800 mb-3">
-                  Concentration: µg/m³
-                </p>,
-
-                <div className="flex flex-col text-sm font-medium text-gray-800 gap-4">
-                  <SideElement
-                    parameter="Fine Particles (PM2.5)"
-                    value={airQualityComponents.pm2_5}
-                  />
-
-                  <SideElement
-                    parameter="Coarse Particles (PM10)"
-                    value={airQualityComponents.pm10}
-                  />
-
-                  <SideElement
-                    parameter="Nitrogen Dioxide (NO2)"
-                    value={airQualityComponents.no2}
-                  />
-
-                  <SideElement
-                    parameter="Ozone (O3)"
-                    value={airQualityComponents.o3}
-                  />
-
-                  <SideElement
-                    parameter="Sulphur Dioxide (SO2)"
-                    value={airQualityComponents.so2}
-                  />
-
-                  <SideElement
-                    parameter="Carbon Monoxide (CO)"
-                    value={airQualityComponents.co}
-                  />
-
-                  <SideElement
-                    parameter="Ammonia (NH3)"
-                    value={airQualityComponents.nh3}
-                  />
-
-                  <SideElement
-                    parameter="Nitrogen Monoxide (NO)"
-                    value={airQualityComponents.no}
-                  />
+                <div className="text-nowrap">
+                  <p className="text-sm font-semibold text-gray-800 mb-3">
+                    Concentration: µg/m³
+                  </p>
+                  
+                  <div className="flex flex-col text-sm font-medium text-gray-800 gap-4">
+                    <SideElement
+                      parameter="Fine Particles (PM2.5)"
+                      value={airQualityComponents.pm2_5}
+                    />
+                  
+                    <SideElement
+                      parameter="Coarse Particles (PM10)"
+                      value={airQualityComponents.pm10}
+                    />
+                  
+                    <SideElement
+                      parameter="Nitrogen Dioxide (NO2)"
+                      value={airQualityComponents.no2}
+                    />
+                  
+                    <SideElement
+                      parameter="Ozone (O3)"
+                      value={airQualityComponents.o3}
+                    />
+                  
+                    <SideElement
+                      parameter="Sulphur Dioxide (SO2)"
+                      value={airQualityComponents.so2}
+                    />
+                  
+                    <SideElement
+                      parameter="Carbon Monoxide (CO)"
+                      value={airQualityComponents.co}
+                    />
+                  
+                    <SideElement
+                      parameter="Ammonia (NH3)"
+                      value={airQualityComponents.nh3}
+                    />
+                  
+                    <SideElement
+                      parameter="Nitrogen Monoxide (NO)"
+                      value={airQualityComponents.no}
+                    />
+                  </div>
                 </div>,
               ]}
             />

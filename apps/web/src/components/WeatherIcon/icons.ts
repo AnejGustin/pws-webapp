@@ -68,6 +68,23 @@ import overcastAnimated from "@meteocons/svg/monochrome/cloudy.svg";
 
 import unknown from "@meteocons/svg-static/monochrome/not-available.svg";
 
+import newMoon from "@meteocons/svg-static/monochrome/moon-new.svg";
+import newMoonAnimated from "@meteocons/svg/monochrome/moon-new.svg";
+import moonWaxingCrescent from "@meteocons/svg-static/monochrome/moon-waxing-crescent.svg";
+import moonWaxingCrescentAnimated from "@meteocons/svg/monochrome/moon-waxing-crescent.svg";
+import moonFirstQuarter from "@meteocons/svg-static/monochrome/moon-first-quarter.svg";
+import moonFirstQuarterAnimated from "@meteocons/svg/monochrome/moon-first-quarter.svg";
+import moonWaxingGibbous from "@meteocons/svg-static/monochrome/moon-waxing-gibbous.svg";
+import moonWaxingGibbousAnimated from "@meteocons/svg/monochrome/moon-waxing-gibbous.svg";
+import fullMoon from "@meteocons/svg-static/monochrome/moon-full.svg";
+import fullMoonAnimated from "@meteocons/svg/monochrome/moon-full.svg";
+import moonWaningGibbous from "@meteocons/svg-static/monochrome/moon-waning-gibbous.svg";
+import moonWaningGibbousAnimated from "@meteocons/svg/monochrome/moon-waning-gibbous.svg";
+import moonLastQuarter from "@meteocons/svg-static/monochrome/moon-last-quarter.svg";
+import moonLastQuarterAnimated from "@meteocons/svg/monochrome/moon-last-quarter.svg";
+import moonWaningCrescent from "@meteocons/svg-static/monochrome/moon-waning-crescent.svg";
+import moonWaningCrescentAnimated from "@meteocons/svg/monochrome/moon-waning-crescent.svg";
+
 import type { IconName, IconObject } from "./types";
 
 export const icons: Record<IconName, IconObject> = {
@@ -550,5 +567,37 @@ export const icons: Record<IconName, IconObject> = {
     "unknown": {
         normal: unknown,
         animated: unknown
+    },
+    "First Quarter": {
+        normal: moonFirstQuarter,
+        animated: moonFirstQuarterAnimated
+    },
+    "Full Moon": {
+        normal: fullMoon,
+        animated: fullMoonAnimated
+    },
+    "Last Quarter": {
+        normal: moonLastQuarter,
+        animated: moonLastQuarterAnimated
+    },
+    "New Moon": {
+        normal: newMoon,
+        animated: newMoonAnimated
+    },
+    "Waning Crescent": {
+        normal: moonWaningCrescent,
+        animated: moonWaningCrescentAnimated
+    },
+    "Waning Gibbous": {
+        normal: moonWaningGibbous,
+        animated: moonWaningGibbousAnimated
+    },
+    "Waxing Crescent": {
+        normal: moonWaxingCrescent,
+        animated: moonWaxingCrescentAnimated
+    },
+    "Waxing Gibbous": {
+        normal: moonWaxingGibbous,
+        animated: moonWaxingGibbousAnimated
     },
 };

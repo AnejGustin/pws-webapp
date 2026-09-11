@@ -9,7 +9,17 @@ export type AirQualityApiResponse = {
         {
             main: {
                 aqi: number | null
-            }
+            },
+            components: {
+                co: number | null,
+                no: number | null,
+                no2: number | null,
+                o3: number | null,
+                so2: number | null,
+                pm2_5: number | null,
+                pm10: number | null,
+                nh3: number | null,
+            },
         }
     ]
 }

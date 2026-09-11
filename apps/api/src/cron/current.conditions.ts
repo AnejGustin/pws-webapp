@@ -15,7 +15,17 @@ export let currentWeatherConditions: CurrentWeatherConditionsFormat = {
     visibility: null,
     weather_description: null,
     cloud_cover: null,
-    aqi: null,
+    aq: {
+        aqi: null,
+        co: null,
+        no: null,
+        no2: null,
+        o3: null,
+        so2: null,
+        pm2_5: null,
+        pm10: null,
+        nh3: null,
+    },
     uv_index: null,
     last_update_time: null,
 };
@@ -47,7 +57,15 @@ export async function fetchCurrentConditions() {
         const airQualityData: AirQualityApiResponse = currentAirQuality.data;
         const currentWeatherData: CurrentConditionsApiResponse = currentConditions.data;
 
-        currentWeatherConditions.aqi = airQualityData.list[0]?.main?.aqi ?? null;
+        currentWeatherConditions.aq.aqi = airQualityData.list[0]?.main?.aqi ?? null;
+        currentWeatherConditions.aq.co = Number(airQualityData.list[0]?.components.co?.toFixed(1)) ?? null;
+        currentWeatherConditions.aq.nh3 = Number(airQualityData.list[0]?.components.nh3?.toFixed(1)) ?? null;
+        currentWeatherConditions.aq.no = Number(airQualityData.list[0]?.components.no?.toFixed(1)) ?? null;
+        currentWeatherConditions.aq.no2 = Number(airQualityData.list[0]?.components.no2?.toFixed(1)) ?? null;
+        currentWeatherConditions.aq.o3 = Number(airQualityData.list[0]?.components.o3?.toFixed(1)) ?? null;
+        currentWeatherConditions.aq.pm10 = Number(airQualityData.list[0]?.components.pm10?.toFixed(1)) ?? null;
+        currentWeatherConditions.aq.pm2_5 = Number(airQualityData.list[0]?.components.pm2_5?.toFixed(1)) ?? null;
+        currentWeatherConditions.aq.so2 = Number(airQualityData.list[0]?.components.so2?.toFixed(1)) ?? null;
         currentWeatherConditions.sunrise = currentWeatherData.sys?.sunrise ?? null;
         currentWeatherConditions.sunset = currentWeatherData.sys?.sunset ?? null;
         currentWeatherConditions.visibility = currentWeatherData.visibility ?? null;

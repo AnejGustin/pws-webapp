@@ -182,7 +182,7 @@ export async function getCurrentConditions(
     try {
         const currentConditions = weatherService.getCurrentConditions();
 
-        if (!currentConditions.aqi && 
+        if (!currentConditions.aq.aqi && 
             !currentConditions.cloud_cover && 
             !currentConditions.sunrise && 
             !currentConditions.sunset && 

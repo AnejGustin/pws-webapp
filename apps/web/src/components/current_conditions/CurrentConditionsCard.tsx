@@ -146,7 +146,7 @@ export default function CurrentConditionsCard() {
           </div>
         </div>
         <div className="flex justify-center mt-auto pb-5">
-          <div className="grid grid-cols-3 gap-y-3 gap-x-7">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-y-10 md:gap-y-3 gap-x-5 md:gap-x-12">
             <SideElement parameter={"Sunrise"} value={sunriseFormatted} />
             <SideElement parameter={"Sunset"} value={sunsetFormatted} />
             <SideElement

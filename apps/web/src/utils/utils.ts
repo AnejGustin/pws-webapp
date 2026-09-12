@@ -1,5 +1,6 @@
 import {
     WEATHER_STATION_TIMEZONE,
+    type CurrentMoonInfoFormat,
     type WeatherHistoryQuery,
     type WeatherPeriod,
     type WeatherReadingFormat,
@@ -623,10 +624,188 @@ export function getCurrentConditionsDescriptionAndIconName(weatherDescription: s
         weatherConditionsIconName = "unknown";
         iconAlt = "Unknown";
     }
-    
+
     return ({
         conditionsDescription: conditionsDescription,
         weatherConditionsIconName: weatherConditionsIconName,
         iconAlt: iconAlt,
+    })
+}
+
+export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat) {
+    let updateTime;
+    if (currentMoonInfoData.last_update_time) {
+        updateTime = formatTime(currentMoonInfoData.last_update_time, {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    } else {
+        updateTime = "-";
+    }
+
+    const name = currentMoonInfoData.name ?? "Unknown";
+
+    let iconName;
+    let iconAlt;
+    if (!(name in icons)) {
+        iconName = "unknown";
+        iconAlt = "Unknown";
+    } else {
+        iconName = name;
+        iconAlt = name;
+    }
+
+    const illumination = currentMoonInfoData.illumination
+        ? currentMoonInfoData.illumination * 100
+        : "-";
+    const riseTime = currentMoonInfoData.rise_set.rise_time;
+    const setTime = currentMoonInfoData.rise_set.set_time;
+    const distance = currentMoonInfoData.distance_km ?? "-";
+
+    const nextFullMoon = currentMoonInfoData.forecast.full_moon.date;
+    const nextFullMoonDaysUntil =
+        currentMoonInfoData.forecast.full_moon.days_until;
+
+    const nextFirstQuarter = currentMoonInfoData.forecast.first_quarter.date;
+
+    const nextLastQuarter = currentMoonInfoData.forecast.last_quarter.date;
+
+    const nextNewMoon = currentMoonInfoData.forecast.new_moon.date;
+    const nextNewMoonDaysUntil = currentMoonInfoData.forecast.new_moon.days_until;
+
+    const nextSpecialMoon = currentMoonInfoData.forecast.next_special_moon.date;
+    const nextSpecialMoonDaysUntil =
+        currentMoonInfoData.forecast.next_special_moon.days_until;
+    const nextSpecialMoonType =
+        currentMoonInfoData.forecast.next_special_moon.type ?? "-";
+
+    const nextMoonEclipse = currentMoonInfoData.forecast.next_eclipse.date;
+    const nextMoonEclipseDaysUntil =
+        currentMoonInfoData.forecast.next_eclipse.days_until;
+    const nextMoonEclipseType =
+        currentMoonInfoData.forecast.next_eclipse.type ?? "-";
+    const nextMoonEclipseIsBloodMoon =
+        currentMoonInfoData.forecast.next_eclipse.is_blood_moon;
+
+    let riseTimeFormatted;
+    if (riseTime) {
+        riseTimeFormatted = formatTime(new Date(riseTime), {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    } else {
+        riseTimeFormatted = "-";
+    }
+
+    let setTimeFormatted;
+    if (setTime) {
+        setTimeFormatted = formatTime(new Date(setTime), {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    } else {
+        setTimeFormatted = "-";
+    }
+
+    let nextNewMoonDateFormatted;
+    if (nextNewMoon) {
+        nextNewMoonDateFormatted = formatTime(new Date(nextNewMoon), {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            day: "numeric",
+            month: "numeric",
+            year: "numeric",
+        });
+    } else {
+        nextNewMoonDateFormatted = "-";
+    }
+
+    let nextLastQuarterDateFormatted;
+    if (nextLastQuarter) {
+        nextLastQuarterDateFormatted = formatTime(new Date(nextLastQuarter), {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            day: "numeric",
+            month: "numeric",
+            year: "numeric",
+        });
+    } else {
+        nextLastQuarterDateFormatted = "-";
+    }
+
+    let nextFirstQuarterDateFormatted;
+    if (nextFirstQuarter) {
+        nextFirstQuarterDateFormatted = formatTime(new Date(nextFirstQuarter), {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            day: "numeric",
+            month: "numeric",
+            year: "numeric",
+        });
+    } else {
+        nextFirstQuarterDateFormatted = "-";
+    }
+
+    let nextFullMoonDateFormatted;
+    if (nextFullMoon) {
+        nextFullMoonDateFormatted = formatTime(new Date(nextFullMoon), {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            day: "numeric",
+            month: "numeric",
+            year: "numeric",
+        });
+    } else {
+        nextFullMoonDateFormatted = "-";
+    }
+
+    let nextSpecialMoonDateFormatted;
+    if (nextSpecialMoon) {
+        nextSpecialMoonDateFormatted = formatTime(new Date(nextSpecialMoon), {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            day: "numeric",
+            month: "numeric",
+            year: "numeric",
+        });
+    } else {
+        nextSpecialMoonDateFormatted = "-";
+    }
+
+    let nextMoonEclipseDateFormatted;
+    if (nextMoonEclipse) {
+        nextMoonEclipseDateFormatted = formatTime(new Date(nextMoonEclipse), {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            day: "numeric",
+            month: "numeric",
+            year: "numeric",
+        });
+    } else {
+        nextMoonEclipseDateFormatted = "-";
+    }
+
+    return({
+        updateTime: updateTime,
+        name: name,
+        iconName: iconName,
+        iconAlt: iconAlt,
+        illumination: illumination,
+        distance: distance,
+        nextFullMoonDaysUntil: nextFullMoonDaysUntil,
+        nextNewMoonDaysUntil: nextNewMoonDaysUntil,
+        nextSpecialMoonDaysUntil: nextSpecialMoonDaysUntil,
+        nextSpecialMoonType: nextSpecialMoonType,
+        nextMoonEclipseDaysUntil: nextMoonEclipseDaysUntil,
+        nextMoonEclipseType: nextMoonEclipseType,
+        nextMoonEclipseIsBloodMoon: nextMoonEclipseIsBloodMoon,
+        riseTimeFormatted: riseTimeFormatted,
+        setTimeFormatted: setTimeFormatted,
+        nextNewMoonDateFormatted: nextNewMoonDateFormatted,
+        nextLastQuarterDateFormatted: nextLastQuarterDateFormatted,
+        nextFirstQuarterDateFormatted: nextFirstQuarterDateFormatted,
+        nextFullMoonDateFormatted: nextFullMoonDateFormatted,
+        nextSpecialMoonDateFormatted: nextSpecialMoonDateFormatted,
+        nextMoonEclipseDateFormatted: nextMoonEclipseDateFormatted
     })
 }

@@ -1,17 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
-import { capitaliseEachWord, formatTime } from "../../utils/utils";
+import { capitaliseEachWord, getMoonInfoForDisplay } from "../../utils/utils";
 import { useState } from "react";
 import Card from "../Card/Card";
 import { RefreshCw } from "lucide-react";
 import InfoCard from "../info/InfoCard";
-import { WEATHER_STATION_TIMEZONE } from "shared";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
 import SideElement from "../dashboard/WeatherCard/SideElement/SideElement";
 import InfoTooltip from "../InfoToolTip/InfoTooltip";
 import type { IconName } from "../WeatherIcon/types";
 import { getCurrentMoonInfo } from "../../api/current.moon.info";
 import CardSecondaryHero from "../card_secondary_hero/CardSecondaryHero";
-import { icons } from "../WeatherIcon/icons";
 
 export default function MoonCard() {
   const [isHovered, setIsHovered] = useState(false);
@@ -57,157 +55,29 @@ export default function MoonCard() {
     );
   }
 
-  let updateTime;
-  if (currentMoonInfoData.last_update_time) {
-    updateTime = formatTime(currentMoonInfoData.last_update_time, {
-      timeZone: WEATHER_STATION_TIMEZONE,
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  } else {
-    updateTime = "-";
-  }
-
-  const name = currentMoonInfoData.name ?? "Unknown";
-
-  let iconName;
-  let iconAlt;
-  if(!(name in icons)) {
-    iconName = "unknown";
-    iconAlt = "Unknown";
-  } else {
-    iconName = name;
-    iconAlt = name;
-  }
-
-  const illumination = currentMoonInfoData.illumination
-    ? currentMoonInfoData.illumination * 100
-    : "-";
-  const riseTime = currentMoonInfoData.rise_set.rise_time;
-  const setTime = currentMoonInfoData.rise_set.set_time;
-  const distance = currentMoonInfoData.distance_km ?? "-";
-
-  const nextFullMoon = currentMoonInfoData.forecast.full_moon.date;
-  const nextFullMoonDaysUntil =
-    currentMoonInfoData.forecast.full_moon.days_until;
-
-  const nextFirstQuarter = currentMoonInfoData.forecast.first_quarter.date;
-
-  const nextLastQuarter = currentMoonInfoData.forecast.last_quarter.date;
-
-  const nextNewMoon = currentMoonInfoData.forecast.new_moon.date;
-  const nextNewMoonDaysUntil = currentMoonInfoData.forecast.new_moon.days_until;
-
-  const nextSpecialMoon = currentMoonInfoData.forecast.next_special_moon.date;
-  const nextSpecialMoonDaysUntil =
-    currentMoonInfoData.forecast.next_special_moon.days_until;
-  const nextSpecialMoonType =
-    currentMoonInfoData.forecast.next_special_moon.type ?? "-";
-
-  const nextMoonEclipse = currentMoonInfoData.forecast.next_eclipse.date;
-  const nextMoonEclipseDaysUntil =
-    currentMoonInfoData.forecast.next_eclipse.days_until;
-  const nextMoonEclipseType =
-    currentMoonInfoData.forecast.next_eclipse.type ?? "-";
-  const nextMoonEclipseIsBloodMoon =
-    currentMoonInfoData.forecast.next_eclipse.is_blood_moon;
-
-  let riseTimeFormatted;
-  if (riseTime) {
-    riseTimeFormatted = formatTime(new Date(riseTime), {
-      timeZone: WEATHER_STATION_TIMEZONE,
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  } else {
-    riseTimeFormatted = "-";
-  }
-
-  let setTimeFormatted;
-  if (setTime) {
-    setTimeFormatted = formatTime(new Date(setTime), {
-      timeZone: WEATHER_STATION_TIMEZONE,
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  } else {
-    setTimeFormatted = "-";
-  }
-
-  let nextNewMoonDateFormatted;
-  if (nextNewMoon) {
-    nextNewMoonDateFormatted = formatTime(new Date(nextNewMoon), {
-      timeZone: WEATHER_STATION_TIMEZONE,
-      day: "numeric",
-      month: "numeric",
-      year: "numeric",
-    });
-  } else {
-    nextNewMoonDateFormatted = "-";
-  }
-
-  let nextLastQuarterDateFormatted;
-  if (nextLastQuarter) {
-    nextLastQuarterDateFormatted = formatTime(new Date(nextLastQuarter), {
-      timeZone: WEATHER_STATION_TIMEZONE,
-      day: "numeric",
-      month: "numeric",
-      year: "numeric",
-    });
-  } else {
-    nextLastQuarterDateFormatted = "-";
-  }
-
-  let nextFirstQuarterDateFormatted;
-  if (nextFirstQuarter) {
-    nextFirstQuarterDateFormatted = formatTime(new Date(nextFirstQuarter), {
-      timeZone: WEATHER_STATION_TIMEZONE,
-      day: "numeric",
-      month: "numeric",
-      year: "numeric",
-    });
-  } else {
-    nextFirstQuarterDateFormatted = "-";
-  }
-
-  let nextFullMoonDateFormatted;
-  if (nextFullMoon) {
-    nextFullMoonDateFormatted = formatTime(new Date(nextFullMoon), {
-      timeZone: WEATHER_STATION_TIMEZONE,
-      day: "numeric",
-      month: "numeric",
-      year: "numeric",
-    });
-  } else {
-    nextFullMoonDateFormatted = "-";
-  }
-
-  let nextSpecialMoonDateFormatted;
-  if (nextSpecialMoon) {
-    nextSpecialMoonDateFormatted = formatTime(new Date(nextSpecialMoon), {
-      timeZone: WEATHER_STATION_TIMEZONE,
-      day: "numeric",
-      month: "numeric",
-      year: "numeric",
-    });
-  } else {
-    nextSpecialMoonDateFormatted = "-";
-  }
-
-  let nextMoonEclipseDateFormatted;
-  if (nextMoonEclipse) {
-    nextMoonEclipseDateFormatted = formatTime(new Date(nextMoonEclipse), {
-      timeZone: WEATHER_STATION_TIMEZONE,
-      day: "numeric",
-      month: "numeric",
-      year: "numeric",
-    });
-  } else {
-    nextMoonEclipseDateFormatted = "-";
-  }
+  const {
+    updateTime,
+    name,
+    iconName,
+    iconAlt,
+    illumination,
+    distance,
+    nextFullMoonDateFormatted,
+    nextNewMoonDaysUntil,
+    nextFullMoonDaysUntil,
+    nextSpecialMoonDaysUntil,
+    nextSpecialMoonType,
+    nextMoonEclipseDaysUntil,
+    nextMoonEclipseType,
+    nextMoonEclipseIsBloodMoon,
+    riseTimeFormatted,
+    setTimeFormatted,
+    nextNewMoonDateFormatted,
+    nextLastQuarterDateFormatted,
+    nextFirstQuarterDateFormatted,
+    nextMoonEclipseDateFormatted,
+    nextSpecialMoonDateFormatted,
+  } = getMoonInfoForDisplay(currentMoonInfoData);
 
   function animateIcons() {
     setIsHovered(true);
@@ -236,13 +106,13 @@ export default function MoonCard() {
             />
           </div>
           <div className="flex flex-row justify-center gap-8">
-            <CardSecondaryHero 
+            <CardSecondaryHero
               value={illumination}
               unit="%"
               description="Illumination"
             />
 
-            <CardSecondaryHero 
+            <CardSecondaryHero
               value={distance.toLocaleString()}
               unit="km"
               description="Distance"
@@ -250,12 +120,12 @@ export default function MoonCard() {
           </div>
         </div>
         <div className="flex justify-center mt-auto pb-5 gap-5">
-          <div className="grid grid-cols-4 gap-y-3 gap-x-7 pb-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-y-3 gap-x-12 pb-3 md:gap-x-12">
             <SideElement parameter={"Rise"} value={riseTimeFormatted} />
             <SideElement parameter={"Set"} value={setTimeFormatted} />
 
             <SideElement
-              parameter={"Next Special Moon"}
+              parameter={"Special Moon"}
               value={nextSpecialMoonDateFormatted}
               hoverContent={[
                 <div className="text-nowrap">
@@ -274,7 +144,7 @@ export default function MoonCard() {
               ]}
             />
             <SideElement
-              parameter={"Next Moon Eclipse"}
+              parameter={"Moon Eclipse"}
               value={nextMoonEclipseDateFormatted}
               hoverContent={[
                 <div className="text-nowrap">

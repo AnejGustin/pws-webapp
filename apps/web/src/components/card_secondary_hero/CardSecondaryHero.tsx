@@ -10,7 +10,7 @@ export default function CardSecondaryHero(props: CardSecondaryHeroProps) {
 
   return (
     <div className="text-center">
-      <p className="text-lg font-semibold text-gray-900">
+      <p className="text-lg font-semibold text-gray-900 tracking-tight">
         {val} {props.unit}
       </p>
       <p className="text-xs text-gray-500">{props.description}</p>

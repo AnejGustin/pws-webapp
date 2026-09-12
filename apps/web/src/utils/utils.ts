@@ -785,7 +785,7 @@ export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat
         nextMoonEclipseDateFormatted = "-";
     }
 
-    return({
+    return ({
         updateTime: updateTime,
         name: name,
         iconName: iconName,
@@ -808,4 +808,154 @@ export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat
         nextSpecialMoonDateFormatted: nextSpecialMoonDateFormatted,
         nextMoonEclipseDateFormatted: nextMoonEclipseDateFormatted
     })
+}
+
+export function getSeverityDescriptionForAirParticleConcentration(airParticle: string, value: number | null) {
+    if(value === null || value === undefined) {
+        return "Unknown";
+    }
+
+    switch (airParticle) {
+        case "PM2.5": {
+            if (value >= 0 && value < 10) {
+                return "Good";
+            }
+            if (value >= 10 && value < 15) {
+                return "Fair";
+            }
+            if (value >= 15 && value < 25) {
+                return "Moderate";
+            }
+            if (value >= 25 && value < 50) {
+                return "Poor";
+            }
+            if (value >= 50) {
+                return "Very Poor";
+            }
+            return "Unknown";
+        }
+        case "PM10": {
+            if (value >= 0 && value < 20) {
+                return "Good";
+            }
+            if (value >= 20 && value < 40) {
+                return "Fair";
+            }
+            if (value >= 40 && value < 50) {
+                return "Moderate";
+            }
+            if (value >= 50 && value < 100) {
+                return "Poor";
+            }
+            if (value >= 100) {
+                return "Very Poor";
+            }
+            return "Unknown";
+        }
+        case "NO2": {
+            if (value >= 0 && value < 40) {
+                return "Good";
+            }
+            if (value >= 40 && value < 90) {
+                return "Fair";
+            }
+            if (value >= 90 && value < 120) {
+                return "Moderate";
+            }
+            if (value >= 120 && value < 230) {
+                return "Poor";
+            }
+            if (value >= 230) {
+                return "Very Poor";
+            }
+            return "Unknown";
+        }
+        case "O3": {
+            if (value >= 0 && value < 50) {
+                return "Good";
+            }
+            if (value >= 50 && value < 100) {
+                return "Fair";
+            }
+            if (value >= 100 && value < 130) {
+                return "Moderate";
+            }
+            if (value >= 130 && value < 240) {
+                return "Poor";
+            }
+            if (value >= 240) {
+                return "Very Poor";
+            }
+            return "Unknown";
+        }
+        case "SO2": {
+            if (value >= 0 && value < 100) {
+                return "Good";
+            }
+            if (value >= 100 && value < 200) {
+                return "Fair";
+            }
+            if (value >= 200 && value < 350) {
+                return "Moderate";
+            }
+            if (value >= 350 && value < 500) {
+                return "Poor";
+            }
+            if (value >= 500) {
+                return "Very Poor";
+            }
+            return "Unknown";
+        }
+        case "CO": {
+            if (value >= 0 && value < 4000) {
+                return "Good";
+            }
+            if (value >= 4000 && value < 7000) {
+                return "Fair";
+            }
+            if (value >= 7000 && value < 10000) {
+                return "Moderate";
+            }
+            if (value >= 10000 && value < 15000) {
+                return "Poor";
+            }
+            if (value >= 15000) {
+                return "Very Poor";
+            }
+            return "Unknown";
+        }
+        case "NH3": {
+            if (value >= 0 && value < 10) {
+                return "Good";
+            }
+            if (value >= 10 && value < 50) {
+                return "Moderate";
+            }
+            if (value >= 50) {
+                return "Very Poor";
+            }
+            return "Unknown";
+        }
+        case "NO": {
+            if (value >= 0 && value < 40) {
+                return "Good";
+            }
+            if (value >= 40 && value < 90) {
+                return "Fair";
+            }
+            if (value >= 90 && value < 120) {
+                return "Moderate";
+            }
+            if (value >= 120 && value < 230) {
+                return "Poor";
+            }
+            if (value >= 230) {
+                return "Very Poor";
+            }
+            return "Unknown";
+        }
+        default: {
+            return "Unknown";
+        }
+    }
 }

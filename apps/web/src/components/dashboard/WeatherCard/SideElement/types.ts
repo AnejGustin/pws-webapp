@@ -5,4 +5,5 @@ export type SideElementProps = {
     value: string | number | null | undefined,
     unit?: string,
     hoverContent?: ReactNode | Array<ReactNode>,
+    description?: string,
 }

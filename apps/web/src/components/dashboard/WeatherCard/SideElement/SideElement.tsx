@@ -16,14 +16,14 @@ export default function SideElement(props: SideElementProps) {
   };
 
   return (
-    <div 
-        onMouseEnter={show} 
-        onMouseLeave={hide}
-        className="relative"
-    >
+    <div onMouseEnter={show} onMouseLeave={hide} className="relative">
       <p className="text-xs text-gray-500">{props.parameter}</p>
       <p className="text-sm font-medium text-gray-800">
-        {props.value === undefined || props.value === null ? "-" : props.value}{" "}
+        {props.value === undefined || props.value === null
+          ? "-"
+          : props.description != undefined
+            ? `${props.value} ${props.description}`
+            : props.value}{" "}
         {props.unit}
       </p>
       {open && props.hoverContent && (

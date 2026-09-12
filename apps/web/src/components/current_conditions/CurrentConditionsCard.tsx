@@ -3,6 +3,7 @@ import {
   formatTime,
   getAirQualityDescription,
   getCurrentConditionsDescriptionAndIconName,
+  getSeverityDescriptionForAirParticleConcentration,
   getUvIndexSeverity,
   getVisibilityDescription,
 } from "../../utils/utils";
@@ -151,19 +152,13 @@ export default function CurrentConditionsCard() {
             <SideElement parameter={"Sunset"} value={sunsetFormatted} />
             <SideElement
               parameter={"UV Index"}
-              value={
-                uvIndex != null && uvIndex != undefined
-                  ? `${uvIndex} (${uvIndexSeverity})`
-                  : "-"
-              }
+              value={uvIndex}
+              description={`(${uvIndexSeverity})`}
             />
             <SideElement
-              parameter={"Visibility"}
-              value={
-                visibility != null && visibility != undefined
-                  ? `${visibilityDescription} (${visibility} m)`
-                  : "-"
-              }
+              parameter={"Visibility Metres"}
+              value={visibility}
+              description={`(${visibilityDescription})`}
             />
             <SideElement
               parameter={"Cloud Cover"}
@@ -172,11 +167,8 @@ export default function CurrentConditionsCard() {
             />
             <SideElement
               parameter={"Air Quality Index"}
-              value={
-                airQuality != null && airQuality != undefined
-                  ? `${airQuality} (${airQualityDescription})`
-                  : "-"
-              }
+              value={airQuality}
+              description={`(${airQualityDescription})`}
               hoverContent={[
                 <div className="text-nowrap">
                   <p className="text-sm font-semibold text-gray-800 mb-3">
@@ -187,41 +179,49 @@ export default function CurrentConditionsCard() {
                     <SideElement
                       parameter="Fine Particles (PM2.5)"
                       value={airQualityComponents.pm2_5}
+                      description={`(${getSeverityDescriptionForAirParticleConcentration("PM2.5", airQualityComponents.pm2_5)})`}
                     />
                   
                     <SideElement
                       parameter="Coarse Particles (PM10)"
                       value={airQualityComponents.pm10}
+                      description={`(${getSeverityDescriptionForAirParticleConcentration("PM10", airQualityComponents.pm10)})`}
                     />
                   
                     <SideElement
                       parameter="Nitrogen Dioxide (NO2)"
                       value={airQualityComponents.no2}
+                      description={`(${getSeverityDescriptionForAirParticleConcentration("NO2", airQualityComponents.no2)})`}
                     />
                   
                     <SideElement
                       parameter="Ozone (O3)"
                       value={airQualityComponents.o3}
+                      description={`(${getSeverityDescriptionForAirParticleConcentration("O3", airQualityComponents.o3)})`}
                     />
                   
                     <SideElement
                       parameter="Sulphur Dioxide (SO2)"
                       value={airQualityComponents.so2}
+                      description={`(${getSeverityDescriptionForAirParticleConcentration("SO2", airQualityComponents.so2)})`}
                     />
                   
                     <SideElement
                       parameter="Carbon Monoxide (CO)"
                       value={airQualityComponents.co}
+                      description={`(${getSeverityDescriptionForAirParticleConcentration("CO", airQualityComponents.co)})`}
                     />
                   
                     <SideElement
                       parameter="Ammonia (NH3)"
                       value={airQualityComponents.nh3}
+                      description={`(${getSeverityDescriptionForAirParticleConcentration("NH3", airQualityComponents.nh3)})`}
                     />
                   
                     <SideElement
                       parameter="Nitrogen Monoxide (NO)"
                       value={airQualityComponents.no}
+                      description={`(${getSeverityDescriptionForAirParticleConcentration("NO", airQualityComponents.no)})`}
                     />
                   </div>
                 </div>,

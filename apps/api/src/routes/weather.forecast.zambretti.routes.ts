@@ -17,7 +17,6 @@ const router = Router();
  *           application/json:
  *             schema:
  *               type: object
- *               nullable: true
  *               properties:
  *                 data:
  *                   type: object

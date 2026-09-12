@@ -19,7 +19,6 @@ const router = Router();
  *           application/json:
  *             schema:
  *               type: object
- *               nullable: true
  *               properties:
  *                 data:
  *                   type: object
@@ -90,13 +89,14 @@ const router = Router();
  *                           example: 7.5
  *                     radiation:
  *                       type: object
- *                       nullable: true
  *                       properties:
  *                         solar:
  *                           type: integer
+ *                           nullable: true
  *                           example: null
  *                         uv:
  *                           type: integer
+ *                           nullable: true
  *                           example: null
  *                     deltas:
  *                       type: object
@@ -151,6 +151,7 @@ router.get(
  *               properties:
  *                 data:
  *                   type: array
+ *                   nullable: true
  *                   items:
  *                     type: object
  *                     properties:
@@ -543,7 +544,7 @@ router.get(
  * /api/v1/weather/current-conditions:
  *   get:
  *     summary: Get current weather conditions
- *     description: Endpoint returns current weather conditions such as description, cloud cover, air quality index and more.
+ *     description: Endpoint returns current weather conditions such as description, cloud cover, air quality data and more.
  *     responses:
  *       200:
  *         description: Successfull request returns current weather conditions. If no data is available, null is returned.
@@ -551,7 +552,6 @@ router.get(
  *           application/json:
  *             schema:
  *               type: object
- *               nullable: true
  *               properties:
  *                 data:
  *                   type: object
@@ -577,10 +577,53 @@ router.get(
  *                       type: integer
  *                       nullable: true
  *                       example: 38
- *                     aqi:
- *                       type: integer
- *                       nullable: true
- *                       example: 1
+ *                     aq:
+ *                       type: object
+ *                       properties:
+ *                         aqi:
+ *                           type: integer
+ *                           nullable: true
+ *                           example: 2
+ *                         co:
+ *                           type: integer
+ *                           format: float
+ *                           nullable: true
+ *                           example: 122.1
+ *                         no:
+ *                           type: integer
+ *                           format: float
+ *                           nullable: true
+ *                           example: 0.1
+ *                         no2:
+ *                           type: integer
+ *                           format: float
+ *                           nullable: true
+ *                           example: 0.6
+ *                         o3:
+ *                           type: integer
+ *                           format: float
+ *                           nullable: true
+ *                           example: 79.5
+ *                         so2:
+ *                           type: integer
+ *                           format: float
+ *                           nullable: true
+ *                           example: 0.3
+ *                         pm2_5:
+ *                           type: integer
+ *                           format: float
+ *                           nullable: true
+ *                           example: 2.5
+ *                         pm10:
+ *                           type: integer
+ *                           format: float
+ *                           nullable: true
+ *                           example: 2.8
+ *                         nh3:
+ *                           type: integer
+ *                           format: float
+ *                           nullable: true
+ *                           example: 0.7
  *                     uv_index:
  *                       type: integer
  *                       format: float

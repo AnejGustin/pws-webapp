@@ -812,7 +812,7 @@ export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat
 
 export function getSeverityDescriptionForAirParticleConcentration(airParticle: string, value: number | null) {
     if(value === null || value === undefined) {
-        return "Unknown";
+        return "Invalid Value";
     }
 
     switch (airParticle) {
@@ -832,7 +832,7 @@ export function getSeverityDescriptionForAirParticleConcentration(airParticle: s
             if (value >= 50) {
                 return "Very Poor";
             }
-            return "Unknown";
+            return "Invalid Value";
         }
         case "PM10": {
             if (value >= 0 && value < 20) {
@@ -850,7 +850,7 @@ export function getSeverityDescriptionForAirParticleConcentration(airParticle: s
             if (value >= 100) {
                 return "Very Poor";
             }
-            return "Unknown";
+            return "Invalid Value";
         }
         case "NO2": {
             if (value >= 0 && value < 40) {
@@ -868,7 +868,7 @@ export function getSeverityDescriptionForAirParticleConcentration(airParticle: s
             if (value >= 230) {
                 return "Very Poor";
             }
-            return "Unknown";
+            return "Invalid Value";
         }
         case "O3": {
             if (value >= 0 && value < 50) {
@@ -886,7 +886,7 @@ export function getSeverityDescriptionForAirParticleConcentration(airParticle: s
             if (value >= 240) {
                 return "Very Poor";
             }
-            return "Unknown";
+            return "Invalid Value";
         }
         case "SO2": {
             if (value >= 0 && value < 100) {
@@ -904,7 +904,7 @@ export function getSeverityDescriptionForAirParticleConcentration(airParticle: s
             if (value >= 500) {
                 return "Very Poor";
             }
-            return "Unknown";
+            return "Invalid Value";
         }
         case "CO": {
             if (value >= 0 && value < 4000) {
@@ -922,7 +922,7 @@ export function getSeverityDescriptionForAirParticleConcentration(airParticle: s
             if (value >= 15000) {
                 return "Very Poor";
             }
-            return "Unknown";
+            return "Invalid Value";
         }
         case "NH3": {
             if (value >= 0 && value < 10) {
@@ -934,7 +934,7 @@ export function getSeverityDescriptionForAirParticleConcentration(airParticle: s
             if (value >= 50) {
                 return "Very Poor";
             }
-            return "Unknown";
+            return "Invalid Value";
         }
         case "NO": {
             if (value >= 0 && value < 40) {
@@ -952,10 +952,37 @@ export function getSeverityDescriptionForAirParticleConcentration(airParticle: s
             if (value >= 230) {
                 return "Very Poor";
             }
-            return "Unknown";
+            return "Invalid Value";
         }
         default: {
-            return "Unknown";
+            return "Invalid Value";
+        }
+    }
+}
+
+export function getUvIndexSeverityTooltipInfo(uvIndexSeverity: string | null | undefined) {
+    if(uvIndexSeverity === undefined || uvIndexSeverity === null) {
+        return null;
+    }
+
+    switch(uvIndexSeverity) {
+        case "Low": {
+            return "Safe to stay outside with minimal protection";
+        }
+        case "Moderate": {
+            return "Protection recommended";
+        }
+        case "High": {
+            return "Protection is essential";
+        }
+        case "Very High": {
+            return "Extra protection required";
+        }
+        case "Extreme": {
+            return "Extreme risk of sunburn";
+        }
+        default: {
+            return null;
         }
     }
 }

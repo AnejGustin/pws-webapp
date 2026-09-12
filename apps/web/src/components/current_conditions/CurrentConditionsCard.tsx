@@ -5,6 +5,7 @@ import {
   getCurrentConditionsDescriptionAndIconName,
   getSeverityDescriptionForAirParticleConcentration,
   getUvIndexSeverity,
+  getUvIndexSeverityTooltipInfo,
   getVisibilityDescription,
 } from "../../utils/utils";
 import { useState } from "react";
@@ -84,6 +85,8 @@ export default function CurrentConditionsCard() {
   const uvIndex = currentConditionsData.uv_index;
 
   const uvIndexSeverity = getUvIndexSeverity(uvIndex);
+  const uvIndexSeverityTooltipDescription =
+    getUvIndexSeverityTooltipInfo(uvIndexSeverity);
   const airQualityDescription = getAirQualityDescription(airQuality);
   const visibilityDescription = getVisibilityDescription(visibility);
 
@@ -154,6 +157,15 @@ export default function CurrentConditionsCard() {
               parameter={"UV Index"}
               value={uvIndex}
               description={`(${uvIndexSeverity})`}
+              hoverContent={
+                uvIndexSeverityTooltipDescription != null
+                  ? [
+                      <div className="text-nowrap">
+                        <p>{uvIndexSeverityTooltipDescription}</p>
+                      </div>,
+                    ]
+                  : undefined
+              }
             />
             <SideElement
               parameter={"Visibility Metres"}
@@ -174,50 +186,50 @@ export default function CurrentConditionsCard() {
                   <p className="text-sm font-semibold text-gray-800 mb-3">
                     Concentration: µg/m³
                   </p>
-                  
+
                   <div className="flex flex-col text-sm font-medium text-gray-800 gap-4">
                     <SideElement
                       parameter="Fine Particles (PM2.5)"
                       value={airQualityComponents.pm2_5}
                       description={`(${getSeverityDescriptionForAirParticleConcentration("PM2.5", airQualityComponents.pm2_5)})`}
                     />
-                  
+
                     <SideElement
                       parameter="Coarse Particles (PM10)"
                       value={airQualityComponents.pm10}
                       description={`(${getSeverityDescriptionForAirParticleConcentration("PM10", airQualityComponents.pm10)})`}
                     />
-                  
+
                     <SideElement
                       parameter="Nitrogen Dioxide (NO2)"
                       value={airQualityComponents.no2}
                       description={`(${getSeverityDescriptionForAirParticleConcentration("NO2", airQualityComponents.no2)})`}
                     />
-                  
+
                     <SideElement
                       parameter="Ozone (O3)"
                       value={airQualityComponents.o3}
                       description={`(${getSeverityDescriptionForAirParticleConcentration("O3", airQualityComponents.o3)})`}
                     />
-                  
+
                     <SideElement
                       parameter="Sulphur Dioxide (SO2)"
                       value={airQualityComponents.so2}
                       description={`(${getSeverityDescriptionForAirParticleConcentration("SO2", airQualityComponents.so2)})`}
                     />
-                  
+
                     <SideElement
                       parameter="Carbon Monoxide (CO)"
                       value={airQualityComponents.co}
                       description={`(${getSeverityDescriptionForAirParticleConcentration("CO", airQualityComponents.co)})`}
                     />
-                  
+
                     <SideElement
                       parameter="Ammonia (NH3)"
                       value={airQualityComponents.nh3}
                       description={`(${getSeverityDescriptionForAirParticleConcentration("NH3", airQualityComponents.nh3)})`}
                     />
-                  
+
                     <SideElement
                       parameter="Nitrogen Monoxide (NO)"
                       value={airQualityComponents.no}

@@ -2,17 +2,33 @@
 
 A full-stack web application built for my personal weather station. It provides a fast and minimalistic view of live weather data and historical observations using interactive charts. It also features a short-term weather forecast based on a modified Zambretti algorithm.
 
-**Live Demo:** https://weather-station-konjice.onrender.com/
+# https://weather-station-konjice.onrender.com/
 
 ## Features
 
-### Live Data Dashboard & Short-Term Forecast
+### Live Data Dashboard & Current Weather Conditions
 
 The dashboard provides a quick overview of the latest data reported by the weather station, including temperature, humidity, pressure, wind speed and wind direction. It also displays the station's local time, the time of the latest update, and a status indicator.
 
 The dashboard also includes current conditions card. It includes general weather conditions description and icon. Some additional parameters such as visibility, cloud cover, air quality index and more are also displayed. Information on this card is collected from [OpenWeather](https://openweathermap.org/).
 
 ![dashboard](screenshots/dashboard.png)
+
+### Short Term Forecast
+
+A short-term weather forecast is generated using a modified Zambretti algorithm. The forecast displays a short text description along with weather icons for easier interpretation.
+
+An arrow indicates the expected trend of the weather: pointing down when conditions are expected to worsen (e.g. rain is approaching) and pointing up when conditions are expected to improve or stabilize.
+
+### Precipitation Radar
+
+The card includes an embedded Windy iframe displaying the precipitation radar, allowing users to view current precipitation conditions at weather station location and surrounding area.
+
+### Moon Information
+
+The Moon card presents the moon phase, moon icon, illumination, and distance as the primary parameters. Secondary information includes moonrise and moonset times, dates of upcoming moon phases, as well as the dates of upcoming special lunar events and moon eclipses.
+
+![precipitation radar, short term forecast and moon information cards](screenshots/middle_section.png)
 
 ### Statistics & Charts
 
@@ -24,15 +40,9 @@ The statistics card displays the **minimum**, **maximum**, and **average** value
 
 Wind direction has a dedicated visualization that represents directions as degrees on a circular chart. Since this can be difficult to interpret at a glance, a wind rose is also provided to show the dominant wind directions more clearly.
 
-![statistics, chart and short term forecast](screenshots/history_section.png)
+![history section of webapp](screenshots/history_section.png)
 
 ![Wind direction chart and wind rose](screenshots/wind_direction_chart_rose_chart.png)
-
-### Short Term Forecast
-
-A short-term weather forecast is generated using a modified Zambretti algorithm. The forecast displays a short text description along with weather icons for easier interpretation.
-
-An arrow indicates the expected trend of the weather: pointing down when conditions are expected to worsen (e.g. rain is approaching) and pointing up when conditions are expected to improve or stabilize.
 
 ## Tech Stack
 
@@ -109,8 +119,8 @@ Additional adjustments are then applied to the forecast score:
 
 - Rising pressure during summer subtracts 1 from the final score, as rising pressure during summer generally indicates more stable weather.
 - Falling pressure during winter adds 1 to the final score, as falling pressure during winter can indicate approaching precipitation.
-- Wind directions between **180° and 314°** receive a score of 1.5, as southern and western winds can occur ahead of approaching fronts.
-- Wind directions between **315° and 45°** receive a score of 0 and therefore have no effect on the forecast.
+- Wind directions between **180°** and **314°** receive a score of 1.5, as southern and western winds can occur ahead of approaching fronts.
+- Wind directions between **315°** and **45°** receive a score of 0 and therefore have no effect on the forecast.
 - Other wind directions receive a score of 0.25.
 
 The wind-direction score is further adjusted according to wind speed:

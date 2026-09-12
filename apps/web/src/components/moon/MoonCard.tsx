@@ -11,6 +11,7 @@ import InfoTooltip from "../InfoToolTip/InfoTooltip";
 import type { IconName } from "../WeatherIcon/types";
 import { getCurrentMoonInfo } from "../../api/current.moon.info";
 import CardSecondaryHero from "../card_secondary_hero/CardSecondaryHero";
+import { icons } from "../WeatherIcon/icons";
 
 export default function MoonCard() {
   const [isHovered, setIsHovered] = useState(false);
@@ -70,7 +71,18 @@ export default function MoonCard() {
     updateTime = "-";
   }
 
-  const name = currentMoonInfoData.name ?? "-";
+  const name = currentMoonInfoData.name ?? "Unknown";
+
+  let iconName;
+  let iconAlt;
+  if(!(name in icons)) {
+    iconName = "unknown";
+    iconAlt = "Unknown";
+  } else {
+    iconName = name;
+    iconAlt = name;
+  }
+
   const illumination = currentMoonInfoData.illumination
     ? currentMoonInfoData.illumination * 100
     : "-";
@@ -218,8 +230,8 @@ export default function MoonCard() {
           </div>
           <div className="flex justify-center mt-10">
             <WeatherIcon
-              icon={name as IconName}
-              iconAlt={name ? name : ""}
+              icon={iconName as IconName}
+              iconAlt={iconAlt}
               animate={isHovered}
             />
           </div>

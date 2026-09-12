@@ -599,10 +599,12 @@ export function getCurrentConditionsDescriptionAndIconName(weatherDescription: s
     if (!weatherDescription) {
         return ({
             conditionsDescription: "Unknown",
-            weatherConditionsIconDescription: "unknown"
+            weatherConditionsIconDescription: "unknown",
+            iconAlt: "Unknown",
         })
     }
     const conditionsDescription = capitaliseEachWord(weatherDescription);
+    let iconAlt;
     let weatherConditionsIconName;
     if (
         updateTime &&
@@ -612,15 +614,19 @@ export function getCurrentConditionsDescriptionAndIconName(weatherDescription: s
             updateTime >= sunsetTime)
     ) {
         weatherConditionsIconName = weatherDescription + " night";
+        iconAlt = weatherDescription + " night";
     } else {
         weatherConditionsIconName = weatherDescription;
+        iconAlt = weatherDescription;
     }
     if (!(weatherConditionsIconName in icons)) {
         weatherConditionsIconName = "unknown";
+        iconAlt = "Unknown";
     }
     
     return ({
         conditionsDescription: conditionsDescription,
-        weatherConditionsIconName: weatherConditionsIconName
+        weatherConditionsIconName: weatherConditionsIconName,
+        iconAlt: iconAlt,
     })
 }

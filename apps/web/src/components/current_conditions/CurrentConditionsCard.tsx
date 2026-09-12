@@ -86,7 +86,7 @@ export default function CurrentConditionsCard() {
   const airQualityDescription = getAirQualityDescription(airQuality);
   const visibilityDescription = getVisibilityDescription(visibility);
 
-  const { conditionsDescription, weatherConditionsIconName } =
+  const { conditionsDescription, weatherConditionsIconName, iconAlt } =
     getCurrentConditionsDescriptionAndIconName(
       currentConditionsData.weather_description,
       currentConditionsData.last_update_time,
@@ -140,11 +140,7 @@ export default function CurrentConditionsCard() {
           <div className="flex justify-center mt-10">
             <WeatherIcon
               icon={weatherConditionsIconName as IconName}
-              iconAlt={
-                currentConditionsData.weather_description
-                  ? currentConditionsData.weather_description
-                  : ""
-              }
+              iconAlt={iconAlt}
               animate={isHovered}
             />
           </div>

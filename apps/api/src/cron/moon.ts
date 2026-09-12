@@ -101,7 +101,7 @@ export async function fetchMoonInfo() {
         currentMoonInfo.forecast.next_special_moon.days_until = moonData.forecast?.next_special_moon?.days_until ?? null;
         currentMoonInfo.forecast.next_special_moon.type = moonData.forecast?.next_special_moon?.type ?? null;
         currentMoonInfo.forecast.next_special_moon.date = currentMoonInfo.forecast.next_special_moon.days_until != null
-        ? new Date(new Date().setDate(currentMoonInfo.forecast.next_special_moon.days_until)).toISOString()
+        ? new Date(Date.now() + currentMoonInfo.forecast.next_special_moon.days_until * 24 * 60 * 60 * 1000).toISOString()
         : null;
         currentMoonInfo.forecast.next_eclipse.date = moonData.forecast?.next_eclipse?.date ?? null;
         currentMoonInfo.forecast.next_eclipse.days_until = moonData.forecast?.next_eclipse?.days_until ?? null;

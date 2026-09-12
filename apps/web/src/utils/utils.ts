@@ -660,7 +660,7 @@ export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat
     }
 
     const illumination = currentMoonInfoData.illumination
-        ? currentMoonInfoData.illumination * 100
+        ? (currentMoonInfoData.illumination * 100).toFixed(1)
         : "-";
     const riseTime = currentMoonInfoData.rise_set.rise_time;
     const setTime = currentMoonInfoData.rise_set.set_time;

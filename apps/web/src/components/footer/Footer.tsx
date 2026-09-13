@@ -1,12 +1,12 @@
 export default function Footer() {
   return (
-    <div className="flex flex-col pt-1 flex-wrap gap-1 md:flex-row md:items-center md:gap-2 mt-6 border-t border-t-gray-300">
+    <div className="flex flex-col text-[var(--color-ordinary-text)] pt-1 flex-wrap gap-1 md:flex-row md:items-center md:gap-2 mt-6 border-t border-t-[var(--border-color)]">
       <span>
         <a
           href="https://stats.uptimerobot.com/XnM5o6H2OZ"
           target="_blank"
           rel="noreferrer"
-          className="text-blue-600 hover:underline"
+          className="text-[var(--color-blue-text)] hover:underline"
         >
           Service Status
         </a>
@@ -17,7 +17,7 @@ export default function Footer() {
           href="https://github.com/AnejGustin/pws-webapp"
           target="_blank"
           rel="noreferrer"
-          className="text-blue-600 hover:underline"
+          className="text-[var(--color-blue-text)] hover:underline"
         >
           GitHub
         </a>
@@ -28,7 +28,7 @@ export default function Footer() {
           href="https://weather-station-slov-konjice.onrender.com/api/v1/docs/"
           target="_blank"
           rel="noreferrer"
-          className="text-blue-600 hover:underline"
+          className="text-[var(--color-blue-text)] hover:underline"
         >
           API Documentation
         </a>
@@ -39,7 +39,7 @@ export default function Footer() {
           href="https://github.com/AnejGustin/pws-webapp#weather-station"
           target="_blank"
           rel="noreferrer"
-          className="text-blue-600 hover:underline"
+          className="text-[var(--color-blue-text)] hover:underline"
         >
           About Weather Station
         </a>

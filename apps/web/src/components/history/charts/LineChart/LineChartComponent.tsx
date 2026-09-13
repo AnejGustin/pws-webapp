@@ -39,7 +39,7 @@ function LineChartComponent(props: LineChartProps) {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis
             dataKey="observation_time"
-            stroke="var(--color-text-3)"
+            stroke="var(--color-primary-card-text)"
             type="number"
             ticks={xTicks}
             domain={[xTicks[0], xTicks[xTicks.length - 1]]}
@@ -54,7 +54,8 @@ function LineChartComponent(props: LineChartProps) {
           >
           </XAxis>
           <YAxis
-            width="auto" stroke="var(--color-text-3)"
+            width="auto"
+            stroke="var(--color-primary-card-text)"
             domain={[yStart, yEnd]}
             ticks={yTicks}
             unit={props.unit}
@@ -74,8 +75,8 @@ function LineChartComponent(props: LineChartProps) {
               })}
             cursor={false}
             contentStyle={{
-              backgroundColor: "rgba(255, 255, 255, 1)",
-              border: "1px solid var(--color-border-2)",
+              backgroundColor: "var(--color-card-bg)",
+              border: "1px solid var(--color-card-border)",
               borderRadius: "12px",
               boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
             }}
@@ -92,7 +93,7 @@ function LineChartComponent(props: LineChartProps) {
             iconType="line"
             layout="vertical"
             formatter={
-              (value) => <span style={{ color: 'black' }}>{value}</span>
+              (value) => <span style={{ color: "var(--color-primary-card-text)" }}>{value}</span>
             }
           />
           {

@@ -6,11 +6,11 @@ export default function StatsCard(props: StatsCardProps) {
     return (
         <div className="mt-8 mb-10">
             <Card>
-                <h3 className="text-sm font-semibold text-gray-900 mb-10">
+                <h3 className="text-sm font-semibold text-[var(--color-primary-card-text)] mb-10">
                     {props.weatherParameter} Stats For {props.time}
                 </h3>
 
-                <div className="grid grid-cols-3 divide-x divide-gray-300">
+                <div className="grid grid-cols-3 divide-x divide-[var(--border-color)]">
                     <StatsElement 
                         text={"Minimum"}
                         value={props.min}

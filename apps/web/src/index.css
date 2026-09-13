@@ -1,1 +1,51 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* light theme */
+:root {
+  --color-bg: theme("colors.gray.100");
+  --color-title: theme("colors.gray.900");
+  --color-ordinary-text: theme("colors.gray.500");
+  --border-color: theme("colors.gray.300");
+  --color-card-bg: theme("colors.white");
+  --color-button-bg: theme("colors.gray.200");
+  --color-status-badge-green-bg: theme("colors.green.200");
+  --color-status-badge-green-text: theme("colors.green.600");
+  --color-status-badge-red-bg: theme("colors.red.500");
+  --color-status-badge-red-text: theme("colors.white");
+  --color-status-badge-yellow-bg: theme("colors.yellow.300");
+  --color-status-badge-yellow-text: theme("colors.black");
+  --color-error-text: theme("colors.red.600");
+  --color-green-text: theme("colors.green.600");
+  --color-blue-text: theme("colors.blue.600");
+  --color-icon: theme("colors.black");
+  --color-primary-card-text: theme("colors.gray.900");
+  --color-secondary-card-text: theme("colors.gray.500");
+  --color-info-text: theme("colors.gray.700");
+  --color-card-border: theme("colors.gray.200");
+}
+
+/* dark theme */
+.dark {
+  --color-bg: theme("colors.gray.950");
+  --color-title: theme("colors.white");
+  --color-ordinary-text: theme("colors.gray.300");
+  --border-color: theme("colors.gray.700");
+  --color-card-bg: theme("colors.gray.900");
+  --color-button-bg: theme("colors.gray.800");
+  --color-status-badge-green-bg: theme("colors.green.900");
+  --color-status-badge-green-text: theme("colors.green.200");
+  --color-status-badge-red-bg: theme("colors.red.800");
+  --color-status-badge-red-text: theme("colors.white");
+  --color-status-badge-yellow-bg: theme("colors.yellow.400");
+  --color-status-badge-yellow-text: theme("colors.black");
+  --color-error-text: theme("colors.red.500");
+  --color-green-text: theme("colors.green.400");
+  --color-blue-text: theme("colors.blue.400");
+  --color-icon: theme("colors.white");
+  --color-primary-card-text: theme("colors.white");
+  --color-secondary-card-text: theme("colors.gray.400");
+  --color-info-text: theme("colors.white");
+  --color-card-border: theme("colors.gray.800");
+}

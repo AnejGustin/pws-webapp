@@ -8,7 +8,7 @@ import ZambrettiCard from "./components/zambretti/ZambrettiCard";
 
 function App() {
   return (
-    <div className="bg-gray-100 p-6 tabular-nums">
+    <div className="bg-[var(--color-bg)] p-6 tabular-nums">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <Dashboard />
         <CurrentConditionsCard />

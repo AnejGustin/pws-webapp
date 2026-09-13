@@ -35,9 +35,9 @@ export default function CurrentConditionsCard() {
     return (
       <InfoCard
         message={"Loading Current Weather Conditions..."}
-        textColor={"text-gray-700"}
+        textColor={"text-[var(--color-info-text)]"}
       >
-        <RefreshCw size={20} className="animate-spin" />
+        <RefreshCw size={20} className="animate-spin text-[var(--color-icon)]" />
       </InfoCard>
     );
   }
@@ -47,7 +47,7 @@ export default function CurrentConditionsCard() {
     return (
       <InfoCard
         message={"Error While Fetching Current Weather Conditions"}
-        textColor={"text-red-600"}
+        textColor={"text-[var(--color-error-text)]"}
       />
     );
   }
@@ -58,7 +58,7 @@ export default function CurrentConditionsCard() {
     return (
       <InfoCard
         message={"No Current Weather Conditions Available"}
-        textColor={"text-gray-700"}
+        textColor={"text-[var(--color-info-text)]"}
       />
     );
   }
@@ -133,11 +133,11 @@ export default function CurrentConditionsCard() {
 
         <div className="flex flex-col items-center text-center space-y-2 mb-10 p-2">
           <div className="space-y-1">
-            <p className="text-3xl font-bold text-gray-900">
+            <p className="text-3xl font-bold text-[var(--color-primary-card-text)]">
               {conditionsDescription}
             </p>
 
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-[var(--color-secondary-card-text)]">
               Last OpenWeather Update: {updateTime}
             </p>
           </div>
@@ -183,11 +183,11 @@ export default function CurrentConditionsCard() {
               description={`(${airQualityDescription})`}
               hoverContent={[
                 <div className="text-nowrap">
-                  <p className="text-sm font-semibold text-gray-800 mb-3">
+                  <p className="text-sm font-semibold text-[var(--color-primary-card-text)] mb-3">
                     Concentration: µg/m³
                   </p>
 
-                  <div className="flex flex-col text-sm font-medium text-gray-800 gap-4">
+                  <div className="flex flex-col text-sm font-medium gap-4">
                     <SideElement
                       parameter="Fine Particles (PM2.5)"
                       value={airQualityComponents.pm2_5}
@@ -249,7 +249,7 @@ export default function CurrentConditionsCard() {
             href="https://openweathermap.org/"
             target="_blank"
             rel="noreferrer"
-            className="ml-1 text-blue-600 hover:underline"
+            className="ml-1 text-[var(--color-blue-text)] hover:underline"
           >
             OpenWeather
           </a>
@@ -261,7 +261,7 @@ export default function CurrentConditionsCard() {
             href="https://uvindexapi.com/"
             target="_blank"
             rel="noreferrer"
-            className="ml-1 text-blue-600 hover:underline"
+            className="ml-1 text-[var(--color-blue-text)] hover:underline"
           >
             UV Index API
           </a>

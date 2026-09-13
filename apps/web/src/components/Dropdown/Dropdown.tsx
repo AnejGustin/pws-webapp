@@ -9,9 +9,9 @@ export default function Dropdown(props: DropdownProps) {
 
             <button
                 onClick={() => setOpen(!open)}
-                className="w-full flex items-center justify-between px-3 py-2 text-sm bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition"
+                className="w-full flex items-center justify-between px-3 py-2 text-sm bg-[var(--color-card-bg)] border border-[var(--color-card-border)] rounded-xl shadow-sm hover:shadow-md transition"
             >
-                <span className="text-gray-700">
+                <span className="text-[var(--color-info-text)]">
                     {
                         props.formatDisplay != undefined
                             ? props.formatDisplay(props.value)
@@ -35,7 +35,7 @@ export default function Dropdown(props: DropdownProps) {
             </button>
 
             {open && (
-                <div className="absolute mt-2 w-full bg-white border border-gray-200 rounded-xl shadow-lg z-10 overflow-hidden">
+                <div className="absolute mt-2 w-full bg-[var(--color-card-bg)] border border-[var(--color-card-border)] rounded-xl shadow-lg z-10 overflow-hidden">
 
                     {props.options.map((option) => (
                         <button
@@ -44,9 +44,9 @@ export default function Dropdown(props: DropdownProps) {
                                 props.onChange(option);
                                 setOpen(false);
                             }}
-                            className={`w-full text-left px-3 py-2 text-sm hover:bg-gray-50 transition ${option === props.value
-                                ? "bg-gray-100 text-gray-900 font-medium"
-                                : "text-gray-600"
+                            className={`w-full text-left px-3 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition ${option === props.value
+                                ? "bg-gray-100 text-[var(--color-primary-card-text)] font-medium dark:bg-gray-700"
+                                : "text-gray-600 dark:text-white"
                                 }`}
                         >
                             {

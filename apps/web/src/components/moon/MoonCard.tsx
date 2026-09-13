@@ -9,7 +9,7 @@ import SideElement from "../dashboard/WeatherCard/SideElement/SideElement";
 import InfoTooltip from "../InfoToolTip/InfoTooltip";
 import type { IconName } from "../WeatherIcon/types";
 import { getCurrentMoonInfo } from "../../api/current.moon.info";
-import CardSecondaryHero from "../card_secondary_hero/CardSecondaryHero";
+import CardSecondaryHero from "../Card/card_secondary_hero/CardSecondaryHero";
 
 export default function MoonCard() {
   const [isHovered, setIsHovered] = useState(false);
@@ -27,9 +27,9 @@ export default function MoonCard() {
     return (
       <InfoCard
         message={"Loading Current Moon Info..."}
-        textColor={"text-gray-700"}
+        textColor={"text-[var(--color-info-text)]"}
       >
-        <RefreshCw size={20} className="animate-spin" />
+        <RefreshCw size={20} className="animate-spin text-[var(--color-icon)]" />
       </InfoCard>
     );
   }
@@ -39,7 +39,7 @@ export default function MoonCard() {
     return (
       <InfoCard
         message={"Error While Fetching Current Moon Info"}
-        textColor={"text-red-600"}
+        textColor={"text-[var(--color-error-text)]"}
       />
     );
   }
@@ -50,7 +50,7 @@ export default function MoonCard() {
     return (
       <InfoCard
         message={"No Current Moon Data Available"}
-        textColor={"text-gray-700"}
+        textColor={"text-[var(--color-info-text)]"}
       />
     );
   }
@@ -94,9 +94,9 @@ export default function MoonCard() {
 
         <div className="flex flex-col items-center text-center space-y-2 mb-10 p-2">
           <div className="space-y-1">
-            <p className="text-3xl font-bold text-gray-900">{name}</p>
+            <p className="text-3xl font-bold text-[var(--color-primary-card-text)]">{name}</p>
 
-            <p className="text-sm text-gray-500">Last Update: {updateTime}</p>
+            <p className="text-sm text-[var(--color-secondary-card-text)]">Last Update: {updateTime}</p>
           </div>
           <div className="flex justify-center mt-10">
             <WeatherIcon
@@ -129,7 +129,7 @@ export default function MoonCard() {
               value={nextSpecialMoonDateFormatted}
               hoverContent={[
                 <div className="text-nowrap">
-                  <div className="flex flex-col text-sm font-medium text-gray-800 gap-4">
+                  <div className="flex flex-col text-sm font-medium gap-4">
                     <SideElement
                       parameter="Days Until"
                       value={nextSpecialMoonDaysUntil?.toFixed(0)}
@@ -148,7 +148,7 @@ export default function MoonCard() {
               value={nextMoonEclipseDateFormatted}
               hoverContent={[
                 <div className="text-nowrap">
-                  <div className="flex flex-col text-sm font-medium text-gray-800 gap-4">
+                  <div className="flex flex-col text-sm font-medium gap-4">
                     <SideElement
                       parameter="Days Until"
                       value={nextMoonEclipseDaysUntil?.toFixed(0)}
@@ -180,7 +180,7 @@ export default function MoonCard() {
               value={nextNewMoonDateFormatted}
               hoverContent={[
                 <div className="text-nowrap">
-                  <div className="flex flex-col text-sm font-medium text-gray-800 gap-4">
+                  <div className="flex flex-col text-sm font-medium gap-4">
                     <SideElement
                       parameter="Days Until"
                       value={nextNewMoonDaysUntil?.toFixed(0)}
@@ -198,7 +198,7 @@ export default function MoonCard() {
               value={nextFullMoonDateFormatted}
               hoverContent={[
                 <div className="text-nowrap">
-                  <div className="flex flex-col text-sm font-medium text-gray-800 gap-4">
+                  <div className="flex flex-col text-sm font-medium gap-4">
                     <SideElement
                       parameter="Days Until"
                       value={nextFullMoonDaysUntil?.toFixed(0)}
@@ -221,7 +221,7 @@ export default function MoonCard() {
             href="https://www.freeastroapi.com/moon"
             target="_blank"
             rel="noreferrer"
-            className="ml-1 text-blue-600 hover:underline"
+            className="ml-1 text-[var(--color-blue-text)] hover:underline"
           >
             FreeAstroAPI
           </a>

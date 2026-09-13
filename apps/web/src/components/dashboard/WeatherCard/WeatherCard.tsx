@@ -6,12 +6,12 @@ export default function WeatherCard(props: WeatherCardProps) {
     let deltaRisingColor, deltaFallingColor;
 
     if(!props.deltaFallingColor) {
-        deltaFallingColor = "text-red-500";
+        deltaFallingColor = "text-[var(--color-error-text)]";
     } else {
         deltaFallingColor = props.deltaFallingColor;
     }
     if(!props.deltaRisingColor) {
-        deltaRisingColor = "text-green-600";
+        deltaRisingColor = "text-[var(--color-green-text)]";
     } else {
         deltaRisingColor = props.deltaRisingColor;
     }
@@ -21,7 +21,7 @@ export default function WeatherCard(props: WeatherCardProps) {
             <div className="flex flex-col h-full">
                 <div className="flex flex-row items-center gap-2">
                     {props.titleIcon}
-                    <h3 className="text-sm font-semibold">
+                    <h3 className="text-sm font-semibold ">
                         {props.title}
                     </h3>
                 </div>
@@ -33,7 +33,7 @@ export default function WeatherCard(props: WeatherCardProps) {
                             {props.icon}
                         </div>
 
-                        <p className="text-5xl font-bold text-gray-900 tracking-tight">
+                        <p className="text-5xl font-bold text-[var(--color-primary-card-text)] tracking-tight">
                             {
                                 props.value === null 
                                 ? "-" 
@@ -41,7 +41,7 @@ export default function WeatherCard(props: WeatherCardProps) {
                             }
                         </p>
                     </div>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-[var(--color-secondary-card-text)]">
                         {props.unit}
                     </p>
 
@@ -50,7 +50,7 @@ export default function WeatherCard(props: WeatherCardProps) {
                             ? deltaRisingColor
                             : props.deltaOneHour < 0
                                 ? deltaFallingColor
-                                : "text-gray-500"
+                                : "text-[var(--color-secondary-card-text)]"
                             }`}>
                             {props.deltaOneHour > 0 ? "↑" : props.deltaOneHour < 0 ? "↓" : "→"}
                             {" "}

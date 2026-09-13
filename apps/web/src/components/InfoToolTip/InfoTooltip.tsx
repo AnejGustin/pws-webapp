@@ -21,7 +21,7 @@ export default function InfoTooltip(props: InfoTooltipProps) {
                 onMouseEnter={show}
                 onMouseLeave={hide}
                 className="w-7 h-7 rounded-full font-bold text-base
-                           text-gray-500 hover:text-gray-900 hover:bg-gray-200 transition"
+                           text-gray-500 hover:text-gray-900 hover:bg-gray-200 transition dark:text-white dark:hover:bg-gray-800"
             >
                 i
             </button>
@@ -31,8 +31,8 @@ export default function InfoTooltip(props: InfoTooltipProps) {
                     onMouseEnter={show}
                     onMouseLeave={hide}
                     className="absolute bottom-full mb-2 right-0 w-80
-                               bg-white text-gray-700 text-sm
-                               shadow-lg border border-gray-200
+                               bg-[var(--color-card-bg)] text-[var(--color-info-text)] text-sm
+                               shadow-lg border border-[var(--color-card-border)]
                                rounded-xl p-4 z-50 space-y-3"
                 >
                     {props.children}

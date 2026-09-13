@@ -22,7 +22,7 @@ export default function PrecipitationRadar() {
             href="https://www.windy.com"
             target="_blank"
             rel="noreferrer"
-            className="ml-1 text-blue-600 hover:underline"
+            className="ml-1 text-[var(--color-blue-text)] hover:underline"
           >
             Windy
           </a>

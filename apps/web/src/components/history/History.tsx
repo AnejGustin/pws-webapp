@@ -111,11 +111,11 @@ export default function History() {
 
                     <InfoCard
                         message={"Loading History..."}
-                        textColor={"text-gray-700"}
+                        textColor={"text-[var(--color-info-text)]"}
                     >
                         <RefreshCw
                             size={20}
-                            className="animate-spin"
+                            className="animate-spin text-[var(--color-icon)]"
                         />
                     </InfoCard>
 
@@ -131,7 +131,7 @@ export default function History() {
                 <>
                     <InfoCard
                         message={"Error While Fetching Weather Stats"}
-                        textColor={"text-red-600"}
+                        textColor={"text-[var(--color-error-text)]"}
                     />
                 </>
             )
@@ -144,11 +144,11 @@ export default function History() {
                 <>
                     <InfoCard
                         message={"Loading History..."}
-                        textColor={"text-gray-700"}
+                        textColor={"text-[var(--color-info-text)]"}
                     >
                         <RefreshCw
                             size={20}
-                            className="animate-spin"
+                            className="animate-spin text-[var(--color-icon)]"
                         />
                     </InfoCard>
 
@@ -165,7 +165,7 @@ export default function History() {
                 <>
                     <InfoCard
                         message={"No Weather Data History Available For Selected Parameters"}
-                        textColor={"text-gray-700"}
+                        textColor={"text-[var(--color-info-text)]"}
                     />
                 </>
             )
@@ -189,7 +189,7 @@ export default function History() {
                     />
                     <InfoCard
                         message={"Error While Fetching History Weather Data"}
-                        textColor={"text-red-600"}
+                        textColor={"text-[var(--color-error-text)]"}
                     />
                 </>
             )

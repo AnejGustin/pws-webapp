@@ -52,13 +52,13 @@ function WindRadarChartComponent(props: RadarChartComponentProps) {
                     }}
                 >
                     <PolarGrid />
-                    <PolarAngleAxis dataKey="windDirection" />
+                    <PolarAngleAxis dataKey="windDirection" stroke="var(--color-primary-card-text)" />
                     <Radar name="Wind Direction Count" dataKey="count" stroke="red" fill="red" fillOpacity={0.25} />
                     <Tooltip
                         cursor={false}
                         contentStyle={{
-                            backgroundColor: "rgba(255, 255, 255, 1)",
-                            border: "1px solid var(--color-border-2)",
+                            backgroundColor: "var(--color-card-bg)",
+                            border: "1px solid var(--color-card-border)",
                             borderRadius: "12px",
                             boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
                         }}

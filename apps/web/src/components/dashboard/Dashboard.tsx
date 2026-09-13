@@ -70,9 +70,9 @@ export default function Dashboard() {
 
           <InfoCard
             message={"Loading Latest Weather Data..."}
-            textColor={"text-gray-700"}
+            textColor={"text-[var(--color-info-text)]"}
           >
-            <RefreshCw size={20} className="animate-spin" />
+            <RefreshCw size={20} className="animate-spin text-[var(--color-icon)]" />
           </InfoCard>
         </div>
       </div>
@@ -96,7 +96,7 @@ export default function Dashboard() {
 
           <InfoCard
             message={"Error While Fetching Latest Weather Data"}
-            textColor={"text-red-600"}
+            textColor={"text-[var(--color-error-text)]"}
           />
         </div>
       </div>
@@ -121,7 +121,7 @@ export default function Dashboard() {
 
           <InfoCard
             message={"No Latest Weather Data Available"}
-            textColor={"text-gray-700"}
+            textColor={"text-[var(--color-info-text)]"}
           />
         </div>
       </div>
@@ -191,8 +191,8 @@ export default function Dashboard() {
                 key={"heat_index"}
               />,
             ]}
-            deltaFallingColor={"text-blue-600"}
-            deltaRisingColor={"text-red-500"}
+            deltaFallingColor={"text-[var(--color-blue-text)]"}
+            deltaRisingColor={"text-[var(--color-error-text)]"}
           />
 
           <WeatherCard
@@ -229,6 +229,7 @@ export default function Dashboard() {
             ]}
             icon={
               <Navigation2
+              className="text-[var(--color-icon)]"
                 size={50}
                 style={{
                   rotate: `${windDirectionForDisplayIcon}deg`,

@@ -17,8 +17,8 @@ export default function SideElement(props: SideElementProps) {
 
   return (
     <div onMouseEnter={show} onMouseLeave={hide} className="relative">
-      <p className="text-xs text-gray-500">{props.parameter}</p>
-      <p className="text-sm font-medium text-gray-800">
+      <p className="text-xs text-[var(--color-secondary-card-text)]">{props.parameter}</p>
+      <p className="text-sm font-medium text-[var(--color-primary-card-text)]">
         {props.value === undefined || props.value === null
           ? "-"
           : props.description != undefined
@@ -31,8 +31,8 @@ export default function SideElement(props: SideElementProps) {
           onMouseEnter={show}
           onMouseLeave={hide}
           className="absolute bottom-full mb-2 right-0 w-auto
-                               bg-white text-gray-700 text-sm
-                               shadow-lg border border-gray-200
+                               bg-[var(--color-card-bg)] text-[var(--color-info-text)] text-sm
+                               shadow-lg border border-[var(--color-card-border)]
                                rounded-xl p-4 z-50 space-y-2"
         >
           {props.hoverContent}

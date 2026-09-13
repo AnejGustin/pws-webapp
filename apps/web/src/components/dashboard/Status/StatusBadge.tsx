@@ -4,9 +4,9 @@ import type {
 } from "./types";
 
 const statusBadgeColors: Record<PossibleStatusBadgeColors, string> = {
-    green: "bg-green-200 text-green-600",
-    red: "bg-red-500 text-white",
-    yellow: "bg-yellow-300 text-black",
+    green: "bg-[var(--color-status-badge-green-bg)] text-[var(--color-status-badge-green-text)]",
+    red: "bg-[var(--color-status-badge-red-bg)] text-[var(--color-status-badge-red-text)]",
+    yellow: "bg-[var(--color-status-badge-yellow-bg)] text-[var(--color-status-badge-yellow-text)]",
 };
 
 export default function Status(props: StatusBadgeProperties) {

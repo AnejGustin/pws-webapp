@@ -26,9 +26,9 @@ export default function ZambrettiCard() {
     return (
       <InfoCard
         message={"Loading Latest Zambretti Forecast..."}
-        textColor={"text-gray-700"}
+        textColor={"text-[var(--color-info-text)]"}
       >
-        <RefreshCw size={20} className="animate-spin" />
+        <RefreshCw size={20} className="animate-spin text-[var(--color-icon)]" />
       </InfoCard>
     );
   }
@@ -38,7 +38,7 @@ export default function ZambrettiCard() {
     return (
       <InfoCard
         message={"Error While Fetching Latest Zambretti Forecast"}
-        textColor={"text-red-600"}
+        textColor={"text-[var(--color-error-text)]"}
       />
     );
   }
@@ -49,7 +49,7 @@ export default function ZambrettiCard() {
     return (
       <InfoCard
         message={"No Zambretti Forecast Available"}
-        textColor={"text-gray-700"}
+        textColor={"text-[var(--color-info-text)]"}
       />
     );
   }
@@ -80,9 +80,9 @@ export default function ZambrettiCard() {
 
       <div className="flex flex-col items-center text-center space-y-15 mb-10 p-2">
         <div className="space-y-1">
-          <p className="text-3xl font-bold text-gray-900">{forecastText}</p>
+          <p className="text-3xl font-bold text-[var(--color-primary-card-text)]">{forecastText}</p>
 
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-[var(--color-secondary-card-text)]">
             Last Forecast Run: {forecastTime}
           </p>
         </div>
@@ -119,7 +119,7 @@ export default function ZambrettiCard() {
           href="https://github.com/AnejGustin/pws-webapp#zambretti-algorithm"
           target="_blank"
           rel="noreferrer"
-          className="text-blue-600 hover:underline"
+          className="text-[var(--color-blue-text)] hover:underline"
         >
           More details
         </a>

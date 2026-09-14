@@ -1,0 +1,313 @@
+{
+  "common": {
+    "stationName": "Vremenska Postaja Slovenske Konjice",
+    "Live weather conditions": "Trenutne vremenske razmere",
+    "Last update": "Zadnja posodobitev",
+    "Last Update": "Zadnja Posodobitev",
+    "ONLINE": "POVEZANO",
+    "STALE": "ZASTARELI PODATKI",
+    "OFFLINE": "BREZ POVEZAVE",
+    "unknown": "neznano",
+    "Unknown": "Neznano",
+    "Statistics For": "Statistika za",
+    "directions": {
+      "N": "S",
+      "NNE": "SSV",
+      "NE": "SV",
+      "ENE": "VSV",
+      "E": "V",
+      "ESE": "VJV",
+      "SE": "JV",
+      "SSE": "JJV",
+      "S": "J",
+      "SSW": "JJZ",
+      "SW": "JZ",
+      "WSW": "ZJZ",
+      "W": "Z",
+      "WNW": "ZSZ",
+      "NW": "SZ",
+      "NNW": "SSZ"
+    },
+    "moon": {
+      "Moon": "Luna",
+      "Special Moon": "Posebna Luna",
+      "Moon Eclipse": "Lunin Mrk",
+      "Blood Moon": "Krvava Luna",
+      "Supermoon": "Superluna",
+      "Micromoon": "Mikroluna",
+      "Blue Moon": "Modra Luna",
+      "Black Moon": "Črna Luna",
+      "Harvest Moon": "Žetvena Luna",
+      "Hunter Moon": "Lovska Luna",
+      "Penumbral": "Polsenčni",
+      "Total": "Popolni",
+      "Partial": "Delni",
+      "phases": {
+        "New Moon": "Prazna Luna (Mlaj)",
+        "Waxing Crescent": "Rastoči Krajec",
+        "First Quarter": "Prvi Krajec",
+        "Waxing Gibbous": "Naraščajoča Luna",
+        "Full Moon": "Polna Luna (Ščip)",
+        "Waning Gibbous": "Padajoča Luna",
+        "Last Quarter": "Zadnji Krajec",
+        "Waning Crescent": "Pojemajoči Krajec"
+      }
+    },
+    "Precipitation Radar": "Radar Padavin",
+    "Precipitation radar from": "Radar padavin od",
+    "API Documentation": "Dokumentacija API",
+    "About Weather Station": "O Vremenski Postaji",
+    "Service Status": "Stanje Storitve",
+    "Loading": "Nalaganje",
+    "Load Weather Data": "Naloži Vremenske Podatke",
+    "Minimum": "Minimum",
+    "Maximum": "Maksimum",
+    "Average": "Povprečje",
+    "Illumination": "Osvetlitev",
+    "Distance": "Razdalja",
+    "Rise": "Vzhod",
+    "Set": "Zahod",
+    "Days Until": "Dni Do",
+    "Type": "Tip",
+    "Yes": "Ja",
+    "No": "Ne",
+    "Data about moon is collected from": "Podatki o luni so pridobljeni iz",
+    "Short Term Forecast": "Kratkoročna Napoved",
+    "Last Forecast Run": "Zadnji Zagon",
+    "More details": "Več podrobnosti",
+    "zambretti": {
+      "info": {
+        "text1": "Ta napoved je kratkoročna napoved atmosferskih trendov, veljavna do 12 ur vnaprej in do 24 ur v stabilnih razmerah.",
+        "text2": "Temelji na prilagojenem algoritmu Zambretti, ki kot glavni dejavnik uporablja trende zračnega tlaka. Smer vetra, hitrost vetra in letni čas so vključeni kot sekundarni dejavniki z omejenim vplivom na končni rezultat.",
+        "text3": "Ta model je konfiguriran za slovenske vremenske vzorce in je namenjen le nakazovanju trenda ter absolutno ni natančna meteorološka napoved."
+      }
+    },
+    "Current Weather Conditions": "Trenutne Vremenske Razmere",
+    "Last OpenWeather Update": "Zadnja Posodobitev OpenWeather",
+    "Visibility Metres": "Vidljivost v Metrih",
+    "Cloud Cover": "Pokritost z Oblaki",
+    "Data about UV index is collected from": "Podatki o UV indeksu so pridobljeni iz",
+    "Data about current conditions is collected from": "Podatki o trenutnih razmerah so pridobljeni iz",
+    "sun": {
+      "Sunrise": "Sončni Vzhod",
+      "Sunset": "Sončni Zahod"
+    },
+    "uv": {
+      "severity": {
+        "Low": "Nizek",
+        "Moderate": "Zmeren",
+        "High": "Visok",
+        "Very High": "Zelo Visok",
+        "Extreme": "Ekstremen"
+      },
+      "description": {
+        "Safe to stay outside with minimal protection": "Varno je biti zunaj z minimalno zaščito",
+        "Protection recommended": "Zaščita je priporočljiva",
+        "Protection is essential": "Zaščita je nujna",
+        "Extra protection required": "Dodatna zaščita je potrebna",
+        "Extreme risk of sunburn": "Ekstremno tveganje za sončne opekline"
+      }
+    },
+    "visibility": {
+      "description": {
+        "Good": "Dobra",
+        "Moderate": "Zmerna",
+        "Poor": "Slaba",
+        "Very Poor": "Zelo Slaba"
+      }
+    },
+    "aq": {
+      "Air Quality Index": "Indeks Kakovosti Zraka",
+      "severity": {
+        "Good": "Dobro",
+        "Moderate": "Zmerno",
+        "Fair": "Sprejemljivo",
+        "Poor": "Slabo",
+        "Very Poor": "Zelo Slabo"
+      },
+      "Concentration": "Koncentracija",
+      "particles": {
+        "Fine Particles (PM2.5)": "Drobni Delci (PM2.5)",
+        "Coarse Particles (PM10)": "Grobi Delci (PM10)",
+        "Nitrogen Dioxide (NO2)": "Dušikov Dioksid (NO2)",
+        "Ozone (O3)": "Ozon (O3)",
+        "Sulphur Dioxide (SO2)": "Žveplov Dioksid (SO2)",
+        "Carbon Monoxide (CO)": "Ogljikov Monoksid (CO)",
+        "Ammonia (NH3)": "Amonijak (NH3)",
+        "Nitrogen Monoxide (NO)": "Dušikov Monoksid (NO)"
+      }
+    }
+  },
+  "time": {
+    "Local time": "Lokalni čas"
+  },
+  "weather": {
+    "Temperature": "Temperatura",
+    "Humidity": "Vlažnost",
+    "Dew Point": "Rosišče",
+    "Feels Like": "Občutek",
+    "Pressure": "Tlak",
+    "Wind": "Veter",
+    "Apparent": "Občutek Zaradi Vetra",
+    "Gust": "Sunek",
+    "Direction": "Smer",
+    "Precipitation": "Padavine",
+    "Rate": "Intenzivnost",
+    "Heat Index": "Toplotni Indeks",
+    "Wind Speed": "Hitrost Vetra",
+    "Wind Chill": "Občutek Zaradi Vetra",
+    "Wind Gust": "Sunek Vetra",
+    "Wind Direction": "Smer Vetra",
+    "Precipitation Rate": "Intenzivnost Padavin",
+    "forecast": {
+      "zambretti": {
+        "Settled Fine": "Ustaljeno Lepo Vreme",
+        "Fine Weather": "Lepo Vreme",
+        "Fine, Becoming Less Settled": "Lepo, Postaja Manj Stabilno",
+        "Fairly Fine, Showery Later": "Precej Lepo, Kasneje Plohe",
+        "Showery, Becoming More Unsettled": "Plohe, Postaja Bolj Nestabilno",
+        "Unsettled, Rain Later": "Nestabilno, Kasneje Dež",
+        "Rain at Times, Worse Later": "Občasno Deževno, Kasneje Slabše",
+        "Rain at Times, Becoming Very Unsettled": "Občasno Deževno, Postaja Zelo Nestabilno",
+        "Very Unsettled, Rain": "Zelo Nestabilno, Dež",
+        "Fine, Possibly Showers": "Lepo, Možne Plohe",
+        "Fairly Fine, Showers Likely": "Precej Lepo, Plohe Verjetne",
+        "Showery, Bright Intervals": "Plohe, Vmes Jasno",
+        "Changeable, Some Rain": "Spremenljivo, Nekaj Dežja",
+        "Unsettled, Rain at Times": "Nestabilno, Občasno Dež",
+        "Rain at Frequent Intervals": "Pogoste Padavine",
+        "Stormy, Much Rain": "Nevihtno, Veliko Dežja",
+        "Becoming Fine": "Vreme Postaja Lepo",
+        "Fairly Fine, Improving": "Precej Lepo Vreme, Izboljšanje",
+        "Fairly Fine, Possibly Showers Early": "Precej Lepo Vreme, Zgodaj Možne Plohe",
+        "Showery Early, Improving": "Zgodaj Plohe, Nato Izboljšanje",
+        "Changeable, Mending": "Spremenljivo, Izboljšanje",
+        "Rather Unsettled, Clearing Later": "Precej Nestabilno, Kasneje Razjasnitev",
+        "Unsettled, Probably Improving": "Nestabilno, Verjetno Izboljšanje",
+        "Unsettled, Short Fine Intervals": "Nestabilno, Kratkotrajna Lepša Obdobja",
+        "Very Unsettled, Finer at Times": "Zelo Nestabilno, Občasno Lepše",
+        "Stormy, Possibly Improving": "Nevihtno, Možno Izboljšanje"
+      }
+    },
+    "UV Index": "UV Indeks",
+    "current": {
+      "Unknown": "Neznano",
+
+      "Clear Sky": "Jasno",
+      "Few Clouds": "Nekaj Oblakov",
+      "Scattered Clouds": "Razpršena Oblačnost",
+      "Broken Clouds": "Delno Oblačno",
+      "Shower Rain": "Dežne Plohe",
+      "Thunderstorm": "Nevihta",
+      "Snow": "Sneg",
+      "Mist": "Meglica",
+
+      "Thunderstorm With Light Rain": "Nevihta Z Rahlim Dežjem",
+      "Thunderstorm With Rain": "Nevihta Z Dežjem",
+      "Thunderstorm With Heavy Rain": "Nevihta Z Močnim Dežjem",
+
+      "Light Thunderstorm": "Manjša Nevihta",
+      "Heavy Thunderstorm": "Močna Nevihta",
+      "Ragged Thunderstorm": "Huda Nevihta",
+
+      "Thunderstorm With Light Drizzle": "Nevihta Z Rahlim Pršenjem",
+      "Thunderstorm With Drizzle": "Nevihta S Pršenjem",
+      "Thunderstorm With Heavy Drizzle": "Nevihta Z Močnim Pršenjem",
+
+      "Light Intensity Drizzle": "Rahlo Pršenje",
+      "Drizzle": "Pršenje",
+      "Heavy Intensity Drizzle": "Močno Pršenje",
+
+      "Light Intensity Drizzle Rain": "Rahel Pršeč Dež",
+      "Drizzle Rain": "Pršeč Dež",
+      "Heavy Intensity Drizzle Rain": "Močan Pršeč Dež",
+
+      "Shower Rain And Drizzle": "Dežna Ploha In Pršenje",
+      "Heavy Shower Rain And Drizzle": "Močna Dežna Ploha In Pršenje",
+      "Shower Drizzle": "Ploha Pršenja",
+
+      "Light Rain": "Rahel Dež",
+      "Moderate Rain": "Zmeren Dež",
+      "Heavy Intensity Rain": "Močan Dež",
+      "Very Heavy Rain": "Zelo Močan Dež",
+      "Extreme Rain": "Ekstremen Dež",
+      "Freezing Rain": "Ledeni Dež",
+
+      "Light Intensity Shower Rain": "Rahla Dežna Ploha",
+      "Heavy Intensity Shower Rain": "Močna Dežna Ploha",
+      "Ragged Shower Rain": "Huda Dežna Ploha",
+
+      "Light Snow": "Rahel Sneg",
+      "Heavy Snow": "Močan Sneg",
+      "Sleet": "Dež Z Snegom",
+
+      "Light Shower Sleet": "Rahla Ploha Sodre",
+      "Shower Sleet": "Ploha Sodre",
+
+      "Light Rain And Snow": "Rahel Sneg Z Dežjem",
+      "Shower Snow": "Snežna Ploha",
+      "Heavy Shower Snow": "Močna Snežna Ploha",
+      "Rain And Snow": "Sneg Z Dežjem",
+      "Light Shower Snow": "Rahla Snežna Ploha",
+
+      "Overcast Clouds": "Oblačno",
+
+      "Smoke": "Dim",
+      "Haze": "Motno Nebo",
+      "Sand/Dust Whirls": "Peščeni/Prašni Vrtinci",
+      "Fog": "Megla",
+      "Sand": "Pesek",
+      "Dust": "Prah",
+      "Volcanic Ash": "Vulkanski Pepel",
+      "Squalls": "Močne Vetrovne Nevihte",
+      "Tornado": "Tornado"
+    }
+  },
+  "info": {
+    "Loading Latest Weather Data...": "Nalaganje Najnovejših Vremenskih Podatkov...",
+    "Error While Fetching Latest Weather Data": "Napaka Pri Pridobivanju Najnovejših Vremenskih Podatkov",
+    "No Latest Weather Data Available": "Najnovejši Vremenski Podatki Niso Na Voljo",
+    "Loading History...": "Nalaganje Zgodovine...",
+    "Error While Fetching Weather Stats": "Napaka Pri Pridobivanju Vremenske Statistike",
+    "No Weather Data History Available For Selected Parameters": "Za Izbrane Parametre Zgodovina Ni Na Voljo",
+    "Error While Fetching History Weather Data": "Napaka Pri Pridobivanju Zgodovinskih Vremenskih Podatkov",
+    "Loading Current Moon Info...": "Nalaganje Trenutnih Podatkov O Luni...",
+    "Error While Fetching Current Moon Info": "Napaka Pri Pridobivanju Trenutnih Podatkov O Luni",
+    "No Current Moon Data Available": "Trenutni Podatki O Luni Niso Na Voljo",
+    "Loading Latest Zambretti Forecast...": "Nalaganje Najnovejše Kratkoročne Zambretti Napovedi...",
+    "Error While Fetching Latest Zambretti Forecast": "Napaka Pri Pridobivanju Najnovejše Kratkoročne Zambretti Napovedi",
+    "No Zambretti Forecast Available": "Kratkoročna Zambretti Napoved Ni Na Voljo",
+    "Loading Current Weather Conditions...": "Nalaganje Trenutnih Vremenskih Razmer...",
+    "Error While Fetching Current Weather Conditions": "Napaka Pri Pridobivanju Trenutnih Vremenskih Razmer",
+    "No Current Weather Conditions Available": "Trenutne Vremenske Razmere Niso Na Voljo"
+  },
+  "dropdowns": {
+    "Temperature": "Temperatura",
+    "Humidity": "Vlažnost",
+    "Dew Point": "Rosišče",
+    "Heat Index": "Toplotni Indeks",
+    "Pressure": "Tlak",
+    "Wind Speed": "Hitrost Vetra",
+    "Wind Chill": "Občutek Zaradi Vetra",
+    "Wind Gust": "Sunek Vetra",
+    "Wind Direction": "Smer Vetra",
+    "Precipitation": "Padavine",
+    "Precipitation Rate": "Intenzivnost Padavin",
+    "All Time": "Ves Čas",
+    "Year": "Leto",
+    "Month": "Mesec",
+    "Day": "Dan",
+    "January": "Januar",
+    "February": "Februar",
+    "March": "Marec",
+    "April": "April",
+    "May": "Maj",
+    "June": "Junij",
+    "July": "Julij",
+    "August": "Avgust",
+    "September": "September",
+    "October": "Oktober",
+    "November": "November",
+    "December": "December"
+  }
+}

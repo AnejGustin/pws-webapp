@@ -22,8 +22,11 @@ import StatusRow from "./StatusRow/StatusRow";
 import InfoCard from "../info/InfoCard";
 import { WEATHER_STATION_TIMEZONE } from "shared";
 import Title from "./Title/Title";
+import { useTranslation } from "react-i18next";
 
 export default function Dashboard() {
+  const { t } = useTranslation();
+
   const weatherLatestQuery = useQuery({
     queryKey: ["weather", "latest"],
     queryFn: getLatestWeather,
@@ -166,26 +169,26 @@ export default function Dashboard() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <WeatherCard
-            title={"Temperature"}
+            title={t("weather.Temperature")}
             titleIcon={<Thermometer />}
             value={weatherData.temperature}
             unit={"°C"}
             deltaOneHour={weatherData.deltas.one_hour.temperature}
             sideElements={[
               <SideElement
-                parameter={"Humidity"}
+                parameter={t("weather.Humidity")}
                 value={weatherData.humidity}
                 unit={"%"}
                 key={"humidity"}
               />,
               <SideElement
-                parameter={"Dew Point"}
+                parameter={t("weather.Dew Point")}
                 value={weatherData.dewpoint}
                 unit={"°C"}
                 key={"dewpoint"}
               />,
               <SideElement
-                parameter={"Feels Like"}
+                parameter={t("weather.Feels Like")}
                 value={weatherData.heat_index}
                 unit={"°C"}
                 key={"heat_index"}
@@ -196,7 +199,7 @@ export default function Dashboard() {
           />
 
           <WeatherCard
-            title={"Pressure"}
+            title={t("weather.Pressure")}
             titleIcon={<Gauge />}
             value={weatherData.pressure}
             unit={"hPa"}
@@ -204,26 +207,26 @@ export default function Dashboard() {
           />
 
           <WeatherCard
-            title={"Wind"}
+            title={t("weather.Wind")}
             titleIcon={<Wind />}
             value={weatherData.wind.speed}
             unit={"km/h"}
             sideElements={[
               <SideElement
-                parameter={"Apparent"}
+                parameter={t("weather.Apparent")}
                 value={weatherData.wind.chill}
                 unit={"°C"}
                 key={"wind_chill"}
               />,
               <SideElement
-                parameter={"Gust"}
+                parameter={t("weather.Gust")}
                 value={weatherData.wind.gust}
                 unit={"km / h"}
                 key={"wind_gust"}
               />,
               <SideElement
-                parameter={"Direction"}
-                value={windDirectionDescription}
+                parameter={t("weather.Direction")}
+                value={t(`common.directions.${windDirectionDescription}`)}
                 key={"wind_direction"}
               />,
             ]}
@@ -240,13 +243,13 @@ export default function Dashboard() {
           />
 
           <WeatherCard
-            title={"Precipitation"}
+            title={t("weather.Precipitation")}
             titleIcon={<Droplet />}
             value={weatherData.precipitation.total}
             unit={"mm"}
             sideElements={[
               <SideElement
-                parameter={"Rate"}
+                parameter={t("weather.Rate")}
                 value={weatherData.precipitation.rate}
                 unit={"mm / h"}
                 key={"rain_rate"}

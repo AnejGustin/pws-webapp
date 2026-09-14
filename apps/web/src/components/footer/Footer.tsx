@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col text-[var(--color-ordinary-text)] pt-1 flex-wrap gap-1 md:flex-row md:items-center md:gap-2 mt-6 border-t border-t-[var(--border-color)]">
       <span>
@@ -8,7 +12,7 @@ export default function Footer() {
           rel="noreferrer"
           className="text-[var(--color-blue-text)] hover:underline"
         >
-          Service Status
+          {t("common.Service Status")}
         </a>
       </span>
       <span className="hidden md:inline">·</span>
@@ -30,7 +34,7 @@ export default function Footer() {
           rel="noreferrer"
           className="text-[var(--color-blue-text)] hover:underline"
         >
-          API Documentation
+          {t("common.API Documentation")}
         </a>
       </span>
       <span className="hidden md:inline">·</span>
@@ -41,7 +45,7 @@ export default function Footer() {
           rel="noreferrer"
           className="text-[var(--color-blue-text)] hover:underline"
         >
-          About Weather Station
+          {t("common.About Weather Station")}
         </a>
       </span>
     </div>

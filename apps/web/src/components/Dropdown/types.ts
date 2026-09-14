@@ -6,5 +6,6 @@ export type DropdownProps = {
     options: Array<string> | Array<number> | Array<WeatherParameter> | Array<WeatherPeriod>,
     onChange: (option: any) => void,
     hide?: boolean,
-    formatDisplay?: (option: any) => string
+    formatDisplay?: (option: any) => string,
+    translate?: boolean,
 }

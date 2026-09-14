@@ -2,6 +2,7 @@ import type {
     PossibleStatusBadgeColors,
     StatusBadgeProperties
 } from "./types";
+import { useTranslation } from "react-i18next";
 
 const statusBadgeColors: Record<PossibleStatusBadgeColors, string> = {
     green: "bg-[var(--color-status-badge-green-bg)] text-[var(--color-status-badge-green-text)]",
@@ -10,9 +11,11 @@ const statusBadgeColors: Record<PossibleStatusBadgeColors, string> = {
 };
 
 export default function Status(props: StatusBadgeProperties) {
+    const { t } = useTranslation();
+
     return (
         <span className={`inline-flex md:ml-1 md:mt-0 mt-2 justify-center whitespace-nowrap rounded-full px-3 py-1 text-base font-semibold ${statusBadgeColors[props.statusColor]}`}>
-            {props.statusText}
+            {t(`common.${props.statusText}`)}
         </span>
     )
 }

@@ -1,0 +1,313 @@
+{
+  "common": {
+    "stationName": "Weather Station Slovenske Konjice",
+    "Live weather conditions": "Live weather conditions",
+    "Last update": "Last update",
+    "Last Update": "Last Update",
+    "ONLINE": "ONLINE",
+    "STALE": "STALE",
+    "OFFLINE": "OFFLINE",
+    "unknown": "unknown",
+    "Unknown": "Unknown",
+    "Statistics For": "Statistics For",
+    "directions": {
+      "N": "N",
+      "NNE": "NNE",
+      "NE": "NE",
+      "ENE": "ENE",
+      "E": "E",
+      "ESE": "ESE",
+      "SE": "SE",
+      "SSE": "SSE",
+      "S": "S",
+      "SSW": "SSW",
+      "SW": "SW",
+      "WSW": "WSW",
+      "W": "W",
+      "WNW": "WNW",
+      "NW": "NW",
+      "NNW": "NNW"
+    },
+    "moon": {
+      "Moon": "Moon",
+      "Special Moon": "Special Moon",
+      "Moon Eclipse": "Moon Eclipse",
+      "Blood Moon": "Blood Moon",
+      "Supermoon": "Supermoon",
+      "Micromoon": "Micromoon",
+      "Blue Moon": "Blue Moon",
+      "Black Moon": "Black Moon",
+      "Harvest Moon": "Harvest Moon",
+      "Hunter Moon": "Hunter Moon",
+      "Penumbral": "Penumbral",
+      "Total": "Total",
+      "Partial": "Partial",
+      "phases": {
+        "New Moon": "New Moon",
+        "Waxing Crescent": "Waxing Crescent",
+        "First Quarter": "First Quarter",
+        "Waxing Gibbous": "Waxing Gibbous",
+        "Full Moon": "Full Moon",
+        "Waning Gibbous": "Wanning Gibbous",
+        "Last Quarter": "Last Quarter",
+        "Waning Crescent": "Waning Crescent"
+      }
+    },
+    "Precipitation Radar": "Precipitation Radar",
+    "Precipitation radar from": "Precipitation radar from",
+    "API Documentation": "API Documentation",
+    "About Weather Station": "About Weather Station",
+    "Service Status": "Service Status",
+    "Loading": "Loading",
+    "Load Weather Data": "Load Weather Data",
+    "Minimum": "Minimum",
+    "Maximum": "Maximum",
+    "Average": "Average",
+    "Illumination": "Illumination",
+    "Distance": "Distance",
+    "Rise": "Rise",
+    "Set": "Set",
+    "Days Until": "Days Until",
+    "Type": "Type",
+    "Yes": "Yes",
+    "No": "No",
+    "Data about moon is collected from": "Data about moon is collected from",
+    "Short Term Forecast": "Short Term Forecast",
+    "Last Forecast Run": "Last Forecast Run",
+    "More details": "More details",
+    "zambretti": {
+      "info": {
+        "text1": "This forecast is a short-term atmospheric tendency prediction valid for up to 12 hours ahead, and up to 24 hours under stable conditions.",
+        "text2": "It is based on a modified Zambretti algorithm that uses barometric pressure trends as the primary driver. Wind direction, wind speed, and seasonal context are included as secondary factors with limited influence on the final outcome.",
+        "text3": "This model is calibrated for Slovenian weather patterns and is intended for trend indication rather than precise meteorological forecasting."
+      }
+    },
+    "Current Weather Conditions": "Current Weather Conditions",
+    "Last OpenWeather Update": "Last OpenWeather Update",
+    "Visibility Metres": "Visibility Metres",
+    "Cloud Cover": "Cloud Cover",
+    "Data about UV index is collected from": "Data about UV index is collected from",
+    "Data about current conditions is collected from": "Data about current conditions is collected from",
+    "sun": {
+      "Sunrise": "Sunrise",
+      "Sunset": "Sunset"
+    },
+    "uv": {
+      "severity": {
+        "Low": "Low",
+        "Moderate": "Moderate",
+        "High": "High",
+        "Very High": "Very High",
+        "Extreme": "Extreme"
+      },
+      "description": {
+        "Safe to stay outside with minimal protection": "Safe to stay outside with minimal protection",
+        "Protection recommended": "Protection recommended",
+        "Protection is essential": "Protection is essential",
+        "Extra protection required": "Extra protection required",
+        "Extreme risk of sunburn": "Extreme risk of sunburn"
+      }
+    },
+    "visibility": {
+      "description": {
+        "Good": "Good",
+        "Moderate": "Moderate",
+        "Poor": "Poor",
+        "Very Poor": "Very Poor"
+      }
+    },
+    "aq": {
+      "Air Quality Index": "Air Quality Index",
+      "severity": {
+        "Good": "Good",
+        "Moderate": "Moderate",
+        "Fair": "Fair",
+        "Poor": "Poor",
+        "Very Poor": "Very Poor"
+      },
+      "Concentration": "Concentration",
+      "particles": {
+        "Fine Particles (PM2.5)": "Fine Particles (PM2.5)",
+        "Coarse Particles (PM10)": "Coarse Particles (PM10)",
+        "Nitrogen Dioxide (NO2)": "Nitrogen Dioxide (NO2)",
+        "Ozone (O3)": "Ozone (O3)",
+        "Sulphur Dioxide (SO2)": "Sulphur Dioxide (SO2)",
+        "Carbon Monoxide (CO)": "Carbon Monoxide (CO)",
+        "Ammonia (NH3)": "Ammonia (NH3)",
+        "Nitrogen Monoxide (NO)": "Nitrogen Monoxide (NO)"
+      }
+    }
+  },
+  "time": {
+    "Local time": "Local time"
+  },
+  "weather": {
+    "Temperature": "Temperature",
+    "Humidity": "Humidity",
+    "Dew Point": "Dew Point",
+    "Feels Like": "Feels Like",
+    "Pressure": "Pressure",
+    "Wind": "Wind",
+    "Apparent": "Apparent",
+    "Gust": "Gust",
+    "Direction": "Direction",
+    "Precipitation": "Precipitation",
+    "Rate": "Rate",
+    "Heat Index": "Heat Index",
+    "Wind Speed": "Wind Speed",
+    "Wind Chill": "Wind Chill",
+    "Wind Gust": "Wind Gust",
+    "Wind Direction": "Wind Direction",
+    "Precipitation Rate": "Precipitation Rate",
+    "forecast": {
+      "zambretti": {
+        "Settled Fine": "Settled Fine",
+        "Fine Weather": "Fine Weather",
+        "Fine, Becoming Less Settled": "Fine, Becoming Less Settled",
+        "Fairly Fine, Showery Later": "Fairly Fine, Showery Later",
+        "Showery, Becoming More Unsettled": "Showery, Becoming More Unsettled",
+        "Unsettled, Rain Later": "Unsettled, Rain Later",
+        "Rain at Times, Worse Later": "Rain at Times, Worse Later",
+        "Rain at Times, Becoming Very Unsettled": "Rain at Times, Becoming Very Unsettled",
+        "Very Unsettled, Rain": "Very Unsettled, Rain",
+        "Fine, Possibly Showers": "Fine, Possibly Showers",
+        "Fairly Fine, Showers Likely": "Fairly Fine, Showers Likely",
+        "Showery, Bright Intervals": "Showery, Bright Intervals",
+        "Changeable, Some Rain": "Changeable, Some Rain",
+        "Unsettled, Rain at Times": "Unsettled, Rain at Times",
+        "Rain at Frequent Intervals": "Rain at Frequent Intervals",
+        "Stormy, Much Rain": "Stormy, Much Rain",
+        "Becoming Fine": "Becoming Fine",
+        "Fairly Fine, Improving": "Fairly Fine, Improving",
+        "Fairly Fine, Possibly Showers Early": "Fairly Fine, Possibly Showers Early",
+        "Showery Early, Improving": "Showery Early, Improving",
+        "Changeable, Mending": "Changeable, Mending",
+        "Rather Unsettled, Clearing Later": "Rather Unsettled, Clearing Later",
+        "Unsettled, Probably Improving": "Unsettled, Probably Improving",
+        "Unsettled, Short Fine Intervals": "Unsettled, Short Fine Intervals",
+        "Very Unsettled, Finer at Times": "Very Unsettled, Finer at Times",
+        "Stormy, Possibly Improving": "Stormy, Possibly Improving"
+      }
+    },
+    "UV Index": "UV Index",
+    "current": {
+      "Unknown": "Unknown",
+
+      "Clear Sky": "Clear Sky",
+      "Few Clouds": "Few Clouds",
+      "Scattered Clouds": "Scattered Clouds",
+      "Broken Clouds": "Broken Clouds",
+      "Shower Rain": "Shower Rain",
+      "Thunderstorm": "Thunderstorm",
+      "Snow": "Snow",
+      "Mist": "Mist",
+
+      "Thunderstorm With Light Rain": "Thunderstorm With Light Rain",
+      "Thunderstorm With Rain": "Thunderstorm With Rain",
+      "Thunderstorm With Heavy Rain": "Thunderstorm With Heavy Rain",
+
+      "Light Thunderstorm": "Light Thunderstorm",
+      "Heavy Thunderstorm": "Heavy Thunderstorm",
+      "Ragged Thunderstorm": "Ragged Thunderstorm",
+
+      "Thunderstorm With Light Drizzle": "Thunderstorm With Light Drizzle",
+      "Thunderstorm With Drizzle": "Thunderstorm With Drizzle",
+      "Thunderstorm With Heavy Drizzle": "Thunderstorm With Heavy Drizzle",
+
+      "Light Intensity Drizzle": "Light Intensity Drizzle",
+      "Drizzle": "Drizzle",
+      "Heavy Intensity Drizzle": "Heavy Intensity Drizzle",
+
+      "Light Intensity Drizzle Rain": "Light Intensity Drizzle Rain",
+      "Drizzle Rain": "Drizzle Rain",
+      "Heavy Intensity Drizzle Rain": "Heavy Intensity Drizzle Rain",
+
+      "Shower Rain And Drizzle": "Shower Rain And Drizzle",
+      "Heavy Shower Rain And Drizzle": "Heavy Shower Rain And Drizzle",
+      "Shower Drizzle": "Shower Drizzle",
+
+      "Light Rain": "Light Rain",
+      "Moderate Rain": "Moderate Rain",
+      "Heavy Intensity Rain": "Heavy Intensity Rain",
+      "Very Heavy Rain": "Very Heavy Rain",
+      "Extreme Rain": "Extreme Rain",
+      "Freezing Rain": "Freezing Rain",
+
+      "Light Intensity Shower Rain": "Light Intensity Shower Rain",
+      "Heavy Intensity Shower Rain": "Heavy Intensity Shower Rain",
+      "Ragged Shower Rain": "Ragged Shower Rain",
+
+      "Light Snow": "Light Snow",
+      "Heavy Snow": "Heavy Snow",
+      "Sleet": "Sleet",
+
+      "Light Shower Sleet": "Light Shower Sleet",
+      "Shower Sleet": "Shower Sleet",
+
+      "Light Rain And Snow": "Light Rain And Snow",
+      "Shower Snow": "Shower Snow",
+      "Heavy Shower Snow": "Heavy Shower Snow",
+      "Rain And Snow": "Rain And Snow",
+      "Light Shower Snow": "Light Shower Snow",
+
+      "Overcast Clouds": "Overcast Clouds",
+
+      "Smoke": "Smoke",
+      "Haze": "Haze",
+      "Sand/Dust Whirls": "Sand/Dust Whirls",
+      "Fog": "Fog",
+      "Sand": "Sand",
+      "Dust": "Dust",
+      "Volcanic Ash": "Volcanic Ash",
+      "Squalls": "Squalls",
+      "Tornado": "Tornado"
+    }
+  },
+  "info": {
+    "Loading Latest Weather Data...": "Loading Latest Weather Data...",
+    "Error While Fetching Latest Weather Data": "Error While Fetching Latest Weather Data",
+    "No Latest Weather Data Available": "No Latest Weather Data Available",
+    "Loading History...": "Loading History...",
+    "Error While Fetching Weather Stats": "Error While Fetching Weather Stats",
+    "No Weather Data History Available For Selected Parameters": "No Weather Data History Available For Selected Parameters",
+    "Error While Fetching History Weather Data": "Error While Fetching History Weather Data",
+    "Loading Current Moon Info...": "Loading Current Moon Info...",
+    "Error While Fetching Current Moon Info": "Error While Fetching Current Moon Info",
+    "No Current Moon Data Available": "No Current Moon Data Available",
+    "Loading Latest Zambretti Forecast...": "Loading Latest Zambretti Forecast...",
+    "Error While Fetching Latest Zambretti Forecast": "Error While Fetching Latest Zambretti Forecast",
+    "No Zambretti Forecast Available": "No Zambretti Forecast Available",
+    "Loading Current Weather Conditions...": "Loading Current Weather Conditions...",
+    "Error While Fetching Current Weather Conditions": "Error While Fetching Current Weather Conditions",
+    "No Current Weather Conditions Available": "No Current Weather Conditions Available"
+  },
+  "dropdowns": {
+    "Temperature": "Temperature",
+    "Humidity": "Humidity",
+    "Dew Point": "Dew Point",
+    "Heat Index": "Heat Index",
+    "Pressure": "Pressure",
+    "Wind Speed": "Wind Speed",
+    "Wind Chill": "Wind Chill",
+    "Wind Gust": "Wind Gust",
+    "Wind Direction": "Wind Direction",
+    "Precipitation": "Precipitation",
+    "Precipitation Rate": "Precipitation Rate",
+    "All Time": "All Time",
+    "Year": "Year",
+    "Month": "Month",
+    "Day": "Day",
+    "January": "January",
+    "February": "February",
+    "March": "March",
+    "April": "April",
+    "May": "May",
+    "June": "June",
+    "July": "July",
+    "August": "August",
+    "September": "September",
+    "October": "October",
+    "November": "November",
+    "December": "December"
+  }
+}

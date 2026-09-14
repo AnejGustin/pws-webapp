@@ -12,9 +12,12 @@ import {
     countWindDirections,
     transformWindDirectionsDataForRadarChart
 } from '../../../../utils/utils';
+import { useTranslation } from 'react-i18next';
 
 
 function WindRadarChartComponent(props: RadarChartComponentProps) {
+    const { t } = useTranslation();
+
     const windDirectionsCounted: Record<string, number> = {
         "N": 0,
         "NNE": 0,
@@ -35,7 +38,11 @@ function WindRadarChartComponent(props: RadarChartComponentProps) {
     }
 
     countWindDirections(props.weatherData, windDirectionsCounted);
-    const windDirectionsData = transformWindDirectionsDataForRadarChart(windDirectionsCounted);
+    let windDirectionsData = transformWindDirectionsDataForRadarChart(windDirectionsCounted);
+
+    windDirectionsData.map((element) => {
+        element.windDirection = t(`common.directions.${element.windDirection}`);
+    })
 
     return (
         <div className="w-full h-[350px] sm:h-[400px] lg:h-[500px]">

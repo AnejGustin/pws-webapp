@@ -1,8 +1,18 @@
 import { useState } from "react";
 import type { DropdownProps } from "./types";
+import { useTranslation } from "react-i18next";
 
 export default function Dropdown(props: DropdownProps) {
     const [open, setOpen] = useState(false);
+
+    const { t } = useTranslation();
+
+    let selectedParameter;
+    if(props.formatDisplay != undefined) {
+        selectedParameter = props.formatDisplay(props.value);
+    } else {
+        selectedParameter = props.value;
+    }
 
     return !props.hide && (
         <div className="relative w-48">
@@ -13,9 +23,7 @@ export default function Dropdown(props: DropdownProps) {
             >
                 <span className="text-[var(--color-info-text)]">
                     {
-                        props.formatDisplay != undefined
-                            ? props.formatDisplay(props.value)
-                            : props.value
+                        props.translate ? t(`dropdowns.${selectedParameter}`) : selectedParameter
                     }
                 </span>
 
@@ -51,8 +59,8 @@ export default function Dropdown(props: DropdownProps) {
                         >
                             {
                                 props.formatDisplay != undefined
-                                    ? props.formatDisplay(option)
-                                    : option
+                                    ? props.translate ? t(`dropdowns.${props.formatDisplay(option)}`) : props.formatDisplay(option)
+                                    : props.translate ? t(`dropdowns.${option}`) : option
                             }
                         </button>
                     ))}

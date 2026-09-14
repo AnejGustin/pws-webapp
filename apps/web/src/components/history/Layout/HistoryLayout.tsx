@@ -16,6 +16,7 @@ export default function HistoryLayout(props: HistoryLayoutProps) {
                     value={props.selectedWeatherParameter}
                     options={props.weatherParameterOptions}
                     onChange={props.weatherParameterDropdownOnChange}
+                    translate={true}
                 />
 
                 <Dropdown
@@ -23,6 +24,7 @@ export default function HistoryLayout(props: HistoryLayoutProps) {
                     options={props.weatherPeriodOptions}
                     onChange={props.weatherPeriodDropdownOnChange}
                     formatDisplay={weatherDataPeriodToString}
+                    translate={true}
                 />
 
                 <Dropdown
@@ -37,6 +39,7 @@ export default function HistoryLayout(props: HistoryLayoutProps) {
                     options={props.monthParameterOptions}
                     onChange={props.monthParameterDropdwonOnChange}
                     hide={props.selectedPeriod === "all_time" || props.selectedPeriod === "year"}
+                    translate={true}
                 />
 
                 <Dropdown

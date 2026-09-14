@@ -9,8 +9,11 @@ import Card from "../Card/Card";
 import { RefreshCw } from "lucide-react";
 import InfoCard from "../info/InfoCard";
 import { WEATHER_STATION_TIMEZONE } from "shared";
+import { useTranslation } from "react-i18next";
 
 export default function ZambrettiCard() {
+  const { t } = useTranslation();
+
   const [isHovered, setIsHovered] = useState(false);
 
   const zambrettiLatestQuery = useQuery({
@@ -76,14 +79,14 @@ export default function ZambrettiCard() {
 
   return (
     <Card onMouseEnter={animateIcons} onMouseLeave={stopIconsAnimation}>
-      <h2 className="text-xl font-semibold mb-10">Short Term Forecast</h2>
+      <h2 className="text-xl font-semibold mb-10">{t("common.Short Term Forecast")}</h2>
 
       <div className="flex flex-col items-center text-center space-y-15 mb-10 p-2">
         <div className="space-y-1">
-          <p className="text-3xl font-bold text-[var(--color-primary-card-text)]">{forecastText}</p>
+          <p className="text-3xl font-bold text-[var(--color-primary-card-text)]">{t(`weather.forecast.zambretti.${forecastText}`)}</p>
 
           <p className="text-sm text-[var(--color-secondary-card-text)]">
-            Last Forecast Run: {forecastTime}
+            {t("common.Last Forecast Run")}: {forecastTime}
           </p>
         </div>
         <div className="grid w-full grid-cols-2 pl-6">
@@ -98,21 +101,15 @@ export default function ZambrettiCard() {
       </div>
       <InfoTooltip>
         <p>
-          This forecast is a short-term atmospheric tendency prediction valid
-          for up to 12 hours ahead, and up to 24 hours under stable conditions.
+          {t("common.zambretti.info.text1")}
         </p>
 
         <p>
-          It is based on a modified Zambretti algorithm that uses barometric
-          pressure trends as the primary driver. Wind direction, wind speed, and
-          seasonal context are included as secondary factors with limited
-          influence on the final outcome.
+          {t("common.zambretti.info.text2")}
         </p>
 
         <p>
-          This model is calibrated for Slovenian weather patterns and is
-          intended for trend indication rather than precise meteorological
-          forecasting.
+          {t("common.zambretti.info.text3")}
         </p>
 
         <a
@@ -121,7 +118,7 @@ export default function ZambrettiCard() {
           rel="noreferrer"
           className="text-[var(--color-blue-text)] hover:underline"
         >
-          More details
+          {t("common.More details")}
         </a>
       </InfoTooltip>
     </Card>

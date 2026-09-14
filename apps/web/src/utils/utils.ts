@@ -14,6 +14,7 @@ import type {
 } from "../components/history/types";
 import { icons } from "../components/WeatherIcon/icons";
 import type { FormatTimeOptions } from "./type";
+import i18n from "../i18n/config/i18n";
 
 // for now, data on dashboard is considered stale after 15 minutes, station is considered offline if no data has been received for 2 hours
 export function getStatusBadgeProperties(observationTime: Date): StatusBadgeProperties {
@@ -181,28 +182,28 @@ export function getPeriodDateTimeOptions(period: WeatherPeriod) {
     }
 }
 
-export function getStatsCardTimeAsText(period: WeatherPeriod, selectedDay: number, selectedMonth: number, selectedYear: number) {
+export function getStatsCardTimeAsText(period: WeatherPeriod, selectedDay: number, selectedMonth: number, selectedYear: number, t: (key: string) => string) {
     switch (period) {
         case "all_time": {
-            return "All Time"
+            return t("dropdowns.All Time");
         }
         case "year": {
-            const yearAsString = selectedYear.toString()
+            const yearAsString = selectedYear.toString();
 
-            return `${yearAsString}`
+            return `${yearAsString}`;
         }
         case "month": {
-            const monthAsString = numberToMonth(selectedMonth)
-            const yearAsString = selectedYear.toString()
+            const monthAsString = t(`dropdowns.${numberToMonth(selectedMonth)}`);
+            const yearAsString = selectedYear.toString();
 
-            return `${monthAsString} ${yearAsString}`
+            return `${monthAsString} ${yearAsString}`;
         }
         case "day": {
-            const dayAsString = selectedDay.toString()
-            const monthAsString = numberToMonth(selectedMonth)
-            const yearAsString = selectedYear.toString()
+            const dayAsString = selectedDay.toString();
+            const monthAsString = t(`dropdowns.${numberToMonth(selectedMonth)}`);
+            const yearAsString = selectedYear.toString();
 
-            return `${dayAsString} ${monthAsString} ${yearAsString}`
+            return `${dayAsString} ${monthAsString} ${yearAsString}`;
         }
     }
 }
@@ -225,29 +226,35 @@ export function weatherDataPeriodToString(period: WeatherPeriod) {
 }
 
 export function getTimeSinceUpdateText(currentTime: number, lastObservationTime: Date) {
-    let minutesSinceLastUpdate = Math.floor((currentTime - new Date(lastObservationTime).getTime()) / 1000 / 60);
+    let secondsSinceLastUpdate = Math.floor((currentTime - new Date(lastObservationTime).getTime()) / 1000);
+    let minutesSinceLastUpdate = Math.floor(secondsSinceLastUpdate / 60);
     let hoursSinceLastUpdate = Math.floor(minutesSinceLastUpdate / 60);
     let daysSinceLastUpdate = Math.floor(hoursSinceLastUpdate / 24);
 
-    if (minutesSinceLastUpdate === 0) {
-        return "(just now)";
+    const rtf1 = new Intl.RelativeTimeFormat(i18n.language, { style: "long" });
+
+    if (secondsSinceLastUpdate === 1) {
+        return rtf1.format(-secondsSinceLastUpdate, "second");
+    }
+    if (secondsSinceLastUpdate < 60) {
+        return rtf1.format(-secondsSinceLastUpdate, "seconds");
     }
     if (minutesSinceLastUpdate === 1) {
-        return `(${minutesSinceLastUpdate} minute ago)`;
+        return rtf1.format(-minutesSinceLastUpdate, "minute");
     }
     if (minutesSinceLastUpdate < 60) {
-        return `(${minutesSinceLastUpdate} minutes ago)`;
+        return rtf1.format(-minutesSinceLastUpdate, "minutes");
     }
     if (hoursSinceLastUpdate === 1) {
-        return `(${hoursSinceLastUpdate} hour ago)`;
+        return rtf1.format(-hoursSinceLastUpdate, "hour");
     }
     if (hoursSinceLastUpdate < 24) {
-        return `(${hoursSinceLastUpdate} hours ago)`;
+        return rtf1.format(-hoursSinceLastUpdate, "hours");
     }
     if (daysSinceLastUpdate === 1) {
-        return `(${daysSinceLastUpdate} day ago)`;
+        return rtf1.format(-daysSinceLastUpdate, "day");
     }
-    return `(${daysSinceLastUpdate} days ago)`;
+    return rtf1.format(-daysSinceLastUpdate, "days");
 }
 
 export function getWindDirection(degrees: number | null) {

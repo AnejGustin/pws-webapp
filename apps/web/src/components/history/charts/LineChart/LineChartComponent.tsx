@@ -12,9 +12,10 @@ import {
 import type { LineChartProps } from './types';
 import React from 'react';
 import { getLineChartProperties } from '../../../../utils/utils';
+import { useTranslation } from 'react-i18next';
 
 function LineChartComponent(props: LineChartProps) {
-
+  const { t } = useTranslation();
   const { yStart, yEnd, yTicks, xTicks } = getLineChartProperties(props.yAxisRangeStart, props.yAxisRangeEnd, props.xAxisTimeStart, props.period);
 
   return (
@@ -93,7 +94,7 @@ function LineChartComponent(props: LineChartProps) {
             iconType="line"
             layout="vertical"
             formatter={
-              (value) => <span style={{ color: "var(--color-primary-card-text)" }}>{value}</span>
+              (value) => <span style={{ color: "var(--color-primary-card-text)" }}>{t(`weather.${value}`)}</span>
             }
           />
           {

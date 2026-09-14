@@ -1,7 +1,10 @@
 import { RefreshCw } from "lucide-react";
 import type { FetchButtonProps } from "./types";
+import { useTranslation } from "react-i18next";
 
 export default function FetchButton(props: FetchButtonProps) {
+    const { t } = useTranslation();
+
     return (
         <button
             onClick={props.onClick}
@@ -20,7 +23,7 @@ export default function FetchButton(props: FetchButtonProps) {
                 className={props.loading ? "animate-spin" : ""}
             />
 
-            {props.loading ? "Loading" : "Load Weather Data"}
+            {props.loading ? t("common.Loading") : t("common.Load Weather Data")}
         </button>
     );
 }

@@ -35,6 +35,7 @@ import {
     weatherParameterOptions,
     weatherPeriodOptions
 } from "./dropdown.options";
+import { t } from "i18next";
 
 export default function History() {
     const weatherStationLocalDateTime = toZonedTime(Date.now(), WEATHER_STATION_TIMEZONE);
@@ -185,7 +186,7 @@ export default function History() {
                         avg={statsCardProps.avg}
                         min={statsCardProps.min}
                         max={statsCardProps.max}
-                        time={getStatsCardTimeAsText(appliedPeriod, appliedDay, appliedMonth, appliedYear)}
+                        time={getStatsCardTimeAsText(appliedPeriod, appliedDay, appliedMonth, appliedYear, t)}
                     />
                     <InfoCard
                         message={"Error While Fetching History Weather Data"}
@@ -258,7 +259,7 @@ export default function History() {
                     avg={statsCardProps.avg}
                     min={statsCardProps.min}
                     max={statsCardProps.max}
-                    time={getStatsCardTimeAsText(appliedPeriod, appliedDay, appliedMonth, appliedYear)}
+                    time={getStatsCardTimeAsText(appliedPeriod, appliedDay, appliedMonth, appliedYear, t)}
                 />
 
                 {

@@ -1,11 +1,14 @@
+import { useTranslation } from "react-i18next";
 import Card from "../Card/Card";
 import InfoTooltip from "../InfoToolTip/InfoTooltip";
 
 export default function PrecipitationRadar() {
+  const { t } = useTranslation();
+
   return (
     <Card>
       <div className="flex flex-col h-full">
-        <h2 className="text-xl font-semibold mb-10">Precipitation Radar</h2>
+        <h2 className="text-xl font-semibold mb-10">{t("common.Precipitation Radar")}</h2>
 
         <div className="flex flex-col items-center min-h-100 w-full h-full overflow-hidden text-center space-y-2 mb-10 p-2">
           <iframe
@@ -17,7 +20,7 @@ export default function PrecipitationRadar() {
       </div>
       <InfoTooltip>
         <p>
-          Precipitation radar from
+          {t("common.Precipitation radar from")}
           <a
             href="https://www.windy.com"
             target="_blank"

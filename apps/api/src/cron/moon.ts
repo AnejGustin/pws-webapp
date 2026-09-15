@@ -115,5 +115,5 @@ export async function fetchMoonInfo() {
 }
 
 export function startMoonInfoCron() {
-    cron.schedule("0 0 */8 * * *", fetchMoonInfo);
+    cron.schedule("0 0 */1 * * *", fetchMoonInfo);
 }

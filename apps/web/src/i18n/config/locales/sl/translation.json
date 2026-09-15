@@ -50,7 +50,8 @@
         "Full Moon": "Polna Luna (Ščip)",
         "Waning Gibbous": "Padajoča Luna",
         "Last Quarter": "Zadnji Krajec",
-        "Waning Crescent": "Pojemajoči Krajec"
+        "Waning Crescent": "Pojemajoči Krajec",
+        "Unknown": "Neznano"
       }
     },
     "Precipitation Radar": "Radar Padavin",

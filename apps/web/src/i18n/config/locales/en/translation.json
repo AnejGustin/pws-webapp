@@ -50,7 +50,8 @@
         "Full Moon": "Full Moon",
         "Waning Gibbous": "Wanning Gibbous",
         "Last Quarter": "Last Quarter",
-        "Waning Crescent": "Waning Crescent"
+        "Waning Crescent": "Waning Crescent",
+        "Unknown": "Unknown"
       }
     },
     "Precipitation Radar": "Precipitation Radar",

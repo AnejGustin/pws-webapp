@@ -1,9 +1,3 @@
-export type UvIndexApiResponse = {
-    now: {
-        uv_index: number | null
-    },
-}
-
 export type AirQualityApiResponse = {
     list: [
         {

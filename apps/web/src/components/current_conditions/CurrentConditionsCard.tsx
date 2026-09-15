@@ -4,8 +4,6 @@ import {
   getAirQualityDescription,
   getCurrentConditionsDescriptionAndIconName,
   getSeverityDescriptionForAirParticleConcentration,
-  getUvIndexSeverity,
-  getUvIndexSeverityTooltipInfo,
   getVisibilityDescription,
 } from "../../utils/utils";
 import { useState } from "react";
@@ -19,11 +17,14 @@ import SideElement from "../dashboard/WeatherCard/SideElement/SideElement";
 import InfoTooltip from "../InfoToolTip/InfoTooltip";
 import type { IconName } from "../WeatherIcon/types";
 import { useTranslation } from "react-i18next";
+import useSunInfoQuery from "../../hooks/useSunInfoQuery";
 
 export default function CurrentConditionsCard() {
   const { t } = useTranslation();
 
   const [isHovered, setIsHovered] = useState(false);
+
+  const sunInfoQuery = useSunInfoQuery();
 
   const currentConditionsQuery = useQuery({
     queryKey: ["weather", "current"],
@@ -82,19 +83,15 @@ export default function CurrentConditionsCard() {
   } else {
     updateTime = "-";
   }
-  const sunriseTime = currentConditionsData.sunrise;
-  const sunsetTime = currentConditionsData.sunset;
   const visibility = currentConditionsData.visibility;
   const cloudCover = currentConditionsData.cloud_cover;
   const airQualityComponents = currentConditionsData.aq;
   const airQuality = airQualityComponents.aqi;
-  const uvIndex = currentConditionsData.uv_index;
-
-  const uvIndexSeverity = getUvIndexSeverity(uvIndex);
-  const uvIndexSeverityTooltipDescription =
-    getUvIndexSeverityTooltipInfo(uvIndexSeverity);
   const airQualityDescription = getAirQualityDescription(airQuality);
   const visibilityDescription = getVisibilityDescription(visibility);
+
+  const sunriseTime = sunInfoQuery.data?.sun?.sunrise ?? null;
+  const sunsetTime = sunInfoQuery.data?.sun?.sunset ?? null;
 
   const { conditionsDescription, weatherConditionsIconName, iconAlt } =
     getCurrentConditionsDescriptionAndIconName(
@@ -103,24 +100,6 @@ export default function CurrentConditionsCard() {
       sunriseTime,
       sunsetTime,
     );
-
-  let sunriseFormatted;
-  if (sunriseTime) {
-    sunriseFormatted = formatTime(sunriseTime, {
-      timeZone: WEATHER_STATION_TIMEZONE,
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  }
-
-  let sunsetFormatted;
-  if (sunsetTime) {
-    sunsetFormatted = formatTime(sunsetTime, {
-      timeZone: WEATHER_STATION_TIMEZONE,
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  }
 
   function animateIcons() {
     setIsHovered(true);
@@ -157,30 +136,6 @@ export default function CurrentConditionsCard() {
         </div>
         <div className="flex justify-center mt-auto pb-5">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-y-10 md:gap-y-3 gap-x-5 md:gap-x-12">
-            <SideElement
-              parameter={t("common.sun.Sunrise")}
-              value={sunriseFormatted}
-            />
-            <SideElement
-              parameter={t("common.sun.Sunset")}
-              value={sunsetFormatted}
-            />
-            <SideElement
-              parameter={t("weather.UV Index")}
-              value={uvIndex}
-              description={`(${t(`common.uv.severity.${uvIndexSeverity}`)})`}
-              hoverContent={
-                uvIndexSeverityTooltipDescription != null
-                  ? [
-                      <div className="text-nowrap">
-                        <p>
-                          {t(`common.uv.description.${uvIndexSeverityTooltipDescription}`)}
-                        </p>
-                      </div>,
-                    ]
-                  : undefined
-              }
-            />
             <SideElement
               parameter={t("common.Visibility Metres")}
               value={visibility}
@@ -314,18 +269,6 @@ export default function CurrentConditionsCard() {
             className="ml-1 text-[var(--color-blue-text)] hover:underline"
           >
             OpenWeather
-          </a>
-          .
-        </p>
-        <p>
-          {t("common.Data about UV index is collected from")}
-          <a
-            href="https://uvindexapi.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="ml-1 text-[var(--color-blue-text)] hover:underline"
-          >
-            UV Index API
           </a>
           .
         </p>

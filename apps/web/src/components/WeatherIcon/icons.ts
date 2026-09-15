@@ -600,4 +600,8 @@ export const icons: Record<IconName, IconObject> = {
         normal: moonWaxingGibbous,
         animated: moonWaxingGibbousAnimated
     },
+    "sun": {
+        normal: clearDay,
+        animated: clearDayAnimated
+    },
 };

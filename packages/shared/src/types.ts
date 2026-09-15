@@ -118,8 +118,6 @@ export type WeatherStatsFormat = {
 }
 
 export type CurrentWeatherConditionsFormat = {
-    sunrise: number | null,
-    sunset: number | null,
     visibility: number | null,
     weather_description: string | null,
     cloud_cover: number | null,
@@ -134,7 +132,6 @@ export type CurrentWeatherConditionsFormat = {
         pm10: number | null,
         nh3: number | null,
     },
-    uv_index: number | null,
     last_update_time: number | null
 }
 
@@ -181,4 +178,38 @@ export type CurrentMoonInfoFormat = {
             is_blood_moon: boolean | null,
         },
     },
+}
+
+export type SunInfoFormat = {
+    last_update_time: number | null,
+    sun: {
+        sunrise: number | null,
+        sunset: number | null,
+        first_light: number | null,
+        last_light: number | null,
+        dawn: number | null,
+        dusk: number | null,
+        solar_noon: number | null,
+        day_length: string | null,
+        nautical_twilight_begin: number | null,
+        nautical_twilight_end: number | null,
+        sun_max_altitude: number | null,
+    },
+    uv: {
+        now: {
+            uv_index: number | null,
+        },
+        today: {
+            max: {
+                time: string | null,
+                uv_index: number | null,
+            }
+        },
+        tomorrow: {
+            max: {
+                time: string | null,
+                uv_index: number | null,
+            }
+        },
+    }
 }

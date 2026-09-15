@@ -1,6 +1,7 @@
 import {
     WEATHER_STATION_TIMEZONE,
     type CurrentMoonInfoFormat,
+    type SunInfoFormat,
     type WeatherHistoryQuery,
     type WeatherPeriod,
     type WeatherReadingFormat,
@@ -705,8 +706,6 @@ export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat
             hour: "2-digit",
             minute: "2-digit",
         });
-    } else {
-        riseTimeFormatted = "-";
     }
 
     let setTimeFormatted;
@@ -716,8 +715,6 @@ export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat
             hour: "2-digit",
             minute: "2-digit",
         });
-    } else {
-        setTimeFormatted = "-";
     }
 
     let nextNewMoonDateFormatted;
@@ -728,8 +725,6 @@ export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat
             month: "numeric",
             year: "numeric",
         });
-    } else {
-        nextNewMoonDateFormatted = "-";
     }
 
     let nextLastQuarterDateFormatted;
@@ -740,8 +735,6 @@ export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat
             month: "numeric",
             year: "numeric",
         });
-    } else {
-        nextLastQuarterDateFormatted = "-";
     }
 
     let nextFirstQuarterDateFormatted;
@@ -752,8 +745,6 @@ export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat
             month: "numeric",
             year: "numeric",
         });
-    } else {
-        nextFirstQuarterDateFormatted = "-";
     }
 
     let nextFullMoonDateFormatted;
@@ -764,8 +755,6 @@ export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat
             month: "numeric",
             year: "numeric",
         });
-    } else {
-        nextFullMoonDateFormatted = "-";
     }
 
     let nextSpecialMoonDateFormatted;
@@ -776,8 +765,6 @@ export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat
             month: "numeric",
             year: "numeric",
         });
-    } else {
-        nextSpecialMoonDateFormatted = "-";
     }
 
     let nextMoonEclipseDateFormatted;
@@ -788,8 +775,6 @@ export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat
             month: "numeric",
             year: "numeric",
         });
-    } else {
-        nextMoonEclipseDateFormatted = "-";
     }
 
     return ({
@@ -818,7 +803,7 @@ export function getMoonInfoForDisplay(currentMoonInfoData: CurrentMoonInfoFormat
 }
 
 export function getSeverityDescriptionForAirParticleConcentration(airParticle: string, value: number | null) {
-    if(value === null || value === undefined) {
+    if (value === null || value === undefined) {
         return "Invalid Value";
     }
 
@@ -968,11 +953,11 @@ export function getSeverityDescriptionForAirParticleConcentration(airParticle: s
 }
 
 export function getUvIndexSeverityTooltipInfo(uvIndexSeverity: string | null | undefined) {
-    if(uvIndexSeverity === undefined || uvIndexSeverity === null) {
+    if (uvIndexSeverity === undefined || uvIndexSeverity === null) {
         return null;
     }
 
-    switch(uvIndexSeverity) {
+    switch (uvIndexSeverity) {
         case "Low": {
             return "Safe to stay outside with minimal protection";
         }
@@ -992,4 +977,155 @@ export function getUvIndexSeverityTooltipInfo(uvIndexSeverity: string | null | u
             return null;
         }
     }
+}
+
+export function getSunCardDisplayInfo(sunInfoData: SunInfoFormat) {
+    let updateTime;
+    if (sunInfoData.last_update_time) {
+        updateTime = formatTime(sunInfoData.last_update_time, {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    } else {
+        updateTime = "-";
+    }
+    const sunriseTime = sunInfoData.sun.sunrise;
+    const sunsetTime = sunInfoData.sun.sunset;
+    const dawn = sunInfoData.sun.dawn;
+    const dusk = sunInfoData.sun.dusk;
+    const solarNoon = sunInfoData.sun.solar_noon;
+    const nauticalTwilightBegin = sunInfoData.sun.nautical_twilight_begin;
+    const nauticalTwilightEnd = sunInfoData.sun.nautical_twilight_end;
+    const sunMaxAltitude = sunInfoData.sun.sun_max_altitude ?? "-";
+    const firstLight = sunInfoData.sun.first_light;
+    const lastLight = sunInfoData.sun.last_light;
+
+    const dayLength = sunInfoData.sun.day_length ?? "-";
+
+    const currentUvIndex = sunInfoData.uv.now.uv_index;
+
+    const currentUvIndexSeverity = getUvIndexSeverity(currentUvIndex);
+    const currentUvIndexSeverityTooltipDescription =
+        getUvIndexSeverityTooltipInfo(currentUvIndexSeverity);
+
+    const todayMaxUvIndex = sunInfoData.uv.today.max.uv_index;
+
+    const todayMaxUvIndexSeverity = getUvIndexSeverity(todayMaxUvIndex);
+    const todayMaxUvIndexSeverityTooltipDescription =
+        getUvIndexSeverityTooltipInfo(todayMaxUvIndexSeverity);
+
+    const tomorrowUvIndex = sunInfoData.uv.now.uv_index;
+
+    const tomorrowUvIndexSeverity = getUvIndexSeverity(tomorrowUvIndex);
+    const tomorrowUvIndexSeverityTooltipDescription =
+        getUvIndexSeverityTooltipInfo(tomorrowUvIndexSeverity);
+
+    let sunriseFormatted;
+    if (sunriseTime) {
+        sunriseFormatted = formatTime(sunriseTime, {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    }
+
+    let sunsetFormatted;
+    if (sunsetTime) {
+        sunsetFormatted = formatTime(sunsetTime, {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    }
+
+    let dawnFormatted;
+    if (dawn) {
+        dawnFormatted = formatTime(dawn, {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    }
+
+    let duskFormatted;
+    if (dusk) {
+        duskFormatted = formatTime(dusk, {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    }
+
+    let solarNoonFormatted;
+    if (solarNoon) {
+        solarNoonFormatted = formatTime(solarNoon, {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    }
+
+    let nauticalTwilightBeginFormatted;
+    if (nauticalTwilightBegin) {
+        nauticalTwilightBeginFormatted = formatTime(nauticalTwilightBegin, {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    }
+
+    let nauticalTwilightEndFormatted;
+    if (nauticalTwilightEnd) {
+        nauticalTwilightEndFormatted = formatTime(nauticalTwilightEnd, {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    }
+
+    let firstLightFormatted;
+    if (firstLight) {
+        firstLightFormatted = formatTime(firstLight, {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    }
+
+    let lastLightFormatted;
+    if (lastLight) {
+        lastLightFormatted = formatTime(lastLight, {
+            timeZone: WEATHER_STATION_TIMEZONE,
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    }
+
+    return({
+        updateTime: updateTime,
+        sunriseFormatted: sunriseFormatted,
+        sunsetFormatted: sunsetFormatted,
+        dawnFormatted: dawnFormatted,
+        duskFormatted: duskFormatted,
+        nauticalTwilightBeginFormatted: nauticalTwilightBeginFormatted,
+        nauticalTwilightEndFormatted: nauticalTwilightEndFormatted,
+        solarNoonFormatted: solarNoonFormatted,
+        sunMaxAltitude: sunMaxAltitude,
+        dayLength: dayLength,
+        lastLightFormatted: lastLightFormatted,
+        firstLightFormatted: firstLightFormatted,
+        currentUvIndex: currentUvIndex,
+        currentUvIndexSeverity: currentUvIndexSeverity,
+        currentUvIndexSeverityTooltipDescription: currentUvIndexSeverityTooltipDescription,
+        todayMaxUvIndex: todayMaxUvIndex,
+        todayMaxUvIndexSeverity: todayMaxUvIndexSeverity,
+        todayMaxUvIndexSeverityTooltipDescription: todayMaxUvIndexSeverityTooltipDescription,
+        tomorrowUvIndex: tomorrowUvIndex,
+        tomorrowUvIndexSeverity: tomorrowUvIndexSeverity,
+        tomorrowUvIndexSeverityTooltipDescription: tomorrowUvIndexSeverityTooltipDescription,
+    })
 }

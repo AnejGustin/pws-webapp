@@ -23,6 +23,7 @@ import {
 } from "./swagger_docs/swagger";
 import { fetchCurrentConditions, startCurrentConditionsCron } from './cron/current.conditions';
 import { fetchMoonInfo, startMoonInfoCron } from './cron/moon';
+import { fetchSunInfo, startSunInfoCron } from './cron/sun';
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
@@ -54,4 +55,7 @@ app.listen(port, async () => {
 
   await fetchMoonInfo();
   startMoonInfoCron();
+
+  await fetchSunInfo();
+  startSunInfoCron();
 });

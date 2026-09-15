@@ -184,11 +184,8 @@ export async function getCurrentConditions(
 
         if (!currentConditions.aq.aqi && 
             !currentConditions.cloud_cover && 
-            !currentConditions.sunrise && 
-            !currentConditions.sunset && 
             !currentConditions.visibility && 
-            !currentConditions.weather_description &&
-            !currentConditions.uv_index
+            !currentConditions.weather_description
         ) {
             return res.status(200).json({
                 data: null

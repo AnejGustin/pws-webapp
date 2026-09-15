@@ -91,7 +91,17 @@
     "Data about current conditions is collected from": "Podatki o trenutnih razmerah so pridobljeni iz",
     "sun": {
       "Sunrise": "Sončni Vzhod",
-      "Sunset": "Sončni Zahod"
+      "Sunset": "Sončni Zahod",
+      "Sun": "Sonce",
+      "Solar Noon": "Sončno Poldne",
+      "Day Length": "Dolžina Dneva",
+      "Max Altitude": "Najvišja Višina",
+      "Civil Dawn": "Svit",
+      "Civil Dusk": "Mrak",
+      "Nautical Dawn": "Navtični Svit",
+      "Nautical Dusk": "Navtični Mrak",
+      "Astronomical Dawn": "Astronomski Svit",
+      "Astronomical Dusk": "Astronomski Mrak"
     },
     "uv": {
       "severity": {
@@ -107,7 +117,9 @@
         "Protection is essential": "Zaščita je nujna",
         "Extra protection required": "Dodatna zaščita je potrebna",
         "Extreme risk of sunburn": "Ekstremno tveganje za sončne opekline"
-      }
+      },
+      "UV Index Tomorrow": "UV Indeks Jutri",
+      "Max UV Index Today": "Najvišji UV Indeks Danes"
     },
     "visibility": {
       "description": {
@@ -137,7 +149,8 @@
         "Ammonia (NH3)": "Amonijak (NH3)",
         "Nitrogen Monoxide (NO)": "Dušikov Monoksid (NO)"
       }
-    }
+    },
+    "Data about sun is collected from": "Podatki o soncu so pridobljeni iz"
   },
   "time": {
     "Local time": "Lokalni čas"
@@ -195,9 +208,9 @@
       "Unknown": "Neznano",
 
       "Clear Sky": "Jasno",
-      "Few Clouds": "Nekaj Oblakov",
-      "Scattered Clouds": "Razpršena Oblačnost",
-      "Broken Clouds": "Delno Oblačno",
+      "Few Clouds": "Pretežno Jasno",
+      "Scattered Clouds": "Delno Jasno",
+      "Broken Clouds": "Pretežno Oblačno",
       "Shower Rain": "Dežne Plohe",
       "Thunderstorm": "Nevihta",
       "Snow": "Sneg",
@@ -280,7 +293,10 @@
     "No Zambretti Forecast Available": "Kratkoročna Zambretti Napoved Ni Na Voljo",
     "Loading Current Weather Conditions...": "Nalaganje Trenutnih Vremenskih Razmer...",
     "Error While Fetching Current Weather Conditions": "Napaka Pri Pridobivanju Trenutnih Vremenskih Razmer",
-    "No Current Weather Conditions Available": "Trenutne Vremenske Razmere Niso Na Voljo"
+    "No Current Weather Conditions Available": "Trenutne Vremenske Razmere Niso Na Voljo",
+    "Loading Sun Information...": "Nalaganje Najnovejših Informacij O Soncu...",
+    "Error While Fetching Sun Information": "Napaka Pri Pridobivanju Najnovejših Informacij O Soncu",
+    "No Sun Information Available": "Najnovejše Informacije O Soncu Niso Na Voljo"
   },
   "dropdowns": {
     "Temperature": "Temperatura",

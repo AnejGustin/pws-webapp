@@ -150,7 +150,11 @@
         "Nitrogen Monoxide (NO)": "Dušikov Monoksid (NO)"
       }
     },
-    "Data about sun is collected from": "Podatki o soncu so pridobljeni iz"
+    "Data about sun is collected from": "Podatki o soncu so pridobljeni iz",
+    "Weather Alerts": "Vremenska Opozorila",
+    "UPCOMING": "PRIHAJAJOČE",
+    "ACTIVE": "AKTIVNO",
+    "Alerts source": "Vir vremenskih opozoril"
   },
   "time": {
     "Local time": "Lokalni čas"
@@ -296,7 +300,8 @@
     "No Current Weather Conditions Available": "Trenutne Vremenske Razmere Niso Na Voljo",
     "Loading Sun Information...": "Nalaganje Najnovejših Informacij O Soncu...",
     "Error While Fetching Sun Information": "Napaka Pri Pridobivanju Najnovejših Informacij O Soncu",
-    "No Sun Information Available": "Najnovejše Informacije O Soncu Niso Na Voljo"
+    "No Sun Information Available": "Najnovejše Informacije O Soncu Niso Na Voljo",
+    "There Are Currently No Issued Weather Alerts": "Trenutno Ni Izdanih Nobenih Vremenskih Opozoril"
   },
   "dropdowns": {
     "Temperature": "Temperatura",

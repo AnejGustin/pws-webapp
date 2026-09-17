@@ -1,3 +1,4 @@
+import AlertsCard from "./components/alerts/AlertsCard";
 import CurrentConditionsCard from "./components/current_conditions/CurrentConditionsCard";
 import Dashboard from "./components/dashboard/Dashboard";
 import Footer from "./components/footer/Footer";
@@ -15,6 +16,7 @@ function App() {
         <CurrentConditionsCard />
         <PrecipitationRadar />
         <SunCard />
+        <AlertsCard />
         <MoonCard />
         <ZambrettiCard />
         <History />

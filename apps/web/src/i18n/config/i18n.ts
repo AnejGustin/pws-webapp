@@ -5,15 +5,15 @@ import slTranslation from './locales/sl/translation.json';
 
 i18n.use(initReactI18next).init({
   resources: {
-    en: {
+    "en-GB": {
       translation: enTranslation
     },
-    sl: {
+    "sl": {
       translation: slTranslation
     },
   },
-  lng: 'en',
-  fallbackLng: 'en',
+  lng: "en-GB",
+  fallbackLng: "en-GB",
   interpolation: {
     escapeValue: false,
   },

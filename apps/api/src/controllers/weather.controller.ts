@@ -201,3 +201,30 @@ export async function getCurrentConditions(
         next(error);
     }
 }
+
+export async function getAlerts(
+    _req: Request,
+    res: Response,
+    next: NextFunction,
+) {
+    try {
+        const alerts = weatherService.getAlerts();
+
+        if (alerts.alerts.expired.length <= 0 &&
+            alerts.alerts.active.length <= 0 &&
+            alerts.alerts.upcoming.length <= 0
+        ) {
+            return res.status(200).json({
+                data: null
+            })
+        }
+
+        const response = {
+            data: alerts
+        }
+
+        return res.status(200).json(response);
+    } catch (error) {
+        next(error);
+    }
+}

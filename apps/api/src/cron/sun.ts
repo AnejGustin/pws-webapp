@@ -2,7 +2,7 @@ import cron from "node-cron";
 import axios from "axios";
 import { logger } from "../logger/logger";
 import { SunInfoFormat } from "shared";
-import { sunInfoApiResponse, UvIndexApiResponse } from "../types/sun.types";
+import { SunInfoApiResponse, UvIndexApiResponse } from "../types/sun.types";
 
 const SUN_API_URL = `https://api.sunrisesunset.io/json?lat=46.34&lng=15.42&time_format=unix`;
 const UV_INDEX_API_URL = `https://uvindexapi.com/api/v1/forecast?latitude=46.34&longitude=15.42&timezone=UTC`;
@@ -57,7 +57,7 @@ export async function fetchSunInfo() {
             return;
         }
 
-        const sunData: sunInfoApiResponse = sunInfoResponse.data;
+        const sunData: SunInfoApiResponse = sunInfoResponse.data;
         const uvIndexData: UvIndexApiResponse = uvIndexResponse.data;
 
         sunInfo.last_update_time = Date.now();

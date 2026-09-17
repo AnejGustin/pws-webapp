@@ -3,6 +3,7 @@ import { Router } from "express";
 import * as weatherController from "../controllers/weather.controller";
 import weatherForecastRoutes from "./weather.forecast.routes";
 import { historyEndpointLimiter } from "../rate-limiter/rate.limiter";
+import weatherAlertsRoutes from "./weather.alerts.routes";
 
 const router = Router();
 
@@ -640,5 +641,7 @@ router.get(
 );
 
 router.use("/forecast", weatherForecastRoutes);
+
+router.use("/alerts", weatherAlertsRoutes);
 
 export default router;

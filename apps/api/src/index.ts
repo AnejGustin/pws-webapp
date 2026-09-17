@@ -24,6 +24,7 @@ import {
 import { fetchCurrentConditions, startCurrentConditionsCron } from './cron/current.conditions';
 import { fetchMoonInfo, startMoonInfoCron } from './cron/moon';
 import { fetchSunInfo, startSunInfoCron } from './cron/sun';
+import { fetchAlerts, startAlertsCron } from './cron/alerts';
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
@@ -58,4 +59,7 @@ app.listen(port, async () => {
 
   await fetchSunInfo();
   startSunInfoCron();
+
+  await fetchAlerts();
+  startAlertsCron();
 });

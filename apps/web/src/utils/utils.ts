@@ -1018,7 +1018,7 @@ export function getSunCardDisplayInfo(sunInfoData: SunInfoFormat) {
     const todayMaxUvIndexSeverityTooltipDescription =
         getUvIndexSeverityTooltipInfo(todayMaxUvIndexSeverity);
 
-    const tomorrowUvIndex = sunInfoData.uv.now.uv_index;
+    const tomorrowUvIndex = sunInfoData.uv.tomorrow.max.uv_index;
 
     const tomorrowUvIndexSeverity = getUvIndexSeverity(tomorrowUvIndex);
     const tomorrowUvIndexSeverityTooltipDescription =
@@ -1128,4 +1128,42 @@ export function getSunCardDisplayInfo(sunInfoData: SunInfoFormat) {
         tomorrowUvIndexSeverity: tomorrowUvIndexSeverity,
         tomorrowUvIndexSeverityTooltipDescription: tomorrowUvIndexSeverityTooltipDescription,
     })
+}
+
+export function getAlertIcon(category: string) {
+    switch(category) {
+        case "wind": {
+            return "💨";
+        }
+        case "rain": {
+            return "🌧️"
+        }
+        case "thunderstorm": {
+            return "⛈️";
+        }
+        case "snow-ice": {
+            return "🌨️";
+        }
+        case "ice": {
+            return "❄️";
+        }
+        case "high-temperature": {
+            return "🌡️";
+        }
+        case "low-temperature": {
+            return "🧊";
+        }
+        case "forest-fire": {
+            return "🔥";
+        }
+        case "avalanches": {
+            return "🏔️";
+        }
+        case "coastalevent": {
+            return "🌊";
+        }
+        default: {
+            return "⚠️";
+        }
+    }
 }

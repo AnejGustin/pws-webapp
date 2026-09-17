@@ -1,4 +1,4 @@
-export type sunInfoApiResponse = {
+export type SunInfoApiResponse = {
     results: {
         sunrise: string | null,
         sunset: string | null,

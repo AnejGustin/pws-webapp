@@ -5,11 +5,11 @@ export default function useLanguage() {
     const { i18n } = useTranslation();
 
     const [language, setLanguage] = useState("");
-    const languageDisplay = language === "en" ? "🇬🇧" : "🇸🇮";
+    const languageDisplay = language === "en-GB" ? "🇬🇧" : "🇸🇮";
 
     function setToEnglish() {
-        setLanguage("en");
-        i18n.changeLanguage("en");
+        setLanguage("en-GB");
+        i18n.changeLanguage("en-GB");
     }
 
     function setToSlovenian() {
@@ -20,7 +20,7 @@ export default function useLanguage() {
     const changeLanguage = () => {
         if (language === "sl") {
             setToEnglish();
-            localStorage.setItem("language", "en");
+            localStorage.setItem("language", "en-GB");
         } else {
             setToSlovenian();
             localStorage.setItem("language", "sl");
@@ -32,7 +32,7 @@ export default function useLanguage() {
 
         if (savedLanguage === null) {
             setToEnglish();
-            localStorage.setItem("language", "en");
+            localStorage.setItem("language", "en-GB");
             return;
         }
 

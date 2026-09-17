@@ -24,6 +24,9 @@
   --color-secondary-card-text: theme("colors.gray.500");
   --color-info-text: theme("colors.gray.700");
   --color-card-border: theme("colors.gray.200");
+  --color-alert-yellow: theme("colors.yellow.300");
+  --color-alert-orange: theme("colors.orange.400");
+  --color-alert-red: theme("colors.red.500");
 }
 
 /* dark theme */
@@ -48,4 +51,7 @@
   --color-secondary-card-text: theme("colors.gray.400");
   --color-info-text: theme("colors.white");
   --color-card-border: theme("colors.gray.800");
+  --color-alert-yellow: theme("colors.yellow.300");
+  --color-alert-orange: theme("colors.orange.400");
+  --color-alert-red: theme("colors.red.500");
 }

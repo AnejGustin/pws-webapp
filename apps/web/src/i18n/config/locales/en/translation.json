@@ -150,7 +150,11 @@
         "Nitrogen Monoxide (NO)": "Nitrogen Monoxide (NO)"
       }
     },
-    "Data about sun is collected from": "Data about sun is collected from"
+    "Data about sun is collected from": "Data about sun is collected from",
+    "Weather Alerts": "Weather Alerts",
+    "UPCOMING": "UPCOMING",
+    "ACTIVE": "ACTIVE",
+    "Alerts source": "Alerts source"
   },
   "time": {
     "Local time": "Local time"
@@ -296,7 +300,8 @@
     "No Current Weather Conditions Available": "No Current Weather Conditions Available",
     "Loading Sun Information...": "Loading Sun Information...",
     "Error While Fetching Sun Information": "Error While Fetching Sun Information",
-    "No Sun Information Available": "No Sun Information Available"
+    "No Sun Information Available": "No Sun Information Available",
+    "There Are Currently No Issued Weather Alerts": "There Are Currently No Issued Weather Alerts"
   },
   "dropdowns": {
     "Temperature": "Temperature",

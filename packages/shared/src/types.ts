@@ -213,3 +213,23 @@ export type SunInfoFormat = {
         },
     }
 }
+
+export type AlertsFormat = {
+    last_update_time: number | null,
+    alerts: {
+        expired: Array<AlertFormat>,
+        active: Array<AlertFormat>,
+        upcoming: Array<AlertFormat>
+    }
+}
+
+export type AlertFormat = {
+    language: string,
+    onset: string,
+    expires: string,
+    headline: string,
+    description: string,
+    instruction: string,
+    color: string,
+    category: string,
+}

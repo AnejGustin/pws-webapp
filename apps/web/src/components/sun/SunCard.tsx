@@ -152,13 +152,23 @@ export default function SunCard() {
               parameter={t("common.sun.Max Altitude")}
               value={sunMaxAltitude}
               unit="°"
+              hoverContent={[
+                <div className="text-nowrap">
+                  <p>
+                    {t(
+                      `common.sun.info.The highest point sun reaches during the day`,
+                    )}
+                  </p>
+                </div>,
+              ]}
             />
             <SideElement
               parameter={t("weather.UV Index")}
               value={currentUvIndex}
               description={`(${t(`common.uv.severity.${currentUvIndexSeverity}`)})`}
               hoverContent={
-                currentUvIndexSeverityTooltipDescription != null && todayMaxUvIndex
+                currentUvIndexSeverityTooltipDescription != null &&
+                todayMaxUvIndex
                   ? [
                       <div className="text-nowrap">
                         <p>
@@ -167,12 +177,12 @@ export default function SunCard() {
                           )}
                         </p>
                         <p className="mt-2">
-                          {t("common.uv.Max UV Index Today")}: {todayMaxUvIndex} ({t(`common.uv.severity.${todayMaxUvIndexSeverity}`)})
+                          {t("common.uv.Max UV Index Today")}: {todayMaxUvIndex}{" "}
+                          ({t(`common.uv.severity.${todayMaxUvIndexSeverity}`)})
                         </p>
                       </div>,
                     ]
                   : undefined
-                
               }
             />
             <SideElement

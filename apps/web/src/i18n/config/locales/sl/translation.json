@@ -28,6 +28,24 @@
       "NW": "SZ",
       "NNW": "SSZ"
     },
+    "directionsFullNames": {
+      "N": "Sever",
+      "NNE": "Sever-severovzhod",
+      "NE": "Severovzhod",
+      "ENE": "Vzhod-severovzhod",
+      "E": "Vzhod",
+      "ESE": "Vzhod-jugovzhod",
+      "SE": "Jugovzhod",
+      "SSE": "Jug-jugovzhod",
+      "S": "Jug",
+      "SSW": "Jug-jugozahod",
+      "SW": "Jugozahod",
+      "WSW": "Zahod-jugozahod",
+      "W": "Zahod",
+      "WNW": "Zahod-severozahod",
+      "NW": "Severozahod",
+      "NNW": "Sever-severozahod"
+    },
     "moon": {
       "Moon": "Luna",
       "Special Moon": "Posebna Luna",
@@ -101,7 +119,10 @@
       "Nautical Dawn": "Navtični Svit",
       "Nautical Dusk": "Navtični Mrak",
       "Astronomical Dawn": "Astronomski Svit",
-      "Astronomical Dusk": "Astronomski Mrak"
+      "Astronomical Dusk": "Astronomski Mrak",
+      "info": {
+        "The highest point sun reaches during the day": "Najvišja točka, ki jo sonce doseže čez dan"
+      }
     },
     "uv": {
       "severity": {
@@ -238,7 +259,7 @@
 
       "Light Intensity Drizzle Rain": "Rahel Pršeč Dež",
       "Drizzle Rain": "Pršeč Dež",
-      "Heavy Intensity Drizzle Rain": "Močan Pršeč Dež",
+      "Heavy Intensity Drizzle Rain": "Močen Pršeč Dež",
 
       "Shower Rain And Drizzle": "Dežna Ploha In Pršenje",
       "Heavy Shower Rain And Drizzle": "Močna Dežna Ploha In Pršenje",
@@ -246,8 +267,8 @@
 
       "Light Rain": "Rahel Dež",
       "Moderate Rain": "Zmeren Dež",
-      "Heavy Intensity Rain": "Močan Dež",
-      "Very Heavy Rain": "Zelo Močan Dež",
+      "Heavy Intensity Rain": "Močen Dež",
+      "Very Heavy Rain": "Zelo Močen Dež",
       "Extreme Rain": "Ekstremen Dež",
       "Freezing Rain": "Ledeni Dež",
 
@@ -255,8 +276,8 @@
       "Heavy Intensity Shower Rain": "Močna Dežna Ploha",
       "Ragged Shower Rain": "Huda Dežna Ploha",
 
-      "Light Snow": "Rahel Sneg",
-      "Heavy Snow": "Močan Sneg",
+      "Light Snow": "Rahlo Sneženje",
+      "Heavy Snow": "Močno Sneženje",
       "Sleet": "Dež Z Snegom",
 
       "Light Shower Sleet": "Rahla Ploha Sodre",
@@ -279,6 +300,12 @@
       "Volcanic Ash": "Vulkanski Pepel",
       "Squalls": "Močne Vetrovne Nevihte",
       "Tornado": "Tornado"
+    },
+    "info": {
+      "The temperature to which air must be cooled to become completely saturated with water vapor": "Temperatura, na katero se mora zrak ohladiti, da postane popolnoma nasičen z vodno paro",
+      "The temperature human body perceives due to the combined effect of the actual air temperature and relative humidity": "Temperatura, ki jo človeško telo zaznava zaradi kombiniranega učinka dejanske temperature zraka in relativne vlažnosti",
+      "How much precipitation in milimeters would accumulate in one hour if the current rate persisted": "Koliko padavin v milimetrih bi se nabralo v eni uri, če bi se trenutna intenzivnost padavin nadaljevala",
+      "1 mm = 1 liter of water per square meter": "1 mm = 1 liter vode na kvadratni meter"
     }
   },
   "info": {

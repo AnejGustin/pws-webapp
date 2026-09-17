@@ -1,3 +1,5 @@
+import type { ReactNode } from "react"
+
 export type WeatherCardProps = {
     title: string,
     titleIcon: React.ReactNode,
@@ -8,4 +10,5 @@ export type WeatherCardProps = {
     icon?: React.ReactNode,
     deltaRisingColor?: string,
     deltaFallingColor?: string,
+    children?: ReactNode | Array<ReactNode>
 }

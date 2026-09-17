@@ -62,6 +62,7 @@ export default function WeatherCard(props: WeatherCardProps) {
                 <div className="flex flex-row justify-start gap-4 mt-auto">
                     {props.sideElements}
                 </div>
+                {props.children}
             </div>
         </Card>
     )

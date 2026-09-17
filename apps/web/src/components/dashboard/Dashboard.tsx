@@ -23,6 +23,7 @@ import InfoCard from "../info/InfoCard";
 import { WEATHER_STATION_TIMEZONE } from "shared";
 import Title from "./Title/Title";
 import { useTranslation } from "react-i18next";
+import InfoTooltip from "../InfoToolTip/InfoTooltip";
 
 export default function Dashboard() {
   const { t } = useTranslation();
@@ -75,7 +76,10 @@ export default function Dashboard() {
             message={"Loading Latest Weather Data..."}
             textColor={"text-[var(--color-info-text)]"}
           >
-            <RefreshCw size={20} className="animate-spin text-[var(--color-icon)]" />
+            <RefreshCw
+              size={20}
+              className="animate-spin text-[var(--color-icon)]"
+            />
           </InfoCard>
         </div>
       </div>
@@ -186,12 +190,30 @@ export default function Dashboard() {
                 value={weatherData.dewpoint}
                 unit={"°C"}
                 key={"dewpoint"}
+                hoverContent={[
+                  <div className="max-w-50">
+                    <p>
+                      {t(
+                        `weather.info.The temperature to which air must be cooled to become completely saturated with water vapor`,
+                      )}
+                    </p>
+                  </div>,
+                ]}
               />,
               <SideElement
                 parameter={t("weather.Feels Like")}
                 value={weatherData.heat_index}
                 unit={"°C"}
                 key={"heat_index"}
+                hoverContent={[
+                  <div className="max-w-50">
+                    <p>
+                      {t(
+                        `weather.info.The temperature human body perceives due to the combined effect of the actual air temperature and relative humidity`,
+                      )}
+                    </p>
+                  </div>,
+                ]}
               />,
             ]}
             deltaFallingColor={"text-[var(--color-blue-text)]"}
@@ -228,11 +250,111 @@ export default function Dashboard() {
                 parameter={t("weather.Direction")}
                 value={t(`common.directions.${windDirectionDescription}`)}
                 key={"wind_direction"}
+                hoverContent={[
+                  <div className="flex flex-col">
+                    <p>
+                      {t(`common.directions.N`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.N`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.NNE`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.NNE`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.NE`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.NE`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.ENE`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.ENE`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.E`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.E`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.ESE`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.ESE`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.SE`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.SE`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.SSE`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.SSE`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.S`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.S`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.SSW`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.SSW`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.SW`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.SW`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.WSW`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.WSW`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.W`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.W`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.WNW`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.WNW`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.NW`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.NW`)}
+                      </span>
+                    </p>
+                    <p>
+                      {t(`common.directions.NNW`)}:
+                      <span className="ml-1">
+                        {t(`common.directionsFullNames.NNW`)}
+                      </span>
+                    </p>
+                  </div>,
+                ]}
               />,
             ]}
             icon={
               <Navigation2
-              className="text-[var(--color-icon)]"
+                className="text-[var(--color-icon)]"
                 size={50}
                 style={{
                   rotate: `${windDirectionForDisplayIcon}deg`,
@@ -253,9 +375,26 @@ export default function Dashboard() {
                 value={weatherData.precipitation.rate}
                 unit={"mm / h"}
                 key={"rain_rate"}
+                hoverContent={[
+                  <div className="max-w-25 md:max-w-90">
+                    <p>
+                      {t(
+                        `weather.info.How much precipitation in milimeters would accumulate in one hour if the current rate persisted`,
+                      )}
+                    </p>
+                  </div>,
+                ]}
               />,
             ]}
-          />
+          >
+            <InfoTooltip>
+              <p>
+                {t(
+                  `weather.info.1 mm = 1 liter of water per square meter`,
+                )}
+              </p>
+            </InfoTooltip>
+          </WeatherCard>
         </div>
       </div>
     </div>

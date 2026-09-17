@@ -28,6 +28,24 @@
       "NW": "NW",
       "NNW": "NNW"
     },
+    "directionsFullNames": {
+      "N": "North",
+      "NNE": "North-Northeast",
+      "NE": "Northeast",
+      "ENE": "East-Northeast",
+      "E": "East",
+      "ESE": "East-Southeast",
+      "SE": "Southeast",
+      "SSE": "South-Southeast",
+      "S": "South",
+      "SSW": "South-Southwest",
+      "SW": "Southwest",
+      "WSW": "West-Southwest",
+      "W": "West",
+      "WNW": "West-Northwest",
+      "NW": "Northwest",
+      "NNW": "North-Northwest"
+    },
     "moon": {
       "Moon": "Moon",
       "Special Moon": "Special Moon",
@@ -101,7 +119,10 @@
       "Nautical Dawn": "Nautical Dawn",
       "Nautical Dusk": "Nautical Dusk",
       "Astronomical Dawn": "Astronomical Dawn",
-      "Astronomical Dusk": "Astronomical Dusk"
+      "Astronomical Dusk": "Astronomical Dusk",
+      "info": {
+        "The highest point sun reaches during the day": "The highest point sun reaches during the day"
+      }
     },
     "uv": {
       "severity": {
@@ -279,6 +300,12 @@
       "Volcanic Ash": "Volcanic Ash",
       "Squalls": "Squalls",
       "Tornado": "Tornado"
+    },
+    "info": {
+      "The temperature to which air must be cooled to become completely saturated with water vapor": "The temperature to which air must be cooled to become completely saturated with water vapor",
+      "The temperature human body perceives due to the combined effect of the actual air temperature and relative humidity": "The temperature human body perceives due to the combined effect of the actual air temperature and relative humidity",
+      "How much precipitation in milimeters would accumulate in one hour if the current rate persisted": "How much precipitation in milimeters would accumulate in one hour if the current rate persisted",
+      "1 mm = 1 liter of water per square meter": "1 mm = 1 liter of water per square meter"
     }
   },
   "info": {

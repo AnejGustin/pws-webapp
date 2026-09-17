@@ -15,7 +15,7 @@ export default function Dropdown(props: DropdownProps) {
     }
 
     return !props.hide && (
-        <div className="relative w-48">
+        <div className="relative w-48 select-none">
 
             <button
                 onClick={() => setOpen(!open)}

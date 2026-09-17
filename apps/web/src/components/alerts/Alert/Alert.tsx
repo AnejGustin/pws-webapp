@@ -33,7 +33,7 @@ export default function Alert(props: AlertProps) {
       onClick={show}
     >
       <div className="flex items-start gap-3">
-        <div className="text-xl shrink-0">{props.icon}</div>
+        <div className="text-xl shrink-0 select-none">{props.icon}</div>
 
         <div className="min-w-0 flex-1">
           <span

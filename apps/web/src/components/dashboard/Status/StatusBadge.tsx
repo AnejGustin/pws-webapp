@@ -14,7 +14,7 @@ export default function Status(props: StatusBadgeProperties) {
     const { t } = useTranslation();
 
     return (
-        <span className={`inline-flex md:ml-1 md:mt-0 mt-2 justify-center whitespace-nowrap rounded-full px-3 py-1 text-base font-semibold ${statusBadgeColors[props.statusColor]}`}>
+        <span className={`inline-flex md:ml-1 md:mt-0 mt-2 justify-center select-none whitespace-nowrap rounded-full px-3 py-1 text-base font-semibold ${statusBadgeColors[props.statusColor]}`}>
             {t(`common.${props.statusText}`)}
         </span>
     )

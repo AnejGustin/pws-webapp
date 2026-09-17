@@ -6,13 +6,13 @@ export default function WeatherIcon(props: WeatherIconProps) {
       <img
         src={icons[props.icon].animated}
         alt={props.iconAlt}
-        className="w-40 h-40 dark:invert"
+        className="w-40 h-40 dark:invert select-none"
       />
   ) : (
       <img
         src={icons[props.icon].normal}
         alt={props.iconAlt}
-        className="w-40 h-40 dark:invert"
+        className="w-40 h-40 dark:invert select-none"
       />
   );
 }

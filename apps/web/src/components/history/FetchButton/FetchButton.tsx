@@ -16,6 +16,7 @@ export default function FetchButton(props: FetchButtonProps) {
                 hover:bg-blue-700 active:bg-blue-800
                 transition
                 disabled:opacity-50 disabled:cursor-not-allowed
+                select-none
             `}
         >
             <RefreshCw

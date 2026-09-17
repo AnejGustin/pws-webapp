@@ -73,7 +73,9 @@
       }
     },
     "Precipitation Radar": "Precipitation Radar",
+    "Satellite": "Satellite",
     "Precipitation radar from": "Precipitation radar from",
+    "Satellite from": "Satellite from",
     "API Documentation": "API Documentation",
     "About Weather Station": "About Weather Station",
     "Service Status": "Service Status",

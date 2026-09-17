@@ -5,6 +5,7 @@ import Footer from "./components/footer/Footer";
 import History from "./components/history/History";
 import MoonCard from "./components/moon/MoonCard";
 import PrecipitationRadar from "./components/precipitation_radar/PrecipitationRadar";
+import Satellite from "./components/satellite/Satellite";
 import SunCard from "./components/sun/SunCard";
 import ZambrettiCard from "./components/zambretti/ZambrettiCard";
 
@@ -15,8 +16,9 @@ function App() {
         <Dashboard />
         <CurrentConditionsCard />
         <PrecipitationRadar />
-        <SunCard />
+        <Satellite />
         <AlertsCard />
+        <SunCard />
         <MoonCard />
         <ZambrettiCard />
         <History />

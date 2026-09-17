@@ -30,7 +30,7 @@ export default function SideElement(props: SideElementProps) {
         <div
           onMouseEnter={show}
           onMouseLeave={hide}
-          className="absolute bottom-full mb-2 right-0 w-max
+          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max
                                bg-[var(--color-card-bg)] text-[var(--color-info-text)] text-sm
                                shadow-lg border border-[var(--color-card-border)]
                                rounded-xl p-4 z-50 space-y-2"

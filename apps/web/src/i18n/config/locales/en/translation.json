@@ -330,7 +330,9 @@
     "Loading Sun Information...": "Loading Sun Information...",
     "Error While Fetching Sun Information": "Error While Fetching Sun Information",
     "No Sun Information Available": "No Sun Information Available",
-    "There Are Currently No Issued Weather Alerts": "There Are Currently No Issued Weather Alerts"
+    "There Are Currently No Issued Weather Alerts": "There Are Currently No Issued Weather Alerts",
+    "Loading Weather Alerts...": "Loading Weather Alerts...",
+    "Error While Fetching Weather Alerts": "Error While Fetching Weather Alerts"
   },
   "dropdowns": {
     "Temperature": "Temperature",

@@ -330,7 +330,9 @@
     "Loading Sun Information...": "Nalaganje Najnovejših Informacij O Soncu...",
     "Error While Fetching Sun Information": "Napaka Pri Pridobivanju Najnovejših Informacij O Soncu",
     "No Sun Information Available": "Najnovejše Informacije O Soncu Niso Na Voljo",
-    "There Are Currently No Issued Weather Alerts": "Trenutno Ni Izdanih Nobenih Vremenskih Opozoril"
+    "There Are Currently No Issued Weather Alerts": "Trenutno Ni Izdanih Nobenih Vremenskih Opozoril",
+    "Loading Weather Alerts...": "Nalaganje Vremenskih Opozoril...",
+    "Error While Fetching Weather Alerts": "Napaka Pri Pridobivanju Vremenskih Opozoril"
   },
   "dropdowns": {
     "Temperature": "Temperatura",

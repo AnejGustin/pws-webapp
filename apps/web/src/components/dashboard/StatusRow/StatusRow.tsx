@@ -21,7 +21,7 @@ export default function StatusRow(props: StatusRowProps) {
         </span>
         <span className="hidden md:inline">·</span>
         <span>
-          {t("common.Last update")}: {props.weatherDataObservationTime != "unknown" ? `${props.weatherDataObservationTime} (${props.timeSinceUpdateText})` : t(props.weatherDataObservationTime)}
+          {t("common.Last update")}: {props.weatherDataObservationTime != "unknown" ? `${props.weatherDataObservationTime} (${props.timeSinceUpdateText})` : t(`common.${props.weatherDataObservationTime}`)}
         </span>
         <Status statusText={props.statusText} statusColor={props.statusColor} />
       </div>

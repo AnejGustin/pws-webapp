@@ -558,14 +558,6 @@ router.get(
  *                   type: object
  *                   nullable: true
  *                   properties:
- *                     sunrise:
- *                       type: integer
- *                       nullable: true
- *                       example: 1788582208000
- *                     sunset:
- *                       type: integer
- *                       nullable: true
- *                       example: 1788629470000
  *                     visibility:
  *                       type: integer
  *                       nullable: true
@@ -625,11 +617,6 @@ router.get(
  *                           format: float
  *                           nullable: true
  *                           example: 0.7
- *                     uv_index:
- *                       type: integer
- *                       format: float
- *                       nullable: true
- *                       example: 4.8
  *                     last_update_time:
  *                       type: integer
  *                       nullable: true

@@ -20,15 +20,28 @@ A short-term weather forecast is generated using a modified Zambretti algorithm.
 
 An arrow indicates the expected trend of the weather: pointing down when conditions are expected to worsen (e.g. rain is approaching) and pointing up when conditions are expected to improve or stabilize.
 
+### Weather Alerts
+
+The Weather Alerts card shows active weather warnings and alerts for weather station's region, including their severity, category, validity period, and a detailed description (you can show/hide it with mouse click). It also provides information about upcoming alerts when available. Weather alerts are collected from [ARSO](https://meteo.arso.gov.si/met/sl/).
+
 ### Precipitation Radar
 
 The card includes an embedded Windy iframe displaying the precipitation radar, allowing users to view current precipitation conditions at weather station location and surrounding area.
 
+### Satellite
+
+The card includes an embedded Windy iframe displaying the live satellite view of Europe, allowing users to view current cloudiness across majority of Europe.
+
+### Sun Information
+
+The Sun card presents sunrise, sunset and solar noon time as the primary parameters. Secondary information includes day length, maximum solar altitude, dawn, dusk, astronomical twilight times, nautical twilight times, as well as the current UV index and the maximum UV index for today and tomorrow. Information about sun is collected from [sunrisesunet.io](https://sunrisesunset.io/). Information about UV is collected from [UV Index API](https://uvindexapi.com/).
+
 ### Moon Information
 
-The Moon card presents the moon phase, moon icon, illumination, and distance as the primary parameters. Secondary information includes moonrise and moonset times, dates of upcoming moon phases, as well as the dates of upcoming special lunar events and moon eclipses.
+The Moon card presents the moon phase, moon icon, illumination, and distance as the primary parameters. Secondary information includes moonrise and moonset times, dates of upcoming moon phases, as well as the dates of upcoming special lunar events and moon eclipses. Information on this card is collected from [FreeAstroAPI](https://www.freeastroapi.com/moon).
 
-![precipitation radar, short term forecast and moon information cards](screenshots/middle_section.png)
+![Precipitation radar, satellite and weather alerts cards](screenshots/middle1.png)
+![Sun, moon and short term Zambretti forecast cards](screenshots/middle2.png)
 
 ### Statistics & Charts
 
@@ -40,9 +53,14 @@ The statistics card displays the **minimum**, **maximum**, and **average** value
 
 Wind direction has a dedicated visualization that represents directions as degrees on a circular chart. Since this can be difficult to interpret at a glance, a wind rose is also provided to show the dominant wind directions more clearly.
 
+
 ![history section of webapp](screenshots/history_section.png)
 
 ![Wind direction chart and wind rose](screenshots/wind_direction_chart_rose_chart.png)
+
+### Theme And Language Options
+
+The status bar includes quick access to language and theme settings, allowing users to switch between English and Slovenian translations and toggle between light and dark theme with the click of a button.
 
 ## Tech Stack
 
